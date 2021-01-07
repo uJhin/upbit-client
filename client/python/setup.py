@@ -1,18 +1,26 @@
 from setuptools import setup
 from setuptools import find_packages
 
+
 setup(
     name='upbit_client',
-    version='1.1.6',
+    version='1.1.6.8',
     packages=find_packages(),
-    python_requires='>=3',
+    install_requires=[
+        'bravado>=11.0.2',
+        'PyJWT>=2.0'
+    ],
+    extras_require= {
+        'fido': ['fido>=4.2.1']
+    },
+    python_requires='>=3.8',
     keywords=[
         'Upbit',
         'upbit',
         'upbit-client',
         'Upbit-Client',
         'Upbit_client',
-        'upbit_client'
+        'upbit'
     ],
     url='https://github.com/uJhin/upbit-client',
     license='MIT License',
