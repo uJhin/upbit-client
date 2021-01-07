@@ -4,7 +4,7 @@
   <br/>
   <h1>Upbit Client</h1>
   <div>
-      <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/>
+      <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
   </div>
   <div>
     <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
