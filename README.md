@@ -5,6 +5,7 @@
   <div>
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
   </div>
+  <br/>
   <div>
     <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
   </div>
