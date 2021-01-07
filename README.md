@@ -91,3 +91,7 @@ order = client.Order.Order_new(
 ).result()
 print(order)
 ```
+
+### Donation
+- BTC: 3NVw2seiTQddGQwc1apqudKxuTqebpyL3s
+- ETH: 0x60dd373f59862d9df776596889b997e24bee42eb
