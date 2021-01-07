@@ -27,8 +27,6 @@ class APIKeyAuthenticator(Authenticator):
     def generate_payload(self, request):
         params = request.params
         data = request.data
-        print('params:', params)
-        print('data:', data)
 
         payload = {
             'access_key': self.access_key,
