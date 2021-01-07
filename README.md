@@ -19,7 +19,7 @@ git clone https://github.com/uJhin/upbit-client.git
 
 # Using Package
 ```python
-from upbit_client.client import Upbit
+from upbit.client import Upbit
 
 access_key = "Your Access Key"
 secret_key = "Your Secret Key"
