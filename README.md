@@ -14,7 +14,6 @@
     <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
   </div>
   <p>Upbit(업비트) Cryptocurrency Trading Market API Client</p>
-  <p>Base: Upbit Official Open API</p>
 </div>
 
 # Install
