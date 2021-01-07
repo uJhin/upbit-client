@@ -4,7 +4,7 @@
   <br/>
   <h1>Upbit Client</h1>
   <p>Upbit(업비트) Cryptocurrency Trading Market API Client</p>
-  <p>- Base: Upbit Official Open API</p>
+  <p>Base: Upbit Official Open API</p>
 </div>
 
 # Install
