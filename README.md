@@ -3,10 +3,16 @@
   <br/>
   <br/>
   <h1>Upbit Client</h1>
-  <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/>
-  <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
-  <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
-  <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
+  <div>
+      <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/>
+  </div>
+  <div>
+    <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
+  </div>
+  <div>
+    <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
+    <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
+  </div>
   <p>Upbit(업비트) Cryptocurrency Trading Market API Client</p>
   <p>Base: Upbit Official Open API</p>
 </div>
