@@ -42,7 +42,6 @@ def Upbit(access_key: str = None, secret_key: str = None, **kwargs) -> sc:
 
         client = sc.from_url(
             spec_url=spec_uri, http_client=request_client, config=config)
-        client.__class__.__name__ = 'UpbitClient'
 
     else:
 
