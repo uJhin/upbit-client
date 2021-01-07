@@ -2,7 +2,6 @@
   <img src="logo/UPbit_Logo.png" />
   <br/>
   <br/>
-  <h1>Upbit Client</h1>
   <div>
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
   </div>
