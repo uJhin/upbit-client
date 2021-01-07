@@ -18,12 +18,12 @@
 </div>
 
 # Install
+- `pip` command at PyPI
 ```bash
 pip install upbit-client
 ```
 
-or
-
+- `git` command
 ```bash
 git clone https://github.com/uJhin/upbit-client.git
 ```
