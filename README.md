@@ -14,9 +14,7 @@
     <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
   </div>
   <br/>
-  <br/>
   <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
-  <br/>
   <a href="https://ujhin.github.io/upbit-client-docs/">Upbit Client Documents</a>
 </div>
 
