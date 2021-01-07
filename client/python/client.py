@@ -1,7 +1,7 @@
 
 from bravado.requests_client import RequestsClient as rc
 from bravado.client import SwaggerClient as sc
-from upbit_client.authentication import APIKeyAuthenticator
+from upbit.authentication import APIKeyAuthenticator
 
 
 HOST = "https://api.upbit.com"
