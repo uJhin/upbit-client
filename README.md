@@ -9,17 +9,6 @@
       <img src="https://img.shields.io/pypi/v/upbit-client"/>
     </a>
   </div>
-  <br/>
-  <a href="https://ujhin.github.io/upbit-client-docs/">
-    <b>Upbit Client Documents</b>
-  </a>
-  <br/><br/><br/><br/>
-  <img src="logo/UPbit_Logo.png" />
-  <br/><br/>
-  <div>
-      <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
-  </div>
-  <br/>
   <div>
     <a href="https://github.com/uJhin/upbit-client/issues">
       <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
@@ -29,9 +18,23 @@
     </a>
   </div>
   <br/>
-  <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
-  <p>패키지 개발에 도움을 주신 Upbit OPEN API 지원팀에게 감사의 말씀을 전합니다.</p>
-  <br/><br/>
+  <a href="https://ujhin.github.io/upbit-client-docs/">
+    <b>Upbit Client Documents</b>
+  </a>
+  <br/><br/><br/><br/>
+  <div align="center">
+    <h3>Support</h3>
+    <img src="logo/UPbit_Logo.png" width="350" height="150"/>
+    <img src="logo/swagger_logo.png" width="350" height="150">
+    <br/><br/>
+    <div>
+      <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
+    </div>
+    <br/><br/>
+    <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
+    <p>패키지 개발에 도움을 주신 Upbit OPEN API 지원팀에게 감사의 말씀을 전합니다.</p>
+    <br/><br/>
+  </div>  
 </div>
 
 ### Swagger Generated API Documents
