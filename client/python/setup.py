@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='upbit_client',
-    version='1.1.6.8',
+    version='1.1.6.9',
     packages=find_packages(),
     install_requires=[
         'bravado>=11.0.2',

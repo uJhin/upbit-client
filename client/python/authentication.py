@@ -35,13 +35,33 @@ class APIKeyAuthenticator(Authenticator):
         if isinstance(data, dict):
             params.update(data)
         if params:
-            query = urlencode(params).encode()
+            query = self.generate_query(params)
+
             h = hashlib.sha512()
-            h.update(query)
+            h.update(query.encode())
             query_hash = h.hexdigest()
+
             payload['query_hash'] = query_hash
             payload['query_hash_alg'] = 'SHA512'
 
         jwt_token = jwt.encode(payload, self.secret_key)
         authorize_token = f"Bearer {jwt_token}"
         return authorize_token
+
+    def generate_query(self, params):
+        query = urlencode({
+            param: value
+            for param, value in params.items()
+            if (param != 'uuids') and (param != 'txids')
+        })
+        if params.get('uuids'):
+            uuids = params.pop('uuids')
+            params["uuids[]"] = uuids
+            uuids_query = '&'.join([f"uuids[]={_uuid}" for _uuid in uuids])
+            query = f"{query}&{uuids_query}" if query else uuids_query
+        if params.get('txids'):
+            txids = params.pop('txids')
+            params["txids[]"] = txids
+            txids_query = '&'.join([f"txids[]={_txid}" for _txid in txids])
+            query = f"{query}&{txids_query}" if query else txids_query
+        return query
