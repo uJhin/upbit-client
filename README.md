@@ -1,9 +1,10 @@
 <div align='center'>
-  <img src="logo/logo.png">
+  <img src="logo/logo.png" width="250" height="250">
   <br/>
+  <h3>Upbit Client</h3>
+  <br/><br/>
   <img src="logo/UPbit_Logo.png" />
-  <br/>
-  <br/>
+  <br/><br/>
   <div>
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
   </div>
