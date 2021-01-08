@@ -1,10 +1,15 @@
 from setuptools import setup
 from setuptools import find_packages
 
+long_description = '''Upbit OPEN API Client
+@Author: ujhin
+@GitHub Page: https://github.com/uJhin/upbit-client
+@Official Documents: https://ujhin.github.io/upbit-client-docs 
+'''
 
 setup(
     name='upbit_client',
-    version='1.1.6.9',
+    version='1.1.6.10',
     packages=find_packages(),
     install_requires=[
         'bravado>=11.0.2',
@@ -26,5 +31,6 @@ setup(
     license='MIT License',
     author='ujhin',
     author_email='ujhin942@gmail.com',
-    description='Upbit OPEN API Client'
+    description='Upbit OPEN API Client',
+    long_description=long_description
 )

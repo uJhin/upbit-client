@@ -50,9 +50,9 @@ class APIKeyAuthenticator(Authenticator):
 
     def generate_query(self, params):
         query = urlencode({
-            param: value
-            for param, value in params.items()
-            if (param != 'uuids') and (param != 'txids')
+            k: v
+            for k, v in params.items()
+            if (k != 'uuids') and (k != 'txids') and (k != 'identifiers')
         })
         if params.get('uuids'):
             uuids = params.pop('uuids')
@@ -64,4 +64,12 @@ class APIKeyAuthenticator(Authenticator):
             params["txids[]"] = txids
             txids_query = '&'.join([f"txids[]={_txid}" for _txid in txids])
             query = f"{query}&{txids_query}" if query else txids_query
+        if params.get('identifiers'):
+            identifiers = params.pop('identifiers')
+            params["identifiers[]"] = identifiers
+            identifiers_query = '&'.join([
+                f"identifiers[]={identifier}"
+                for identifier in identifiers
+            ])
+            query = f"{query}&{identifiers}" if query else identifiers_query
         return query
