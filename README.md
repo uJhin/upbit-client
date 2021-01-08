@@ -21,9 +21,9 @@
   <a href="https://ujhin.github.io/upbit-client-docs/">
     <b>Upbit Client Documents</b>
   </a>
-  <br/><br/><br/><br/>
+  <br/><br/>
   <div align="center">
-    <h3>Support</h3>
+    <h2>Support</h2>
     <img src="logo/UPbit_Logo.png" width="350" height="150"/>
     <img src="logo/swagger_logo.png" width="350" height="150">
     <br/><br/>
