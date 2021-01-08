@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "## REST API for Upbit Exchange\n- Base URL: [https://api.upbit.com]\n- Official Upbit API Documents: [https://docs.upbit.com]\n- Official Support email: [open-api@upbit.com]",
+    "description": "## REST API for Upbit Exchange\n- Base URL: [https://api.upbit.com]\n- Official Upbit API Documents: [https://docs.upbit.com]\n- Official Support email: [open-api@upbit.com]\n",
     "version": "1.0.0",
     "title": "Upbit Open API",
     "contact": {
@@ -55,7 +55,7 @@
           "APIKey"
         ],
         "summary": "API 키 리스트 조회",
-        "description": "## API 키 목록 및 만료 일자를 조회합니다.",
+        "description": "## API 키 목록 및 만료 일자를 조회합니다.\n",
         "operationId": "APIKey.info",
         "produces": [
           "application/json"
@@ -115,7 +115,7 @@
           "Account"
         ],
         "summary": "전체 계좌 조회",
-        "description": "## 내가 보유한 자산 리스트를 보여줍니다.",
+        "description": "## 내가 보유한 자산 리스트를 보여줍니다.\n",
         "operationId": "Account.info",
         "produces": [
           "application/json"
@@ -175,7 +175,7 @@
           "Account"
         ],
         "summary": "입출금 현황",
-        "description": "## 입출금 현황 및 블록 상태를 조회합니다.\n\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와 다를 수 있습니다.\n\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.\n본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.",
+        "description": "## 입출금 현황 및 블록 상태를 조회합니다.\n\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와 다를 수 있습니다.\n\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.\n본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.\n",
         "operationId": "Account.wallet",
         "produces": [
           "application/json"
@@ -235,7 +235,7 @@
           "Order"
         ],
         "summary": "시세 호가 정보(Orderbook) 조회",
-        "description": "## 호가 정보 조회",
+        "description": "## 호가 정보 조회\n",
         "operationId": "Order.orderbook",
         "produces": [
           "application/json"
@@ -244,7 +244,7 @@
           {
             "name": "markets",
             "in": "query",
-            "description": "마켓 코드 목록 (ex. KRW-BTC,KRW-ADA)",
+            "description": "마켓 코드 목록 (ex. KRW-BTC,KRW-ADA)\n",
             "required": true,
             "type": "array",
             "items": {
@@ -307,7 +307,7 @@
           "Order"
         ],
         "summary": "주문 가능 정보",
-        "description": "## 마켓별 주문 가능 정보를 확인한다.",
+        "description": "## 마켓별 주문 가능 정보를 확인한다.\n",
         "operationId": "Order.chance",
         "produces": [
           "application/json"
@@ -316,7 +316,7 @@
           {
             "name": "market",
             "in": "query",
-            "description": "Market ID",
+            "description": "Market ID\n",
             "required": true,
             "type": "string"
           }
@@ -372,7 +372,7 @@
           "Order"
         ],
         "summary": "개별 주문 조회",
-        "description": "## 주문 UUID를 통해 개별 주문건을 조회한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.",
+        "description": "## 주문 UUID를 통해 개별 주문건을 조회한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
         "operationId": "Order.info",
         "produces": [
           "application/json"
@@ -381,14 +381,14 @@
           {
             "name": "uuid",
             "in": "query",
-            "description": "주문 UUID",
+            "description": "주문 UUID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "identifier",
             "in": "query",
-            "description": "조회용 사용자 지정 값",
+            "description": "조회용 사용자 지정 값\n",
             "required": false,
             "type": "string"
           }
@@ -442,7 +442,7 @@
           "Order"
         ],
         "summary": "주문 취소 접수",
-        "description": "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.",
+        "description": "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
         "operationId": "Order.cancel",
         "produces": [
           "application/json"
@@ -451,14 +451,14 @@
           {
             "name": "uuid",
             "in": "query",
-            "description": "취소할 주문의 UUID",
+            "description": "취소할 주문의 UUID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "identifier",
             "in": "query",
-            "description": "조회용 사용자 지정 값",
+            "description": "조회용 사용자 지정 값\n",
             "required": false,
             "type": "string"
           }
@@ -514,7 +514,7 @@
           "Order"
         ],
         "summary": "주문 리스트 조회",
-        "description": "## 주문 리스트를 조회한다.",
+        "description": "## 주문 리스트를 조회한다.\n",
         "operationId": "Order.info_all",
         "produces": [
           "application/json"
@@ -523,21 +523,21 @@
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 아이디",
+            "description": "마켓 아이디\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "state",
             "in": "query",
-            "description": "주문 상태\n  - wait : 체결 대기 (default)\n  - done : 전체 체결 완료\n  - cancel : 주문 취소",
+            "description": "주문 상태\n  - wait : 체결 대기 (default)\n  - done : 전체 체결 완료\n  - cancel : 주문 취소\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "states",
             "in": "query",
-            "description": "주문 상태의 목록",
+            "description": "주문 상태의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -548,7 +548,7 @@
           {
             "name": "uuids",
             "in": "query",
-            "description": "주문 UUID의 목록",
+            "description": "주문 UUID의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -559,7 +559,7 @@
           {
             "name": "identifiers",
             "in": "query",
-            "description": "주문 identifier의 목록",
+            "description": "주문 identifier의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -570,28 +570,28 @@
           {
             "name": "kind",
             "in": "query",
-            "description": "주문 유형\n- normal : 일반 주문\n- watch : 예약 주문",
+            "description": "주문 유형\n- normal : 일반 주문\n- watch : 예약 주문\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "page",
             "in": "query",
-            "description": "페이지 수, default: 1",
+            "description": "페이지 수, default: 1\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "limit",
             "in": "query",
-            "description": "요청 개수, default: 100",
+            "description": "요청 개수, default: 100\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "order_by",
             "in": "query",
-            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)",
+            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)\n",
             "required": false,
             "type": "string"
           }
@@ -648,7 +648,7 @@
           "Order"
         ],
         "summary": "주문하기",
-        "description": "## 주문 요청을 한다.\n\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n\n원화 마켓에서 주문을 요청 할 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를 확인하여 값을 입력해주세요.\n\n**NOTE**: identifier 파라미터 사용\n\n`identifier`는 서비스에서 발급하는 `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주문 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n\n주문의 성공 / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주세요.\n\n**NOTE**: 시장가 주문\n\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설정해야됩니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n매도 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.",
+        "description": "## 주문 요청을 한다.\n\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n\n원화 마켓에서 주문을 요청 할 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를 확인하여 값을 입력해주세요.\n\n**NOTE**: identifier 파라미터 사용\n\n`identifier`는 서비스에서 발급하는 `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주문 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n\n주문의 성공 / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주세요.\n\n**NOTE**: 시장가 주문\n\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설정해야됩니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n매도 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.\n",
         "operationId": "Order.new",
         "consumes": [
           "application/x-www-form-urlencoded",
@@ -662,42 +662,42 @@
           {
             "name": "market",
             "in": "formData",
-            "description": "마켓 ID (필수)",
+            "description": "마켓 ID (필수)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "side",
             "in": "formData",
-            "description": "주문 종류 (필수)\n- bid : 매수\n- ask : 매도",
+            "description": "주문 종류 (필수)\n- bid : 매수\n- ask : 매도\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "volume",
             "in": "formData",
-            "description": "주문량 (지정가, 시장가 매도 시 필수)",
+            "description": "주문량 (지정가, 시장가 매도 시 필수)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "price",
             "in": "formData",
-            "description": "주문 가격. (지정가, 시장가 매수 시 필수)\n\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로 거래할 경우, 값은 1000 이 된다.\nex) KRW-BTC 마켓에서 1BTC당 매도 1호가가 500 KRW 인 경우, 시장가 매수 시 값을 1000으로 세팅하면 2BTC가 매수된다.\n(수수료가 존재하거나 매도 1호가의 수량에 따라 상이할 수 있음)",
+            "description": "주문 가격. (지정가, 시장가 매수 시 필수)\n\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로 거래할 경우, 값은 1000 이 된다.\nex) KRW-BTC 마켓에서 1BTC당 매도 1호가가 500 KRW 인 경우, 시장가 매수 시 값을 1000으로 세팅하면 2BTC가 매수된다.\n(수수료가 존재하거나 매도 1호가의 수량에 따라 상이할 수 있음)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "ord_type",
             "in": "formData",
-            "description": "주문 타입 (필수)\n- limit : 지정가 주문\n- price : 시장가 주문(매수)\n- market : 시장가 주문(매도)",
+            "description": "주문 타입 (필수)\n- limit : 지정가 주문\n- price : 시장가 주문(매수)\n- market : 시장가 주문(매도)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "identifier",
             "in": "formData",
-            "description": "조회용 사용자 지정값 (선택)",
+            "description": "조회용 사용자 지정값 (선택)\n",
             "required": false,
             "type": "string"
           }
@@ -759,7 +759,7 @@
           "Withdraw"
         ],
         "summary": "출금 리스트 조회",
-        "description": "## 출금 리스트를 조회한다.",
+        "description": "## 출금 리스트를 조회한다.\n",
         "operationId": "Withdraw.info_all",
         "produces": [
           "application/json"
@@ -768,21 +768,21 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "state",
             "in": "query",
-            "description": "출금 상태\n- submitting : 처리 중\n- submitted : 처리 완료\n- almost_accepted : 출금대기중\n- rejected : 거부\n- accepted : 승인됨\n- processing : 처리 중\n- done : 완료\n- canceled : 취소됨",
+            "description": "출금 상태\n- submitting : 처리 중\n- submitted : 처리 완료\n- almost_accepted : 출금대기중\n- rejected : 거부\n- accepted : 승인됨\n- processing : 처리 중\n- done : 완료\n- canceled : 취소됨\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "uuids",
             "in": "query",
-            "description": "출금 UUID의 목록",
+            "description": "출금 UUID의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -793,7 +793,7 @@
           {
             "name": "txids",
             "in": "query",
-            "description": "출금 TXID의 목록",
+            "description": "출금 TXID의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -804,21 +804,21 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "개수 제한 (default: 100, max: 100)",
+            "description": "개수 제한 (default: 100, max: 100)\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "page",
             "in": "query",
-            "description": "페이지 수, default: 1",
+            "description": "페이지 수, default: 1\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "order_by",
             "in": "query",
-            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)",
+            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)\n",
             "required": false,
             "type": "string"
           }
@@ -877,7 +877,7 @@
           "Withdraw"
         ],
         "summary": "개별 출금 조회",
-        "description": "## 출금 UUID를 통해 개별 출금 정보를 조회한다.",
+        "description": "## 출금 UUID를 통해 개별 출금 정보를 조회한다.\n",
         "operationId": "Withdraw.info",
         "produces": [
           "application/json"
@@ -886,21 +886,21 @@
           {
             "name": "uuid",
             "in": "query",
-            "description": "출금 UUID",
+            "description": "출금 UUID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "txid",
             "in": "query",
-            "description": "출금 TXID",
+            "description": "출금 TXID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": false,
             "type": "string"
           }
@@ -956,7 +956,7 @@
           "Withdraw"
         ],
         "summary": "출금 가능 정보",
-        "description": "## 해당 통화의 가능한 출금 정보를 확인한다.",
+        "description": "## 해당 통화의 가능한 출금 정보를 확인한다.\n",
         "operationId": "Withdraw.chance",
         "produces": [
           "application/json"
@@ -965,7 +965,7 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency Symbol",
+            "description": "Currency Symbol\n",
             "required": true,
             "type": "string"
           }
@@ -1021,7 +1021,7 @@
           "Withdraw"
         ],
         "summary": "코인 출금하기",
-        "description": "## 코인 출금을 요청한다.\n\n**NOTE**: 바로출금 이용 시 유의사항\n\n업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.",
+        "description": "## 코인 출금을 요청한다.\n\n**NOTE**: 바로출금 이용 시 유의사항\n\n업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.\n",
         "operationId": "Withdraw.coin",
         "consumes": [
           "multipart/form-data"
@@ -1033,35 +1033,35 @@
           {
             "name": "currency",
             "in": "formData",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "amount",
             "in": "formData",
-            "description": "출금 수량",
+            "description": "출금 수량\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "address",
             "in": "formData",
-            "description": "출금 가능 주소에 등록된 출금 주소",
+            "description": "출금 가능 주소에 등록된 출금 주소\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "secondary_address",
             "in": "formData",
-            "description": "2차 출금 주소 (필요한 코인에 한해서)",
+            "description": "2차 출금 주소 (필요한 코인에 한해서)\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "transaction_type",
             "in": "formData",
-            "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금",
+            "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금\n",
             "required": false,
             "type": "string"
           }
@@ -1117,7 +1117,7 @@
           "Withdraw"
         ],
         "summary": "원화 출금하기",
-        "description": "## 원화 출금을 요청한다. 등록된 출금 계좌로 출금된다.",
+        "description": "## 원화 출금을 요청한다. 등록된 출금 계좌로 출금된다.\n",
         "operationId": "Withdraw.krw",
         "consumes": [
           "multipart/form-data"
@@ -1129,7 +1129,7 @@
           {
             "name": "amount",
             "in": "formData",
-            "description": "출금 원화 수량",
+            "description": "출금 원화 수량\n",
             "required": true,
             "type": "string"
           }
@@ -1185,7 +1185,7 @@
           "Deposit"
         ],
         "summary": "입금 리스트 조회",
-        "description": "## 입금 리스트 조회",
+        "description": "## 입금 리스트 조회\n",
         "operationId": "Deposit.info_all",
         "produces": [
           "application/json"
@@ -1194,21 +1194,21 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "state",
             "in": "query",
-            "description": "출금 상태\n- submitting : 처리 중\n- submitted : 처리완료\n- almost_accepted : 입금 대기 중\n- rejected : 거절\n- accepted : 승인됨\n- processing : 처리 중",
+            "description": "출금 상태\n- submitting : 처리 중\n- submitted : 처리완료\n- almost_accepted : 입금 대기 중\n- rejected : 거절\n- accepted : 승인됨\n- processing : 처리 중\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "uuids",
             "in": "query",
-            "description": "입금 UUID의 목록",
+            "description": "입금 UUID의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -1219,7 +1219,7 @@
           {
             "name": "txids",
             "in": "query",
-            "description": "입금 TXID의 목록",
+            "description": "입금 TXID의 목록\n",
             "required": false,
             "type": "array",
             "items": {
@@ -1230,21 +1230,21 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "개수 제한 (default: 100, max: 100)",
+            "description": "개수 제한 (default: 100, max: 100)\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "page",
             "in": "query",
-            "description": "페이지 수, default: 1",
+            "description": "페이지 수, default: 1\n",
             "required": false,
             "type": "number"
           },
           {
             "name": "order_by",
             "in": "query",
-            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)",
+            "description": "정렬 방식\n- asc : 오름차순\n- desc : 내림차순 (default)\n",
             "required": false,
             "type": "string"
           }
@@ -1303,7 +1303,7 @@
           "Deposit"
         ],
         "summary": "개별 입금 조회",
-        "description": "## 개별 입금 조회",
+        "description": "## 개별 입금 조회\n",
         "operationId": "Deposit.info",
         "produces": [
           "application/json"
@@ -1312,21 +1312,21 @@
           {
             "name": "uuid",
             "in": "query",
-            "description": "입금 UUID",
+            "description": "입금 UUID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "txid",
             "in": "query",
-            "description": "입금 TXID",
+            "description": "입금 TXID\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": false,
             "type": "string"
           }
@@ -1382,7 +1382,7 @@
           "Deposit"
         ],
         "summary": "입금 주소 생성 요청",
-        "description": "입금 주소 생성을 요청한다.\n\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n\n입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.",
+        "description": "입금 주소 생성을 요청한다.\n\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n\n입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.\n",
         "operationId": "Deposit.generate_coin_address",
         "consumes": [
           "multipart/form-data"
@@ -1394,7 +1394,7 @@
           {
             "name": "currency",
             "in": "formData",
-            "description": "Currency 코드",
+            "description": "Currency 코드\n",
             "required": true,
             "type": "string"
           }
@@ -1456,7 +1456,7 @@
           "Deposit"
         ],
         "summary": "전체 입금 주소 조회",
-        "description": "## 내가 보유한 자산 리스트를 보여줍니다.\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.",
+        "description": "## 내가 보유한 자산 리스트를 보여줍니다.\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
         "operationId": "Deposit.coin_addresses",
         "produces": [
           "application/json"
@@ -1511,7 +1511,7 @@
           "Deposit"
         ],
         "summary": "개별 입금 주소 조회",
-        "description": "## 개별 입금 주소 조회\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.",
+        "description": "## 개별 입금 주소 조회\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
         "operationId": "Deposit.coin_address",
         "produces": [
           "application/json"
@@ -1520,7 +1520,7 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency symbol",
+            "description": "Currency symbol\n",
             "required": true,
             "type": "string"
           }
@@ -1576,7 +1576,7 @@
           "Market"
         ],
         "summary": "마켓 코드 조회",
-        "description": "## 업비트에서 거래 가능한 마켓 목록",
+        "description": "## 업비트에서 거래 가능한 마켓 목록\n",
         "operationId": "Market.info_all",
         "produces": [
           "application/json"
@@ -1585,7 +1585,7 @@
           {
             "name": "isDetails",
             "in": "query",
-            "description": "유의종목 필드과 같은 상세 정보 노출 여부(선택 파라미터)",
+            "description": "유의종목 필드과 같은 상세 정보 노출 여부(선택 파라미터)\n",
             "required": false,
             "type": "boolean",
             "default": false
@@ -1597,31 +1597,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1640,7 +1640,7 @@
           "Candle"
         ],
         "summary": "시세 캔들 조회 (분 단위)",
-        "description": "## 분(Minute) 캔들",
+        "description": "## 분(Minute) 캔들\n",
         "operationId": "Candle.minutes",
         "produces": [
           "application/json"
@@ -1649,28 +1649,28 @@
           {
             "name": "unit",
             "in": "path",
-            "description": "분 단위.\n가능한 값 : 1, 3, 5, 15, 10, 30, 60, 240",
+            "description": "분 단위.\n가능한 값 : 1, 3, 5, 15, 10, 30, 60, 240\n",
             "required": true,
             "type": "integer"
           },
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 코드 (ex. KRW-BTC)",
+            "description": "마켓 코드 (ex. KRW-BTC)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "to",
             "in": "query",
-            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들",
+            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "count",
             "in": "query",
-            "description": "캔들 개수 (최대 200개까지 요청 가능)",
+            "description": "캔들 개수 (최대 200개까지 요청 가능)\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -1682,31 +1682,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1725,7 +1725,7 @@
           "Candle"
         ],
         "summary": "시세 캔들 조회 (일 단위)",
-        "description": "## 일(Day) 캔들",
+        "description": "## 일(Day) 캔들\n",
         "operationId": "Candle.days",
         "produces": [
           "application/json"
@@ -1734,21 +1734,21 @@
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 코드 (ex. KRW-BTC)",
+            "description": "마켓 코드 (ex. KRW-BTC)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "to",
             "in": "query",
-            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들",
+            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "count",
             "in": "query",
-            "description": "캔들 개수",
+            "description": "캔들 개수\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -1756,7 +1756,7 @@
           {
             "name": "convertingPriceUnit",
             "in": "query",
-            "description": "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n\n`convertingPriceUnit` 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시\n종가를 명시된 파라미터 값으로 환산해 `converted_trade_price` 필드에 추가하여 반환합니다.\n현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다.",
+            "description": "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n\n`convertingPriceUnit` 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시\n종가를 명시된 파라미터 값으로 환산해 `converted_trade_price` 필드에 추가하여 반환합니다.\n현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다.\n",
             "required": false,
             "type": "string",
             "default": "KRW"
@@ -1768,31 +1768,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1811,7 +1811,7 @@
           "Candle"
         ],
         "summary": "시세 캔들 조회 (주 단위)",
-        "description": "## 주(Week) 캔들",
+        "description": "## 주(Week) 캔들\n",
         "operationId": "Candle.weeks",
         "produces": [
           "application/json"
@@ -1820,21 +1820,21 @@
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 코드 (ex. KRW-BTC)",
+            "description": "마켓 코드 (ex. KRW-BTC)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "to",
             "in": "query",
-            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들",
+            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "count",
             "in": "query",
-            "description": "캔들 개수",
+            "description": "캔들 개수\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -1846,31 +1846,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1889,7 +1889,7 @@
           "Candle"
         ],
         "summary": "시세 캔들 조회 (월 단위)",
-        "description": "## 월(Month) 캔들",
+        "description": "## 월(Month) 캔들\n",
         "operationId": "Candle.month",
         "produces": [
           "application/json"
@@ -1898,21 +1898,21 @@
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 코드 (ex. KRW-BTC)",
+            "description": "마켓 코드 (ex. KRW-BTC)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "to",
             "in": "query",
-            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들",
+            "description": "마지막 캔들 시각 (exclusive).\n포맷 : `yyyy-MM-dd'T'HH:mm:ssXXX` or `yyyy-MM-dd HH:mm:ss`.\n비워서 요청 시 가장 최근 캔들\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "count",
             "in": "query",
-            "description": "캔들 개수",
+            "description": "캔들 개수\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -1924,31 +1924,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1967,7 +1967,7 @@
           "Trade"
         ],
         "summary": "시세 체결 조회",
-        "description": "## 최근 체결 내역",
+        "description": "## 최근 체결 내역\n",
         "operationId": "Trade.ticks",
         "produces": [
           "application/json"
@@ -1976,21 +1976,21 @@
           {
             "name": "market",
             "in": "query",
-            "description": "마켓 코드 (ex. KRW-BTC, BTC-BCC)",
+            "description": "마켓 코드 (ex. KRW-BTC, BTC-BCC)\n",
             "required": true,
             "type": "string"
           },
           {
             "name": "to",
             "in": "query",
-            "description": "마지막 체결 시각.\n형식 : `[HHmmss 또는 HH:mm:ss]`.\n비워서 요청시 가장 최근 데이터",
+            "description": "마지막 체결 시각.\n형식 : `[HHmmss 또는 HH:mm:ss]`.\n비워서 요청시 가장 최근 데이터\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "count",
             "in": "query",
-            "description": "체결 개수",
+            "description": "체결 개수\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -1998,14 +1998,14 @@
           {
             "name": "cursor",
             "in": "query",
-            "description": "페이지네이션 커서 (sequentialId)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.",
+            "description": "페이지네이션 커서 (sequentialId)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n",
             "required": false,
             "type": "string"
           },
           {
             "name": "daysAgo",
             "in": "query",
-            "description": "최근 체결 날짜 기준 7일 이내의 이전 데이터 조회 가능.\n비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7)",
+            "description": "최근 체결 날짜 기준 7일 이내의 이전 데이터 조회 가능.\n비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7)\n",
             "required": false,
             "type": "number",
             "format": "int32"
@@ -2017,31 +2017,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -2060,7 +2060,7 @@
           "Trade"
         ],
         "summary": "시세 Ticker 조회",
-        "description": "## 현재가 정보\n요청 당시 종목의 스냅샷을 반환한다.",
+        "description": "## 현재가 정보\n요청 당시 종목의 스냅샷을 반환한다.\n",
         "operationId": "Trade.ticker",
         "produces": [
           "application/json"
@@ -2069,7 +2069,7 @@
           {
             "name": "markets",
             "in": "query",
-            "description": "반점으로 구분되는 마켓 코드 (ex. KRW-BTC, BTC-BCC)",
+            "description": "반점으로 구분되는 마켓 코드 (ex. KRW-BTC, BTC-BCC)\n",
             "required": true,
             "type": "string"
           }
@@ -2080,31 +2080,31 @@
             "schema": {}
           },
           "400": {
-            "description": "Status: Bad Request",
+            "description": "Status: Bad Request\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "401": {
-            "description": "Status: Unauthorized",
+            "description": "Status: Unauthorized\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "403": {
-            "description": "Status: Forbidden",
+            "description": "Status: Forbidden\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "404": {
-            "description": "Status: Not Found",
+            "description": "Status: Not Found\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
           },
           "500": {
-            "description": "Status: Internal Server Error",
+            "description": "Status: Internal Server Error\n",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -2210,12 +2210,12 @@
         "wallet_state": {
           "type": "string",
           "example": "working",
-          "description": "입출금 상태\n- working : 입출금 가능\n- withdraw_only : 출금만 가능\n- deposit_only : 입금만 가능\n- paused : 입출금 중단\n- unsupported : 입출금 미지원"
+          "description": "입출금 상태\n- working : 입출금 가능\n- withdraw_only : 출금만 가능\n- deposit_only : 입금만 가능\n- paused : 입출금 중단\n- unsupported : 입출금 미지원\n"
         },
         "block_state": {
           "type": "string",
           "example": "normal",
-          "description": "블록 상태\n- normal : 정상\n- delayed : 지연\n- inactive : 비활성 (점검 등)"
+          "description": "블록 상태\n- normal : 정상\n- delayed : 지연\n- inactive : 비활성 (점검 등)\n"
         },
         "block_height": {
           "type": "number",
@@ -2604,6 +2604,12 @@
         },
         "market": {
           "$ref": "#/definitions/Market"
+        },
+        "bid_account": {
+          "$ref": "#/definitions/BidAccount"
+        },
+        "ask_account": {
+          "$ref": "#/definitions/AskAccount"
         }
       }
     },
@@ -2656,12 +2662,6 @@
           "type": "string",
           "example": "activate",
           "description": "마켓 운영 상태"
-        },
-        "bid_account": {
-          "$ref": "#/definitions/BidAccount"
-        },
-        "ask_account": {
-          "$ref": "#/definitions/AskAccount"
         }
       },
       "description": "마켓에 대한 정보"
@@ -2829,7 +2829,7 @@
         "transaction_type": {
           "type": "string",
           "example": "default",
-          "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금  String"
+          "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금  String\n"
         }
       }
     },
@@ -2889,7 +2889,7 @@
         "transaction_type": {
           "type": "string",
           "example": "default",
-          "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금  String"
+          "description": "출금 유형\n- default : 일반출금\n- internal : 바로출금  String\n"
         }
       }
     },
@@ -3090,7 +3090,7 @@
         "transaction_type": {
           "type": "string",
           "example": "default",
-          "description": "입금 유형\n- default : 일반출금\n- internal : 바로입금"
+          "description": "입금 유형\n- default : 일반출금\n- internal : 바로입금\n"
         }
       }
     },
@@ -3149,7 +3149,7 @@
         "market_warning": {
           "type": "string",
           "example": "NONE",
-          "description": "유의 종목 여부\n- NONE (해당 사항 없음)\n- CAUTION (투자유의)"
+          "description": "유의 종목 여부\n- NONE (해당 사항 없음)\n- CAUTION (투자유의)\n"
         }
       }
     },
@@ -3302,7 +3302,7 @@
         "converted_trade_price": {
           "type": "number",
           "format": "double",
-          "description": "종가 환산 화폐 단위로 환산된 가격\n(요청에 convertingPriceUnit 파라미터 없을 시 해당 필드 포함되지 않음.)"
+          "description": "종가 환산 화폐 단위로 환산된 가격\n(요청에 convertingPriceUnit 파라미터 없을 시 해당 필드 포함되지 않음.)\n"
         }
       }
     },
@@ -3430,7 +3430,7 @@
           "type": "number",
           "format": "int64",
           "example": 1609853849000002,
-          "description": "체결 번호 (Unique)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다."
+          "description": "체결 번호 (Unique)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
         }
       }
     },
@@ -3495,7 +3495,7 @@
         "change": {
           "type": "string",
           "example": "FALL",
-          "description": "EVEN : 보합\nRISE : 상승\nFALL : 하락"
+          "description": "EVEN : 보합\nRISE : 상승\nFALL : 하락\n"
         },
         "change_price": {
           "type": "number",
