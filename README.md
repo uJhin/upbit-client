@@ -40,6 +40,16 @@
 - [Kotlin](https://github.com/uJhin/upbit-client/tree/main/swg_generated/kotlin)
 - [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/docs)
 
+### Install
+- `pip` command
+```console
+pip install upbit-client
+```
+- `git` command
+```console
+git clone https://github.com/uJhin/upbit-client.git
+```
+
 ### Simple Examples
 - Your API Keys
 ```python
