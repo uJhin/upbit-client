@@ -7,11 +7,17 @@
   </div>
   <br/>
   <div>
-    <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
+    <a href="https://github.com/uJhin/upbit-client/releases">
+      <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
+    </a>
   </div>
   <div>
-    <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
-    <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
+    <a href="https://github.com/uJhin/upbit-client/issues">
+      <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
+    </a>
+    <a href="https://github.com/uJhin/upbit-client/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
+    </a>
   </div>
   <br/>
   <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
