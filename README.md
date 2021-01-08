@@ -6,8 +6,9 @@
       <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
     </a>
   </div>
-  <h3>Upbit Client</h3>
-  <a href="https://ujhin.github.io/upbit-client-docs/">Upbit Client Documents</a>
+  <a href="https://ujhin.github.io/upbit-client-docs/">
+    <b>Upbit Client Documents</b>
+  </a>
   <br/><br/><br/><br/>
   <img src="logo/UPbit_Logo.png" />
   <br/><br/>
