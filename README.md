@@ -2,6 +2,7 @@
   <img src="logo/logo.png" width="250" height="250">
   <br/>
   <h3>Upbit Client</h3>
+  <a href="https://ujhin.github.io/upbit-client-docs/">Upbit Client Documents</a>
   <br/><br/>
   <img src="logo/UPbit_Logo.png" />
   <br/><br/>
@@ -24,7 +25,6 @@
   </div>
   <br/>
   <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
-  <a href="https://ujhin.github.io/upbit-client-docs/">Upbit Client Documents</a>
 </div>
 
 ### Swagger Generated API Documents
