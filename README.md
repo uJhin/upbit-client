@@ -56,7 +56,7 @@ git clone https://github.com/uJhin/upbit-client.git
 ```
 
 ### Simple Examples
-- Your API Keys
+- Check Your API Keys
 ```python
 # /v1/api_keys
 
