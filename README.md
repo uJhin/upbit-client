@@ -1,6 +1,11 @@
 <div align='center'>
   <img src="logo/logo.png" width="250" height="250">
   <br/>
+  <div>
+    <a href="https://github.com/uJhin/upbit-client/releases">
+      <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
+    </a>
+  </div>
   <h3>Upbit Client</h3>
   <a href="https://ujhin.github.io/upbit-client-docs/">Upbit Client Documents</a>
   <br/><br/><br/><br/>
@@ -10,11 +15,6 @@
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
   </div>
   <br/>
-  <div>
-    <a href="https://github.com/uJhin/upbit-client/releases">
-      <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
-    </a>
-  </div>
   <div>
     <a href="https://github.com/uJhin/upbit-client/issues">
       <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
