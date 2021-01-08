@@ -5,6 +5,9 @@
     <a href="https://github.com/uJhin/upbit-client/releases">
       <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
     </a>
+    <a href="https://pypi.org/project/upbit-client/">
+      <img src="https://img.shields.io/pypi/v/upbit-client"/>
+    </a>
   </div>
   <br/>
   <a href="https://ujhin.github.io/upbit-client-docs/">
