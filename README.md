@@ -1,11 +1,12 @@
 <div align='center'>
   <img src="logo/logo.png" width="250" height="250">
-  <br/>
+  <br/><br/>
   <div>
     <a href="https://github.com/uJhin/upbit-client/releases">
       <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
     </a>
   </div>
+  <br/>
   <a href="https://ujhin.github.io/upbit-client-docs/">
     <b>Upbit Client Documents</b>
   </a>
