@@ -1,4 +1,6 @@
 <div align='center'>
+  <img src="logo/logo.png">
+  <br/>
   <img src="logo/UPbit_Logo.png" />
   <br/>
   <br/>
