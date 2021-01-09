@@ -11,8 +11,8 @@ SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg
 def Upbit(access_key: str = None, secret_key: str = None, **kwargs) -> sc:
     """
     Upbit Client
-    Please read the official package document.
-    package documents:
+    Please read the official Upbit Client document.
+    Documents: https://ujhin.github.io/upbit-client-docs/
 
     - Base URL: https://api.upbit.com
     - Base Path: /v1
