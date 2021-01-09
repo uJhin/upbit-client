@@ -30,9 +30,13 @@
     <div>
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
     </div>
-    <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
-    <br/><br/>
+    <br/>
   </div>  
+</div>
+
+<div align="center">
+  <h1>Upbit Client</h1>
+  <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
 </div>
 
 ### Swagger Generated Support Languages
