@@ -36,6 +36,15 @@
   </div>  
 </div>
 
+### Swagger Generated Support Languages
+- [Python](https://github.com/uJhin/upbit-client/tree/main/swg_generated/python/)
+- [CSharp](https://github.com/uJhin/upbit-client/tree/main/swg_generated/csharp/)
+- [Java](https://github.com/uJhin/upbit-client/tree/main/swg_generated/java/)
+- [Go](https://github.com/uJhin/upbit-client/tree/main/swg_generated/go/)
+- [JavaScript](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
+- [Kotlin](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
+- [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/)
+
 ### Swagger Generated API Documents
 - [Python](https://github.com/uJhin/upbit-client/tree/main/swg_generated/python/docs)
 - [CSharp](https://github.com/uJhin/upbit-client/tree/main/swg_generated/csharp/docs)
