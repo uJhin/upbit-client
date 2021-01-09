@@ -31,7 +31,6 @@
       <!-- <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social"/> -->
     </div>
     <p>Upbit(업비트) Cryptocurrency Exchange API Client</p>
-    <p>패키지 개발에 도움을 주신 Upbit OPEN API 지원팀에게 감사의 말씀을 전합니다.</p>
     <br/><br/>
   </div>  
 </div>
