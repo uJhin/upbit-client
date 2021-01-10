@@ -24,7 +24,7 @@
   <br/><br/>
   <div align="center">
     <h2>Support</h2>
-    <img src="logo/UPbit_Logo.png" width="250" height="100"/>
+    <img src="logo/upbit_logo.png" width="250" height="100"/>
     <img src="logo/swagger_logo.png" width="250" height="100">
     <br/><br/>
     <div>
