@@ -1,3 +1,4 @@
+
 import jwt
 import hashlib
 import uuid
@@ -7,6 +8,7 @@ from bravado.requests_client import Authenticator
 
 
 class APIKeyAuthenticator(Authenticator):
+
     def __init__(self, host, access_key, secret_key):
         super(APIKeyAuthenticator, self).__init__(host)
         self.host = host
@@ -49,27 +51,19 @@ class APIKeyAuthenticator(Authenticator):
         return authorize_token
 
     def generate_query(self, params):
+        quotation_params = ['uuids', 'txids', 'identifiers']
         query = urlencode({
             k: v
             for k, v in params.items()
-            if (k != 'uuids') and (k != 'txids') and (k != 'identifiers')
+            if k not in quotation_params
         })
-        if params.get('uuids'):
-            uuids = params.pop('uuids')
-            params["uuids[]"] = uuids
-            uuids_query = '&'.join([f"uuids[]={_uuid}" for _uuid in uuids])
-            query = f"{query}&{uuids_query}" if query else uuids_query
-        if params.get('txids'):
-            txids = params.pop('txids')
-            params["txids[]"] = txids
-            txids_query = '&'.join([f"txids[]={_txid}" for _txid in txids])
-            query = f"{query}&{txids_query}" if query else txids_query
-        if params.get('identifiers'):
-            identifiers = params.pop('identifiers')
-            params["identifiers[]"] = identifiers
-            identifiers_query = '&'.join([
-                f"identifiers[]={identifier}"
-                for identifier in identifiers
-            ])
-            query = f"{query}&{identifiers}" if query else identifiers_query
+        for param in quotation_params:
+            if params.get(param):
+                _param = params.pop(param)
+                params[f"{param}[]"] = _param
+                query_params = '&'.join([
+                    f"{param}[]={_p}"
+                    for _p in param
+                ])
+                query = f"{query}&{query_params}" if query else query_params
         return query

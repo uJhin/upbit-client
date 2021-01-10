@@ -1,21 +1,22 @@
 from setuptools import setup
 from setuptools import find_packages
 
-long_description = '''Upbit OPEN API Client
-@Author: ujhin
-@GitHub Page: https://github.com/uJhin/upbit-client
-@Official Documents: https://ujhin.github.io/upbit-client-docs 
+long_description = '''
+Upbit OPEN API Client\n
+@Author: ujhin\n
+@GitHub: https://github.com/uJhin/upbit-client\n
+@Official Documents: https://ujhin.github.io/upbit-client-docs\n 
 '''
 
 setup(
     name='upbit_client',
-    version='1.1.6.10',
+    version='1.1.6.12',
     packages=find_packages(),
     install_requires=[
         'bravado>=11.0.2',
         'PyJWT>=2.0'
     ],
-    extras_require= {
+    extras_require={
         'fido': ['fido>=4.2.1']
     },
     python_requires='>=3.8',
