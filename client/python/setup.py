@@ -7,7 +7,7 @@ with open('README.rst') as readme:
 
 setup(
     name='upbit_client',
-    version='1.1.6.13',
+    version='1.1.6.14',
     packages=find_packages(),
     install_requires=[
         'bravado>=11.0.2',
