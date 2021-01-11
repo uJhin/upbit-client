@@ -2,7 +2,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 
-with open('README.md') as readme:
+with open('README.rst') as readme:
     long_description = readme.read()
 
 setup(
@@ -33,5 +33,6 @@ setup(
     author='ujhin',
     author_email='ujhin942@gmail.com',
     description='Upbit OPEN API Client',
+    long_description_content_type='text/x-rst',
     long_description=long_description
 )
