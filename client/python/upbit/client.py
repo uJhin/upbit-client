@@ -1,6 +1,8 @@
 
 from bravado.requests_client import RequestsClient as rc
 from bravado.client import SwaggerClient as sc
+from bravado.http_future import HttpFuture as hf
+
 from upbit.authentication import APIKeyAuthenticator
 
 
@@ -50,3 +52,19 @@ def Upbit(access_key: str = None, secret_key: str = None, **kwargs) -> sc:
     client.__class__.__name__ = 'UpbitClient'
     return client
 
+
+def remaining_request(result: hf) -> dict:
+    """
+    Check Request limit times
+    Please read the official Upbit Client document.
+    Documents: https://ujhin.github.io/upbit-client-docs/
+    """
+
+    future = result.future
+    headers = future.result().headers
+    req = headers['Remaining-Req']
+    return {
+        k: v
+        for k, v in
+        [p.split('=') for p in req.split('; ')]
+    }

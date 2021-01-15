@@ -57,13 +57,13 @@ class APIKeyAuthenticator(Authenticator):
             for k, v in params.items()
             if k not in quotation_params
         })
-        for param in quotation_params:
-            if params.get(param):
-                _param = params.pop(param)
-                params[f"{param}[]"] = _param
+        for q_param in quotation_params:
+            if params.get(q_param):
+                param = params.pop(q_param)
+                params[f"{q_param}[]"] = param
                 query_params = '&'.join([
-                    f"{param}[]={_p}"
-                    for _p in param
+                    f"{q_param}[]={q}"
+                    for q in q_param
                 ])
                 query = f"{query}&{query_params}" if query else query_params
         return query

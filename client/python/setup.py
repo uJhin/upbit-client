@@ -1,13 +1,18 @@
+
 from setuptools import setup
 from setuptools import find_packages
 
+import upbit
 
+
+version = upbit.__version__
 with open('README.rst') as readme:
     long_description = readme.read()
 
+
 setup(
     name='upbit_client',
-    version='1.1.6.14',
+    version=version,
     packages=find_packages(),
     install_requires=[
         'bravado>=11.0.2',
@@ -24,8 +29,7 @@ setup(
         'upbit',
         'upbit-client',
         'Upbit-Client',
-        'Upbit_client',
-        'upbit'
+        'Upbit_client'
     ],
     url='https://github.com/uJhin/upbit-client',
     download_url='https://github.com/uJhin/upbit-client/releases',
