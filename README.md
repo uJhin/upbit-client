@@ -47,24 +47,17 @@ Upbit(업비트) Cryptocurrency Exchange Open API Client of Multi-Programming La
 - [Python](https://github.com/uJhin/upbit-client/tree/main/swg_generated/python/)
 - [C++](https://github.com/uJhin/upbit-client/tree/main/swg_generated/cpp)
 - [CSharp](https://github.com/uJhin/upbit-client/tree/main/swg_generated/csharp/)
-- [Java](https://github.com/uJhin/upbit-client/tree/main/swg_generated/java/)
-- [Go](https://github.com/uJhin/upbit-client/tree/main/swg_generated/go/)
-- [JavaScript](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
-- [Kotlin](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
-- [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/)
 - [Object-C](https://github.com/uJhin/upbit-client/tree/main/swg_generated/object-c)
-
-
-### Swagger Generated API Documents
-- [Python](https://github.com/uJhin/upbit-client/tree/main/swg_generated/python/docs)
-- [CSharp](https://github.com/uJhin/upbit-client/tree/main/swg_generated/csharp/docs)
-- [Java](https://github.com/uJhin/upbit-client/tree/main/swg_generated/java/docs)
-- [Go](https://github.com/uJhin/upbit-client/tree/main/swg_generated/go/docs)
-- [JavaScript](https://github.com/uJhin/upbit-client/tree/main/swg_generated/javascript)
-- [Kotlin](https://github.com/uJhin/upbit-client/tree/main/swg_generated/kotlin)
-- [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/docs)
-- [Object-C](https://github.com/uJhin/upbit-client/tree/main/swg_generated/object-c/docs)
-
+- [Java](https://github.com/uJhin/upbit-client/tree/main/swg_generated/java/)
+- [JavaScript](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
+- [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/)
+- [Android](https://github.com/uJhin/upbit-client/tree/main/swg_generated/android)
+- [Kotlin](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
+- [Go](https://github.com/uJhin/upbit-client/tree/main/swg_generated/go/)
+- [Lua](https://github.com/uJhin/upbit-client/tree/main/swg_generated/lua)
+- [R](https://github.com/uJhin/upbit-client/tree/main/swg_generated/r)
+- [Rust](https://github.com/uJhin/upbit-client/tree/main/swg_generated/rust)
+- [Scala](https://github.com/uJhin/upbit-client/tree/main/swg_generated/scala)
 
 ### Install
 - `pip` command
