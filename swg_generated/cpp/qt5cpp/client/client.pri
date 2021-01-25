@@ -1,0 +1,99 @@
+QT += network
+
+HEADERS += \
+# Models
+    $${PWD}/SWGAPIKey.h \
+    $${PWD}/SWGAccount.h \
+    $${PWD}/SWGAsk.h \
+    $${PWD}/SWGAskAccount.h \
+    $${PWD}/SWGBid.h \
+    $${PWD}/SWGBidAccount.h \
+    $${PWD}/SWGCandleDate.h \
+    $${PWD}/SWGCandleDays.h \
+    $${PWD}/SWGCandleMinutes.h \
+    $${PWD}/SWGCurrency.h \
+    $${PWD}/SWGDeposit.h \
+    $${PWD}/SWGDepositCompleteResponse.h \
+    $${PWD}/SWGDepositTransferResponse.h \
+    $${PWD}/SWGError.h \
+    $${PWD}/SWGErrorInfo.h \
+    $${PWD}/SWGMarket.h \
+    $${PWD}/SWGMarketInfo.h \
+    $${PWD}/SWGMemberLevel.h \
+    $${PWD}/SWGNewOrder.h \
+    $${PWD}/SWGOrder.h \
+    $${PWD}/SWGOrderChance.h \
+    $${PWD}/SWGOrderInfo.h \
+    $${PWD}/SWGOrderbook.h \
+    $${PWD}/SWGOrderbookUnit.h \
+    $${PWD}/SWGTicker.h \
+    $${PWD}/SWGTrade.h \
+    $${PWD}/SWGTradeTicks.h \
+    $${PWD}/SWGWallet.h \
+    $${PWD}/SWGWithdraw.h \
+    $${PWD}/SWGWithdrawChance.h \
+    $${PWD}/SWGWithdrawCoin.h \
+    $${PWD}/SWGWithdrawLimit.h \
+# APIs
+    $${PWD}/SWGAPIKeyApi.h \
+    $${PWD}/SWGAccountApi.h \
+    $${PWD}/SWGCandleApi.h \
+    $${PWD}/SWGDepositApi.h \
+    $${PWD}/SWGMarketApi.h \
+    $${PWD}/SWGOrderApi.h \
+    $${PWD}/SWGTradeApi.h \
+    $${PWD}/SWGWithdrawApi.h \
+# Others
+    $${PWD}/SWGHelpers.h \
+    $${PWD}/SWGHttpRequest.h \
+    $${PWD}/SWGModelFactory.h \
+    $${PWD}/SWGObject.h \
+    $${PWD}/SWGQObjectWrapper.h
+
+SOURCES += \
+# Models
+    $${PWD}/SWGAPIKey.cpp \
+    $${PWD}/SWGAccount.cpp \
+    $${PWD}/SWGAsk.cpp \
+    $${PWD}/SWGAskAccount.cpp \
+    $${PWD}/SWGBid.cpp \
+    $${PWD}/SWGBidAccount.cpp \
+    $${PWD}/SWGCandleDate.cpp \
+    $${PWD}/SWGCandleDays.cpp \
+    $${PWD}/SWGCandleMinutes.cpp \
+    $${PWD}/SWGCurrency.cpp \
+    $${PWD}/SWGDeposit.cpp \
+    $${PWD}/SWGDepositCompleteResponse.cpp \
+    $${PWD}/SWGDepositTransferResponse.cpp \
+    $${PWD}/SWGError.cpp \
+    $${PWD}/SWGErrorInfo.cpp \
+    $${PWD}/SWGMarket.cpp \
+    $${PWD}/SWGMarketInfo.cpp \
+    $${PWD}/SWGMemberLevel.cpp \
+    $${PWD}/SWGNewOrder.cpp \
+    $${PWD}/SWGOrder.cpp \
+    $${PWD}/SWGOrderChance.cpp \
+    $${PWD}/SWGOrderInfo.cpp \
+    $${PWD}/SWGOrderbook.cpp \
+    $${PWD}/SWGOrderbookUnit.cpp \
+    $${PWD}/SWGTicker.cpp \
+    $${PWD}/SWGTrade.cpp \
+    $${PWD}/SWGTradeTicks.cpp \
+    $${PWD}/SWGWallet.cpp \
+    $${PWD}/SWGWithdraw.cpp \
+    $${PWD}/SWGWithdrawChance.cpp \
+    $${PWD}/SWGWithdrawCoin.cpp \
+    $${PWD}/SWGWithdrawLimit.cpp \
+# APIs
+    $${PWD}/SWGAPIKeyApi.cpp \
+    $${PWD}/SWGAccountApi.cpp \
+    $${PWD}/SWGCandleApi.cpp \
+    $${PWD}/SWGDepositApi.cpp \
+    $${PWD}/SWGMarketApi.cpp \
+    $${PWD}/SWGOrderApi.cpp \
+    $${PWD}/SWGTradeApi.cpp \
+    $${PWD}/SWGWithdrawApi.cpp \
+# Others
+    $${PWD}/SWGHelpers.cpp \
+    $${PWD}/SWGHttpRequest.cpp
+
