@@ -31,7 +31,7 @@ class UpbitWebSocket:
     def Connection(self):
         return self.__conn
     
-    @property
+    @Connection.setter
     def Connection(self, conn):
         self.__conn = conn
 
