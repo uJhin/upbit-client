@@ -5,7 +5,7 @@ from distutils.version import LooseVersion
 from typing import Union
 
 
-class FutureExtractor:
+class HTTPFutureExtractor:
 
     @staticmethod
     def remaining_request(headers: dict) -> dict:
@@ -24,9 +24,9 @@ class FutureExtractor:
         }
 
     @staticmethod
-    def future_extraction(future) -> dict:
-        resp = future.future.result()
-        remaining = FutureExtractor.remaining_request(resp.headers)
+    def future_extraction(http_future) -> dict:
+        resp = http_future.future.result()
+        remaining = HTTPFutureExtractor.remaining_request(resp.headers)
         return {
             "remaining_request": remaining,
             "result": resp.json()

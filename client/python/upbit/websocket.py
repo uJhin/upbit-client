@@ -1,3 +1,4 @@
+
 import websockets
 import uuid
 import json
@@ -5,22 +6,32 @@ import json
 from typing import Union, List
 
 
-WEBSOCKET_HOST = "wss://api.upbit.com/websocket/v1"
+WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
 
 
 class UpbitWebSocket:
 
-    def __init__(self):
-        self.host = WEBSOCKET_HOST
+    def __init__(self, uri=None):
+        self.__uri = uri if uri else WEBSOCKET_URI
+        self.__conn = websockets.connect(self.URI)
 
-    async def request(self, payload: str) -> dict:
-        async with websockets.connect(self.host) as conn:
-            await conn.send(payload)
-            data = await conn.recv()
-        return json.loads(data.decode('utf-8'))
+    @property
+    def URI(self):
+        return self.__uri
+
+    @URI.setter
+    def URI(self, uri):
+        self.__uri = uri
+
+    @property
+    def Connection(self):
+        return self.__conn
 
     @staticmethod
-    def generate_orderbook_codes(currencies: Union[List[str]], counts: Union[List[int]] = None):
+    def generate_orderbook_codes(
+        currencies: Union[List[str]],
+        counts: Union[List[int]] = None
+    ) -> List[str]:
         codes = [
             f"{currency}.{count}"
             for currency, count
@@ -29,7 +40,14 @@ class UpbitWebSocket:
         return codes
 
     @staticmethod
-    def generate_payload(type: str, codes: Union[List[str]], isOnlySnapshot: bool = None, isOnlyRealtime: bool = None, format: str = 'DEFAULT', ticket: str = None) -> str:
+    def generate_payload(
+        type: str,
+        codes: Union[List[str]],
+        isOnlySnapshot: bool = None,
+        isOnlyRealtime: bool = None,
+        format: str = 'DEFAULT',
+        ticket: str = None
+    ) -> str:
         """
         :param type: 수신할 시세 타입 (현재가: ticker, 체결: trade, 호가: orderbook)
         :type type: str
@@ -71,3 +89,9 @@ class UpbitWebSocket:
         payload.append({"format": format})
 
         return json.dumps(payload)
+
+    async def __aenter__(self) -> websockets.client.WebSocketClientProtocol:
+        return await self.Connection.__aenter__()
+
+    async def __aexit__(self, exc_type, exc_value, traceback) -> None:
+        await self.Connection.__aexit__(exc_type, exc_value, traceback)
