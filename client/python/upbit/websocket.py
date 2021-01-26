@@ -11,9 +11,13 @@ WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
 
 class UpbitWebSocket:
 
-    def __init__(self, uri=None):
+    def __init__(self, uri=None, ping_inverval=None, ping_timeout=None):
         self.__uri = uri if uri else WEBSOCKET_URI
-        self.__conn = websockets.connect(self.URI)
+        self.__conn = websockets.connect(
+            uri=self.URI,
+            ping_interval=ping_inverval,
+            ping_timeout=ping_timeout
+        )
 
     @property
     def URI(self):
@@ -26,6 +30,10 @@ class UpbitWebSocket:
     @property
     def Connection(self):
         return self.__conn
+    
+    @property
+    def Connection(self, conn):
+        self.__conn = conn
 
     @staticmethod
     def generate_orderbook_codes(
