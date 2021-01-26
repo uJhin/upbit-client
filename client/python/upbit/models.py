@@ -508,7 +508,7 @@ class Trade(Base):
         :param markets: 반점으로 구분되는 마켓 코드 (ex. KRW-BTC, BTC-BCC)
         :type markets: str
         """
-        result = self.client.Trader.Trade_ticker(**kwargs)
+        result = self.client.Trade.Trade_ticker(**kwargs)
         return FutureExtractor.future_extraction(result)
 
     def Trade_ticks(self, **kwargs) -> dict:
