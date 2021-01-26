@@ -4,8 +4,6 @@ import requests
 from distutils.version import LooseVersion
 from typing import Union
 
-from bravado.http_future import HttpFuture as hf
-
 
 class FutureExtractor:
 
@@ -26,7 +24,7 @@ class FutureExtractor:
         }
 
     @staticmethod
-    def future_extraction(future: hf) -> dict:
+    def future_extraction(future) -> dict:
         resp = future.future.result()
         remaining = FutureExtractor.remaining_request(resp.headers)
         return {
