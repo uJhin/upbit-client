@@ -1,16 +1,8 @@
 
-from bravado.requests_client import RequestsClient as rc
-from bravado.client import SwaggerClient as sc
-from bravado.http_future import HttpFuture as hf
-
-from upbit.authentication import APIKeyAuthenticator
+from upbit.models import *
 
 
-HOST = "https://api.upbit.com"
-SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg_mapper.json"
-
-
-def Upbit(access_key: str = None, secret_key: str = None, **kwargs) -> sc:
+class Upbit:
     """
     Upbit Client
     Please read the official Upbit Client document.
@@ -26,45 +18,19 @@ def Upbit(access_key: str = None, secret_key: str = None, **kwargs) -> sc:
     - Official Support Email: open-api@upbit.com
     """
 
-    arg_config = kwargs.get('config')
-    arg_spec_uri = kwargs.get('spec_uri')
-    config = {
-        'also_return_response': False,
-        'validate_responses': False,
-        'use_models': False,
-        'host': HOST
-    } if not arg_config else arg_config
-    spec_uri = SPEC_URI if not arg_spec_uri else arg_spec_uri
+    def __init__(self, access_key: str = None, secret_key: str = None, **kwargs):
+        self.__client = ClientModel(access_key=access_key, secret_key=secret_key, **kwargs).UpbitClient
+        self.APIKey = APIKey(self.__client)
+        self.Account = Account(self.__client)
+        self.Candle = Candle(self.__client)
+        self.Deposit = Deposit(self.__client)
+        self.Market = Market(self.__client)
+        self.Order = Order(self.__client)
+        self.Trade = Trade(self.__client)
+        self.Withdraw = Withdraw(self.__client)
 
-    if access_key and secret_key:
+    def __str__(self):
+        return f"UpbitClient({HOST})"
 
-        request_client = rc()
-        request_client.authenticator = APIKeyAuthenticator(
-            config['host'], access_key, secret_key)
-
-        client = sc.from_url(
-            spec_url=spec_uri, http_client=request_client, config=config)
-
-    else:
-
-        client = sc.from_url(spec_url=spec_uri, config=config)
-
-    client.__class__.__name__ = 'UpbitClient'
-    return client
-
-
-def remaining_request(result: hf) -> dict:
-    """
-    Check Request limit times
-    Please read the official Upbit Client document.
-    Documents: https://ujhin.github.io/upbit-client-docs/
-    """
-
-    future = result.future
-    headers = future.result().headers
-    req = headers['Remaining-Req']
-    return {
-        k: v
-        for k, v in
-        [p.split('=') for p in req.split('; ')]
-    }
+    def __repr__(self):
+        return f"UpbitClient({HOST})"
