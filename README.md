@@ -71,6 +71,7 @@ git clone https://github.com/uJhin/upbit-client.git
 
 
 ### Simple Examples
+#### REST Client
 - Check Your API Keys
 ```python
 # /v1/api_keys
@@ -123,6 +124,33 @@ order = client.Order.Order_new(
     ord_type='limit'
 )
 print(order['result'])
+```
+
+#### WebSocket Client
+- Get Real-Time Ticker
+```python
+import json
+import asyncio
+
+from upbit.websocket import UpbitWebSocket
+
+
+async def trade(sock, payload):
+    async with sock as conn:
+        await conn.send(payload)
+        data = await conn.recv()
+        resp = json.loads(data.decode('utf8'))
+        print(resp['result'])
+
+
+sock = UpbitWebSocket()
+
+currencies = ["KRW-BTC", "KRW-ETH"]
+payload = sock.generate_payload(
+    type="trade", codes=currencies)
+
+event_loop = asyncio.get_event_loop()
+event_loop.run_until_complete(trade(sock, payload))
 ```
 
 ### Donation
