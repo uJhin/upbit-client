@@ -139,8 +139,8 @@ async def trade(sock, payload):
     async with sock as conn:
         await conn.send(payload)
         data = await conn.recv()
-        resp = json.loads(data.decode('utf8'))
-        print(resp['result'])
+        result = json.loads(data.decode('utf8'))
+        print(result)
 
 
 sock = UpbitWebSocket()
