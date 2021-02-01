@@ -130,6 +130,8 @@ print(order['result'])
 #### WebSocket Client
 - Get Real-Time Ticker
 ```python
+# Using WebSocket
+
 import json
 import asyncio
 
