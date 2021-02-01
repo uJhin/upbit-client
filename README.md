@@ -82,7 +82,8 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-print(client.APIKey.APIKey_info()['result'])
+api_keys = client.APIKey.APIKey_info()
+print(api_keys['result'])
 ```
 
 - Buy Currency
@@ -138,10 +139,12 @@ from upbit.websocket import UpbitWebSocket
 # Definition async function
 async def ticker(sock, payload):
     async with sock as conn:
-        await conn.send(payload)
-        data = await conn.recv()
-        result = json.loads(data.decode('utf8'))
-        print(result)
+        while True:
+            await conn.send(payload)
+            recv = await conn.recv()
+            data = recv.decode('utf8')
+            result = json.loads(data)
+            print(result)
 
 
 sock = UpbitWebSocket()
