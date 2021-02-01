@@ -47,7 +47,7 @@ Upbit(업비트) Cryptocurrency Exchange Open API Client of Multi-Programming La
 - [Python](https://github.com/uJhin/upbit-client/tree/main/swg_generated/python/)
 - [C++](https://github.com/uJhin/upbit-client/tree/main/swg_generated/cpp)
 - [CSharp](https://github.com/uJhin/upbit-client/tree/main/swg_generated/csharp/)
-- [Objective-C](https://github.com/uJhin/upbit-client/tree/main/swg_generated/object-c)
+- [Objective-C](https://github.com/uJhin/upbit-client/tree/main/swg_generated/objective-c)
 - [Java](https://github.com/uJhin/upbit-client/tree/main/swg_generated/java/)
 - [JavaScript](https://github.com/uJhin/upbit-client/tree/main/swg_generated/)
 - [PHP](https://github.com/uJhin/upbit-client/tree/main/swg_generated/php/SwaggerClient-php/)
