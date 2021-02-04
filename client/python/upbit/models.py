@@ -1,6 +1,4 @@
 
-from abc import ABCMeta
-
 from bravado.requests_client import RequestsClient as rc
 from bravado.client import SwaggerClient as sc
 
@@ -43,22 +41,13 @@ class ClientModel:
         return self.__client
 
 
-class Base(metaclass=ABCMeta):
-    """
-    Base Model
-    """
-
-    def __init__(self, client: sc):
-        self.client = client
-
-
-class APIKey(Base):
+class APIKey:
     """
     API Key
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def APIKey_info(self) -> dict:
         """
@@ -66,25 +55,25 @@ class APIKey(Base):
         
         ## API 키 목록 및 만료 일자를 조회합니다.
         """
-        future = self.client.APIKey.APIKey_info()
+        future = self.__client.APIKey.APIKey_info()
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Account(Base):
+class Account:
     """
     계좌
     """
 
     def __init__(self, client):
-        super().__init__(client)
-    
+        self.__client = client
+
     def Account_info(self) -> dict:
         """
         [GET] 전체 계좌 조회
         
         ## 내가 보유한 자산 리스트를 보여줍니다.
         """
-        future = self.client.Account.Account_info()
+        future = self.__client.Account.Account_info()
         return HTTPFutureExtractor.future_extraction(future)
 
     def Account_wallet(self) -> dict:
@@ -98,17 +87,17 @@ class Account(Base):
         입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.
         본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.
         """
-        future = self.client.Account.Account_wallet()
+        future = self.__client.Account.Account_wallet()
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Candle(Base):
+class Candle:
     """
     캔들; 봉
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def Candle_minutes(self, **kwargs) -> dict:
         """
@@ -131,7 +120,7 @@ class Candle(Base):
         :param count: 캔들 개수 (최대 200개까지 요청 가능) (optional)
         :type count: number
         """
-        future = self.client.Candle.Candle_minutes(**kwargs)
+        future = self.__client.Candle.Candle_minutes(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Candle_days(self, **kwargs) -> dict:
@@ -157,7 +146,7 @@ class Candle(Base):
         현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다. (Default: KRW) (optional)
         :type convertingPriceUnit: str
         """
-        future = self.client.Candle.Candle_days(**kwargs)
+        future = self.__client.Candle.Candle_days(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Candle_weeks(self, **kwargs) -> dict:
@@ -177,7 +166,7 @@ class Candle(Base):
         :param count: 캔들 개수 (optional)
         :type count: number
         """
-        future = self.client.Candle.Candle_weeks(**kwargs)
+        future = self.__client.Candle.Candle_weeks(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Candle_month(self, **kwargs) -> dict:
@@ -197,17 +186,17 @@ class Candle(Base):
         :param count: 캔들 개수 (optional)
         :type count: number
         """
-        future = self.client.Candle.Candle_month(**kwargs)
+        future = self.__client.Candle.Candle_month(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Deposit(Base):
+class Deposit:
     """
     입금
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def Deposit_coin_address(self, **kwargs) -> dict:
         """
@@ -222,7 +211,7 @@ class Deposit(Base):
         :param currency: Currency symbol
         :type currency: str
         """
-        future = self.client.Deposit.Deposit_coin_address(**kwargs)
+        future = self.__client.Deposit.Deposit_coin_address(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Deposit_coin_addresses(self) -> dict:
@@ -234,7 +223,7 @@ class Deposit(Base):
 
         입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.
         """
-        future = self.client.Deposit.Deposit_coin_addresses()
+        future = self.__client.Deposit.Deposit_coin_addresses()
         return HTTPFutureExtractor.future_extraction(future)
 
     def Deposit_generate_coin_address(self, **kwargs) -> dict:
@@ -255,7 +244,7 @@ class Deposit(Base):
         :param currency: Currency 코드
         :type currency: string
         """
-        future = self.client.Deposit.Deposit_generate_coin_address(**kwargs)
+        future = self.__client.Deposit.Deposit_generate_coin_address(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Deposit_info(self, **kwargs) -> dict:
@@ -273,7 +262,7 @@ class Deposit(Base):
         :param currency: Currency 코드 (optional)
         :type currency: string
         """
-        future = self.client.Deposit.Deposit_info(**kwargs)
+        future = self.__client.Deposit.Deposit_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Deposit_info_all(self, **kwargs) -> dict:
@@ -311,17 +300,17 @@ class Deposit(Base):
         - desc : 내림차순 (default)
         :type order_by: str
         """
-        future = self.client.Deposit.Deposit_info_all(**kwargs)
+        future = self.__client.Deposit.Deposit_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Market(Base):
+class Market:
     """
     마켓(시장)
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
     
     def Market_info_all(self, **kwargs) -> dict:
         """
@@ -332,17 +321,17 @@ class Market(Base):
         :param isDetails: 유의종목 필드과 같은 상세 정보 노출 여부(선택 파라미터)(Default: False) (optional)
         :type isDetails: bool
         """
-        future = self.client.Market.Market_info_all(**kwargs)
+        future = self.__client.Market.Market_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Order(Base):
+class Order:
     """
     주문
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def Order_orderbook(self, **kwargs) -> dict:
         """
@@ -352,7 +341,7 @@ class Order(Base):
 
         :param markets: 마켓 코드 목록 (ex. [KRW-BTC, KRW-ADA])
         """
-        future = self.client.Order.Order_orderbook(**kwargs)
+        future = self.__client.Order.Order_orderbook(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Order_chance(self, **kwargs) -> dict:
@@ -363,7 +352,7 @@ class Order(Base):
 
         :param market: Market ID
         """
-        future = self.client.Order.Order_chance(**kwargs)
+        future = self.__client.Order.Order_chance(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
     def Order_info(self, **kwargs):
@@ -380,7 +369,7 @@ class Order(Base):
         :param identifier: 조회용 사용자 지정 값 (optional)
         :type identifier: str
         """
-        future = self.client.Order.Order_info(**kwargs)
+        future = self.__client.Order.Order_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
     def Order_info_all(self, **kwargs) -> dict:
@@ -418,7 +407,7 @@ class Order(Base):
         - desc : 내림차순 (default)
         :type order_by: str
         """
-        future = self.client.Order.Order_info_all(**kwargs)
+        future = self.__client.Order.Order_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
     def Order_new(self, **kwargs) -> dict:
@@ -468,7 +457,7 @@ class Order(Base):
         :param identifier: 조회용 사용자 지정값 (선택) (optional)
         :type identifier: str
         """
-        future = self.client.Order.Order_new(**kwargs)
+        future = self.__client.Order.Order_new(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
     def Order_cancel(self, **kwargs) -> dict:
@@ -485,17 +474,17 @@ class Order(Base):
         :param identifier: 조회용 사용자 지정 값 (optional)
         :type identifier: string
         """
-        future = self.client.Order.Order_cancel(**kwargs)
+        future = self.__client.Order.Order_cancel(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Trade(Base):
+class Trade:
     """
     거래
     """
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def Trade_ticker(self, **kwargs) -> dict:
         """
@@ -508,7 +497,7 @@ class Trade(Base):
         :param markets: 반점으로 구분되는 마켓 코드 (ex. KRW-BTC, BTC-BCC)
         :type markets: str
         """
-        future = self.client.Trade.Trade_ticker(**kwargs)
+        future = self.__client.Trade.Trade_ticker(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Trade_ticks(self, **kwargs) -> dict:
@@ -537,14 +526,14 @@ class Trade(Base):
         비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7) (optional)
         :type daysAgo: number
         """
-        future = self.client.Trade.Trade_ticks(**kwargs)
+        future = self.__client.Trade.Trade_ticks(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
 
-class Withdraw(Base):
+class Withdraw:
 
     def __init__(self, client):
-        super().__init__(client)
+        self.__client = client
 
     def Withdraw_chance(self, **kwargs) -> dict:
         """
@@ -555,7 +544,7 @@ class Withdraw(Base):
         :param currency: Currency Symbol
         :type currency: str
         """
-        future = self.client.Withdraw.Withdraw_chance(**kwargs)
+        future = self.__client.Withdraw.Withdraw_chance(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Withdraw_coin(self, **kwargs) -> dict:
@@ -586,7 +575,7 @@ class Withdraw(Base):
         - internal : 바로출금
         :type transaction_type: str
         """
-        future = self.client.Withdraw.Withdraw_coin(**kwargs)
+        future = self.__client.Withdraw.Withdraw_coin(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Withdraw_info(self, **kwargs) -> dict:
@@ -604,7 +593,7 @@ class Withdraw(Base):
         :param currency: Currency 코드 (optional)
         :type currency: str
         """
-        future = self.client.Withdraw.Withdraw_info(**kwargs)
+        future = self.__client.Withdraw.Withdraw_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Withdraw_info_all(self, **kwargs) -> dict:
@@ -644,7 +633,7 @@ class Withdraw(Base):
         - desc : 내림차순 (default)
         :type order_by: str
         """
-        future = self.client.Withdraw.Withdraw_info_all(**kwargs)
+        future = self.__client.Withdraw.Withdraw_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
     def Withdraw_krw(self, **kwargs) -> dict:
@@ -656,5 +645,5 @@ class Withdraw(Base):
         :param amount: 출금 원화 수량
         :type amount: str
         """
-        future = self.client.Withdraw.Withdraw_krw(**kwargs)
+        future = self.__client.Withdraw.Withdraw_krw(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
