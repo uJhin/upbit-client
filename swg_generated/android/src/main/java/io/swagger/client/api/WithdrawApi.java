@@ -190,7 +190,7 @@ public class WithdrawApi {
   }
   /**
   * 코인 출금하기
-  * ## 코인 출금을 요청한다. **NOTE**: 바로출금 이용 시 유의사항 업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
+  * ## 코인 출금을 요청한다.  **NOTE**: 바로출금 이용 시 유의사항  업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
    * @param currency Currency 코드 
    * @param amount 출금 수량 
    * @param address 출금 가능 주소에 등록된 출금 주소 
@@ -287,7 +287,7 @@ public class WithdrawApi {
 
       /**
    * 코인 출금하기
-   * ## 코인 출금을 요청한다. **NOTE**: 바로출금 이용 시 유의사항 업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
+   * ## 코인 출금을 요청한다.  **NOTE**: 바로출금 이용 시 유의사항  업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
    * @param currency Currency 코드    * @param amount 출금 수량    * @param address 출금 가능 주소에 등록된 출금 주소    * @param secondaryAddress 2차 출금 주소 (필요한 코인에 한해서)    * @param transactionType 출금 유형 - default : 일반출금 - internal : 바로출금 
   */
   public void withdrawCoin (String currency, String amount, String address, String secondaryAddress, String transactionType, final Response.Listener<WithdrawCoin> responseListener, final Response.ErrorListener errorListener) {
