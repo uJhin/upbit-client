@@ -53,7 +53,7 @@ class UpbitWebSocket:
         codes: Union[List[str]],
         isOnlySnapshot: bool = None,
         isOnlyRealtime: bool = None,
-    ) -> str:
+    ) -> dict:
         """
         :param type: 수신할 시세 타입 (현재가: `ticker`, 체결: `trade`, 호가: `orderbook`)
         :type type: str
@@ -89,7 +89,7 @@ class UpbitWebSocket:
         type_fields: Union[List[dict]],
         ticket: str = None,
         format: str = 'DEFAULT'
-    ):
+    ) -> str:
         """
         :param type_fields: Type Fields
         :type type_fields: list[dict, ...]
