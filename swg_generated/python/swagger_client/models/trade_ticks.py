@@ -303,7 +303,7 @@ class TradeTicks(object):
     def sequential_id(self):
         """Gets the sequential_id of this TradeTicks.  # noqa: E501
 
-        체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.   # noqa: E501
+        체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.   # noqa: E501
 
         :return: The sequential_id of this TradeTicks.  # noqa: E501
         :rtype: float
@@ -314,7 +314,7 @@ class TradeTicks(object):
     def sequential_id(self, sequential_id):
         """Sets the sequential_id of this TradeTicks.
 
-        체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.   # noqa: E501
+        체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.   # noqa: E501
 
         :param sequential_id: The sequential_id of this TradeTicks.  # noqa: E501
         :type: float
