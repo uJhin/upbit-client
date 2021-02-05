@@ -1501,9 +1501,8 @@
       "type": "object",
       "properties": {
         "error": {
-          "type": "object",
           "description": "HTTP Error",
-          "properties": {}
+          "$ref": "#/definitions/ErrorInfo"
         }
       }
     },
