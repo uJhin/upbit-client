@@ -27,6 +27,7 @@ class HTTPFutureExtractor:
     def future_extraction(http_future) -> dict:
         resp = http_future.future.result()
         remaining = HTTPFutureExtractor.remaining_request(resp.headers)
+        resp.raise_for_status()
         return {
             "remaining_request": remaining,
             "result": resp.json()
