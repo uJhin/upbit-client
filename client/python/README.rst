@@ -118,9 +118,14 @@ WebSocket Client
 
     sock = UpbitWebSocket()
 
-    currencies = ["KRW-BTC", "KRW-ETH"]
+    currencies = ['KRW-BTC', 'KRW-ETH']
+    type_field = sock.generate_type_field(
+        type='ticker',
+        codes=currencies,
+    )
     payload = sock.generate_payload(
-        type="ticker", codes=currencies)
+        type_fields=[type_field]
+    )
 
     event_loop = asyncio.get_event_loop()
     event_loop.run_until_complete(ticker(sock, payload))
