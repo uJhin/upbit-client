@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * CandleMinutes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class CandleMinutes {
   @SerializedName("market")
   private String market = null;
@@ -90,7 +90,7 @@ public class CandleMinutes {
    * 캔들 기준 시각 (UTC 기준)
    * @return candleDateTimeUtc
   **/
-  @ApiModelProperty(example = "", value = "캔들 기준 시각 (UTC 기준)")
+  @ApiModelProperty(example = "2018-04-18T10:16:00", value = "캔들 기준 시각 (UTC 기준)")
   public String getCandleDateTimeUtc() {
     return candleDateTimeUtc;
   }
@@ -108,7 +108,7 @@ public class CandleMinutes {
    * 캔들 기준 시각 (KST 기준)
    * @return candleDateTimeKst
   **/
-  @ApiModelProperty(example = "", value = "캔들 기준 시각 (KST 기준)")
+  @ApiModelProperty(example = "2018-04-18T19:16:00", value = "캔들 기준 시각 (KST 기준)")
   public String getCandleDateTimeKst() {
     return candleDateTimeKst;
   }

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Wallet
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class Wallet {
   @SerializedName("currency")
   private String currency = null;
@@ -126,7 +126,7 @@ public class Wallet {
    * 블록 갱신 시각
    * @return blockUpdatedAt
   **/
-  @ApiModelProperty(example = "2020-07-03T02:04:45.523+0000", value = "블록 갱신 시각")
+  @ApiModelProperty(example = "2020-07-03T02:04:45.523Z", value = "블록 갱신 시각")
   public String getBlockUpdatedAt() {
     return blockUpdatedAt;
   }

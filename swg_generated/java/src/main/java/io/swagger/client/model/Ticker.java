@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Ticker
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class Ticker {
   @SerializedName("market")
   private String market = null;
@@ -492,7 +492,7 @@ public class Ticker {
    * 52주 신고가 달성일
    * @return highest52WeekDate
   **/
-  @ApiModelProperty(example = "2021-01-03T00:00:00.000+0000", value = "52주 신고가 달성일")
+  @ApiModelProperty(example = "2021-01-03T00:00:00.000Z", value = "52주 신고가 달성일")
   public String getHighest52WeekDate() {
     return highest52WeekDate;
   }
@@ -528,7 +528,7 @@ public class Ticker {
    * 52주 신저가 달성일
    * @return lowest52WeekDate
   **/
-  @ApiModelProperty(example = "2020-03-13T00:00:00.000+0000", value = "52주 신저가 달성일")
+  @ApiModelProperty(example = "2020-03-13T00:00:00.000Z", value = "52주 신저가 달성일")
   public String getLowest52WeekDate() {
     return lowest52WeekDate;
   }

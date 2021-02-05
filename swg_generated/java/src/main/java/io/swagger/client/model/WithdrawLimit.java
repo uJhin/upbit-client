@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * 출금 제약 정보
  */
 @ApiModel(description = "출금 제약 정보")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class WithdrawLimit {
   @SerializedName("currency")
   private String currency = null;
@@ -118,7 +118,7 @@ public class WithdrawLimit {
    * 1일 출금 한도
    * @return daily
   **/
-  @ApiModelProperty(example = "10.0", value = "1일 출금 한도")
+  @ApiModelProperty(example = "10", value = "1일 출금 한도")
   public String getDaily() {
     return daily;
   }
@@ -136,7 +136,7 @@ public class WithdrawLimit {
    * 1일 잔여 출금 한도
    * @return remainingDaily
   **/
-  @ApiModelProperty(example = "10.0", value = "1일 잔여 출금 한도")
+  @ApiModelProperty(example = "10", value = "1일 잔여 출금 한도")
   public String getRemainingDaily() {
     return remainingDaily;
   }
@@ -154,7 +154,7 @@ public class WithdrawLimit {
    * 통합 1일 잔여 출금 한도
    * @return remainingDailyKrw
   **/
-  @ApiModelProperty(example = "0.0", value = "통합 1일 잔여 출금 한도")
+  @ApiModelProperty(example = "0", value = "통합 1일 잔여 출금 한도")
   public String getRemainingDailyKrw() {
     return remainingDailyKrw;
   }

@@ -2,7 +2,7 @@
 
 Upbit Open API
 - API version: 1.0.0
-  - Build date: 2021-01-25T00:42:40.509Z
+  - Build date: 2021-02-05T03:34:59.277Z
 
 ## REST API for Upbit Exchange - Base URL: [https://api.upbit.com] - Official Upbit API Documents: [https://docs.upbit.com] - Official Support email: [open-api@upbit.com] 
 

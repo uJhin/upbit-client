@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * APIKey
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class APIKey {
   @SerializedName("access_key")
   private String accessKey = null;
@@ -62,7 +62,7 @@ public class APIKey {
    * Get expireAt
    * @return expireAt
   **/
-  @ApiModelProperty(example = "2021-03-09T12:39:39.000+0000", value = "")
+  @ApiModelProperty(example = "2021-03-09T12:39:39.000Z", value = "")
   public String getExpireAt() {
     return expireAt;
   }

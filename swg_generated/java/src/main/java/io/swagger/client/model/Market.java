@@ -32,7 +32,7 @@ import java.util.List;
  * 마켓에 대한 정보
  */
 @ApiModel(description = "마켓에 대한 정보")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class Market {
   @SerializedName("id")
   private String id = null;

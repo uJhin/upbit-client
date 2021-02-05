@@ -28,7 +28,7 @@ import java.io.IOException;
  * 매수 시 사용하는 화폐의 계좌 상태
  */
 @ApiModel(description = "매수 시 사용하는 화폐의 계좌 상태")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class BidAccount {
   @SerializedName("currency")
   private String currency = null;
@@ -75,7 +75,7 @@ public class BidAccount {
    * 주문가능 금액/수량
    * @return balance
   **/
-  @ApiModelProperty(example = "1000000.0", value = "주문가능 금액/수량")
+  @ApiModelProperty(example = "1000000", value = "주문가능 금액/수량")
   public String getBalance() {
     return balance;
   }
@@ -93,7 +93,7 @@ public class BidAccount {
    * 주문 중 묶여있는 금액/수량
    * @return locked
   **/
-  @ApiModelProperty(example = "0.0", value = "주문 중 묶여있는 금액/수량")
+  @ApiModelProperty(example = "0", value = "주문 중 묶여있는 금액/수량")
   public String getLocked() {
     return locked;
   }

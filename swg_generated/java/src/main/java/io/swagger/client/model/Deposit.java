@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Deposit
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class Deposit {
   @SerializedName("type")
   private String type = null;
@@ -158,7 +158,7 @@ public class Deposit {
    * 입금 생성 시간
    * @return createdAt
   **/
-  @ApiModelProperty(example = "", value = "입금 생성 시간")
+  @ApiModelProperty(example = "2017-12-08T15:38:02+09:00", value = "입금 생성 시간")
   public String getCreatedAt() {
     return createdAt;
   }
@@ -176,7 +176,7 @@ public class Deposit {
    * 입금 완료 시간
    * @return doneAt
   **/
-  @ApiModelProperty(example = "", value = "입금 완료 시간")
+  @ApiModelProperty(example = "2019-02-28T15:22:12+09:00", value = "입금 완료 시간")
   public String getDoneAt() {
     return doneAt;
   }
@@ -194,7 +194,7 @@ public class Deposit {
    * 입금 수량
    * @return amount
   **/
-  @ApiModelProperty(example = "100000.0", value = "입금 수량")
+  @ApiModelProperty(example = "100000", value = "입금 수량")
   public String getAmount() {
     return amount;
   }
@@ -212,7 +212,7 @@ public class Deposit {
    * 입금 수수료
    * @return fee
   **/
-  @ApiModelProperty(example = "0.0", value = "입금 수수료")
+  @ApiModelProperty(example = "0", value = "입금 수수료")
   public String getFee() {
     return fee;
   }

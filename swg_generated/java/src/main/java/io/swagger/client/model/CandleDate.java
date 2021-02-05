@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * CandleDate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class CandleDate {
   @SerializedName("market")
   private String market = null;
@@ -90,7 +90,7 @@ public class CandleDate {
    * 캔들 기준 시각 (UTC 기준)
    * @return candleDateTimeUtc
   **/
-  @ApiModelProperty(example = "", value = "캔들 기준 시각 (UTC 기준)")
+  @ApiModelProperty(example = "2021-01-04T00:00:00", value = "캔들 기준 시각 (UTC 기준)")
   public String getCandleDateTimeUtc() {
     return candleDateTimeUtc;
   }
@@ -108,7 +108,7 @@ public class CandleDate {
    * 캔들 기준 시각 (KST 기준)
    * @return candleDateTimeKst
   **/
-  @ApiModelProperty(example = "", value = "캔들 기준 시각 (KST 기준)")
+  @ApiModelProperty(example = "2021-01-04T09:00:00", value = "캔들 기준 시각 (KST 기준)")
   public String getCandleDateTimeKst() {
     return candleDateTimeKst;
   }
@@ -252,7 +252,7 @@ public class CandleDate {
    * 캔들 기간의 가장 첫 날
    * @return firstDayOfPeriod
   **/
-  @ApiModelProperty(example = "2021-01-04T00:00:00.000+0000", value = "캔들 기간의 가장 첫 날")
+  @ApiModelProperty(example = "2021-01-04T00:00:00.000Z", value = "캔들 기간의 가장 첫 날")
   public String getFirstDayOfPeriod() {
     return firstDayOfPeriod;
   }

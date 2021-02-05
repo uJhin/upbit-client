@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * TradeTicks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class TradeTicks {
   @SerializedName("market")
   private String market = null;
@@ -87,7 +87,7 @@ public class TradeTicks {
    * 체결 일자 (UTC 기준)
    * @return tradeDateUtc
   **/
-  @ApiModelProperty(example = "2021-01-05T00:00:00.000+0000", value = "체결 일자 (UTC 기준)")
+  @ApiModelProperty(example = "2021-01-05T00:00:00.000Z", value = "체결 일자 (UTC 기준)")
   public String getTradeDateUtc() {
     return tradeDateUtc;
   }
@@ -228,10 +228,10 @@ public class TradeTicks {
   }
 
    /**
-   * 체결 번호 (Unique) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
+   * 체결 번호 (Unique)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
    * @return sequentialId
   **/
-  @ApiModelProperty(example = "1.609853849000002E15", value = "체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. ")
+  @ApiModelProperty(example = "1.609853849000002E15", value = "체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. ")
   public BigDecimal getSequentialId() {
     return sequentialId;
   }

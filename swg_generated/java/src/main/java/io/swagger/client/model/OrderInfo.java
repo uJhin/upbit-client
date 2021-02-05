@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * OrderInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class OrderInfo {
   @SerializedName("uuid")
   private String uuid = null;
@@ -144,7 +144,7 @@ public class OrderInfo {
    * 주문 당시 화폐 가격
    * @return price
   **/
-  @ApiModelProperty(example = "4280000.0", value = "주문 당시 화폐 가격")
+  @ApiModelProperty(example = "4280000", value = "주문 당시 화폐 가격")
   public String getPrice() {
     return price;
   }
@@ -198,7 +198,7 @@ public class OrderInfo {
    * 주문 생성 시간
    * @return createdAt
   **/
-  @ApiModelProperty(example = "", value = "주문 생성 시간")
+  @ApiModelProperty(example = "2019-01-04T13:48:09+09:00", value = "주문 생성 시간")
   public String getCreatedAt() {
     return createdAt;
   }
@@ -216,7 +216,7 @@ public class OrderInfo {
    * 사용자가 입력한 주문 양
    * @return volume
   **/
-  @ApiModelProperty(example = "1.0", value = "사용자가 입력한 주문 양")
+  @ApiModelProperty(example = "1", value = "사용자가 입력한 주문 양")
   public String getVolume() {
     return volume;
   }
@@ -234,7 +234,7 @@ public class OrderInfo {
    * 체결 후 남은 주문 양
    * @return remainingVolume
   **/
-  @ApiModelProperty(example = "0.0", value = "체결 후 남은 주문 양")
+  @ApiModelProperty(example = "0", value = "체결 후 남은 주문 양")
   public String getRemainingVolume() {
     return remainingVolume;
   }
@@ -252,7 +252,7 @@ public class OrderInfo {
    * 수수료로 예약된 비용
    * @return reservedFee
   **/
-  @ApiModelProperty(example = "0.0", value = "수수료로 예약된 비용")
+  @ApiModelProperty(example = "0", value = "수수료로 예약된 비용")
   public String getReservedFee() {
     return reservedFee;
   }
@@ -270,7 +270,7 @@ public class OrderInfo {
    * 남은 수수료
    * @return remainingFee
   **/
-  @ApiModelProperty(example = "0.0", value = "남은 수수료")
+  @ApiModelProperty(example = "0", value = "남은 수수료")
   public String getRemainingFee() {
     return remainingFee;
   }
@@ -288,7 +288,7 @@ public class OrderInfo {
    * 사용된 수수료
    * @return paidFee
   **/
-  @ApiModelProperty(example = "2140.0", value = "사용된 수수료")
+  @ApiModelProperty(example = "2140", value = "사용된 수수료")
   public String getPaidFee() {
     return paidFee;
   }
@@ -306,7 +306,7 @@ public class OrderInfo {
    * 거래에 사용중인 비용
    * @return locked
   **/
-  @ApiModelProperty(example = "0.0", value = "거래에 사용중인 비용")
+  @ApiModelProperty(example = "0", value = "거래에 사용중인 비용")
   public String getLocked() {
     return locked;
   }
@@ -324,7 +324,7 @@ public class OrderInfo {
    * 체결된 양
    * @return executedVolume
   **/
-  @ApiModelProperty(example = "1.0", value = "체결된 양")
+  @ApiModelProperty(example = "1", value = "체결된 양")
   public String getExecutedVolume() {
     return executedVolume;
   }

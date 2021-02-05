@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Trade
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-25T00:42:40.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-05T03:34:59.277Z")
 public class Trade {
   @SerializedName("market")
   private String market = null;
@@ -95,7 +95,7 @@ public class Trade {
    * 체결 가격
    * @return price
   **/
-  @ApiModelProperty(example = "4280000.0", value = "체결 가격")
+  @ApiModelProperty(example = "4280000", value = "체결 가격")
   public String getPrice() {
     return price;
   }
@@ -113,7 +113,7 @@ public class Trade {
    * 체결 양
    * @return volume
   **/
-  @ApiModelProperty(example = "1.0", value = "체결 양")
+  @ApiModelProperty(example = "1", value = "체결 양")
   public String getVolume() {
     return volume;
   }
@@ -131,7 +131,7 @@ public class Trade {
    * 체결된 총 가격
    * @return funds
   **/
-  @ApiModelProperty(example = "4280000.0", value = "체결된 총 가격")
+  @ApiModelProperty(example = "4280000", value = "체결된 총 가격")
   public String getFunds() {
     return funds;
   }
@@ -167,7 +167,7 @@ public class Trade {
    * 체결 시각
    * @return createdAt
   **/
-  @ApiModelProperty(example = "2019-01-04T04:48:09.000+0000", value = "체결 시각")
+  @ApiModelProperty(example = "2019-01-04T04:48:09.000Z", value = "체결 시각")
   public String getCreatedAt() {
     return createdAt;
   }
