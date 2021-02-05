@@ -33,6 +33,7 @@ extern NSInteger kSWGMarketApiMissingParamErrorCode;
 ///  code:401 message:"Status: Unauthorized ",
 ///  code:403 message:"Status: Forbidden ",
 ///  code:404 message:"Status: Not Found ",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Status: Internal Server Error "
 ///
 /// @return NSObject*

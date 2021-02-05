@@ -27,7 +27,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 -(instancetype) initWithApiClient:(SWGApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// 개별 입금 주소 조회
-/// ## 개별 입금 주소 조회 **NOTE**: 입금 주소 조회 요청 API 유의사항 입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다. 
+/// ## 개별 입금 주소 조회  **NOTE**: 입금 주소 조회 요청 API 유의사항  입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다. 
 ///
 /// @param currency Currency symbol 
 /// 
@@ -36,6 +36,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGDepositCompleteResponse*
@@ -44,7 +45,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 
 
 /// 전체 입금 주소 조회
-/// ## 내가 보유한 자산 리스트를 보여줍니다. **NOTE**: 입금 주소 조회 요청 API 유의사항 입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다. 
+/// ## 내가 보유한 자산 리스트를 보여줍니다.  **NOTE**: 입금 주소 조회 요청 API 유의사항  입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다. 
 ///
 /// 
 ///  code:200 message:"OK",
@@ -52,6 +53,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return NSObject*
@@ -60,7 +62,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 
 
 /// 입금 주소 생성 요청
-/// 입금 주소 생성을 요청한다. **NOTE**: 입금 주소 생성 요청 API 유의사항 입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다. 비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다. 주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다. 주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다. 정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다. 
+/// 입금 주소 생성을 요청한다.  **NOTE**: 입금 주소 생성 요청 API 유의사항  입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다. 비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다. 주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다. 주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다. 정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다. 
 ///
 /// @param currency Currency 코드 
 /// 
@@ -70,6 +72,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGDepositCompleteResponse*
@@ -89,6 +92,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGDeposit*
@@ -114,6 +118,7 @@ extern NSInteger kSWGDepositApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return NSArray<SWGDeposit>*

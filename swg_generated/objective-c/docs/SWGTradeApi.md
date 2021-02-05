@@ -92,7 +92,7 @@ SWGDefaultConfiguration *apiConfig = [SWGDefaultConfiguration sharedConfig];
 NSString* market = @"market_example"; // 마켓 코드 (ex. KRW-BTC, BTC-BCC) 
 NSString* to = @"to_example"; // 마지막 체결 시각. 형식 : `[HHmmss 또는 HH:mm:ss]`. 비워서 요청시 가장 최근 데이터  (optional)
 NSNumber* count = @8.14; // 체결 개수  (optional)
-NSString* cursor = @"cursor_example"; // 페이지네이션 커서 (sequentialId) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  (optional)
+NSString* cursor = @"cursor_example"; // 페이지네이션 커서 (sequentialId)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  (optional)
 NSNumber* daysAgo = @8.14; // 최근 체결 날짜 기준 7일 이내의 이전 데이터 조회 가능. 비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7)  (optional)
 
 SWGTradeApi*apiInstance = [[SWGTradeApi alloc] init];
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
  **market** | **NSString***| 마켓 코드 (ex. KRW-BTC, BTC-BCC)  | 
  **to** | **NSString***| 마지막 체결 시각. 형식 : &#x60;[HHmmss 또는 HH:mm:ss]&#x60;. 비워서 요청시 가장 최근 데이터  | [optional] 
  **count** | **NSNumber***| 체결 개수  | [optional] 
- **cursor** | **NSString***| 페이지네이션 커서 (sequentialId) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  | [optional] 
+ **cursor** | **NSString***| 페이지네이션 커서 (sequentialId)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  | [optional] 
  **daysAgo** | **NSNumber***| 최근 체결 날짜 기준 7일 이내의 이전 데이터 조회 가능. 비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7)  | [optional] 
 
 ### Return type

@@ -33,6 +33,7 @@ extern NSInteger kSWGAPIKeyApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return NSArray<SWGAPIKey>*

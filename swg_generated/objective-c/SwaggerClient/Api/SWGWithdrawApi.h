@@ -36,6 +36,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGWithdrawChance*
@@ -44,7 +45,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 
 
 /// 코인 출금하기
-/// ## 코인 출금을 요청한다. **NOTE**: 바로출금 이용 시 유의사항 업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
+/// ## 코인 출금을 요청한다.  **NOTE**: 바로출금 이용 시 유의사항  업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다. 반드시 주소를 확인 후 출금을 진행하시기 바랍니다. 
 ///
 /// @param currency Currency 코드 
 /// @param amount 출금 수량 
@@ -57,6 +58,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGWithdrawCoin*
@@ -80,6 +82,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGWithdraw*
@@ -105,6 +108,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return NSArray<SWGWithdraw>*
@@ -128,6 +132,7 @@ extern NSInteger kSWGWithdrawApiMissingParamErrorCode;
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found",
+///  code:429 message:"Too Many Requests",
 ///  code:500 message:"Internal Server Error"
 ///
 /// @return SWGWithdraw*

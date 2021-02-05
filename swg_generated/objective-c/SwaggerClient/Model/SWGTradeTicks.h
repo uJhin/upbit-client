@@ -49,7 +49,7 @@
 /* 매도/매수 [optional]
  */
 @property(nonatomic) NSString* askBid;
-/* 체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  [optional]
+/* 체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  [optional]
  */
 @property(nonatomic) NSNumber* sequentialId;
 
