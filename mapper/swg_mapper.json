@@ -1500,9 +1500,15 @@
     "Error": {
       "type": "object",
       "properties": {
-        "error": {
-          "description": "HTTP Error",
-          "$ref": "#/definitions/ErrorInfo"
+        "message": {
+          "type": "string",
+          "example": "error message",
+          "description": "Error 메시지"
+        },
+        "name": {
+          "type": "string",
+          "example": "error name",
+          "description": "Error 명칭"
         }
       }
     },
