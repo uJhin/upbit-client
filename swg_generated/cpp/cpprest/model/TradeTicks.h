@@ -117,7 +117,7 @@ public:
     void unsetAsk_bid();
     void setAskBid(utility::string_t value);
     /// <summary>
-    /// 체결 번호 (Unique) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
+    /// 체결 번호 (Unique)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
     /// </summary>
     double getSequentialId() const;
     bool sequentialIdIsSet() const;
