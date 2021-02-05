@@ -64,6 +64,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -103,6 +107,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -114,10 +122,10 @@ paths:
       tags:
       - "Account"
       summary: "입출금 현황"
-      description: "## 입출금 현황 및 블록 상태를 조회합니다.\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와 다를\
-        \ 수 있습니다.\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.\n본\
-        \ API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기\
-        \ 바랍니다.\n"
+      description: "## 입출금 현황 및 블록 상태를 조회합니다.\n\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와\
+        \ 다를 수 있습니다.\n\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다\
+        .\n본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해\
+        주시기 바랍니다.\n"
       operationId: "Account.wallet"
       produces:
       - "application/json"
@@ -143,6 +151,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -193,6 +205,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -236,6 +252,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -247,7 +267,7 @@ paths:
       tags:
       - "Order"
       summary: "개별 주문 조회"
-      description: "## 주문 UUID를 통해 개별 주문건을 조회한다.\n**NOTE**: `uuid` 혹은 `identifier`\
+      description: "## 주문 UUID를 통해 개별 주문건을 조회한다.\n\n**NOTE**: `uuid` 혹은 `identifier`\
         \ 둘 중 하나의 값이 반드시 포함되어야 합니다.\n"
       operationId: "Order.info"
       produces:
@@ -288,6 +308,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -298,7 +322,7 @@ paths:
       tags:
       - "Order"
       summary: "주문 취소 접수"
-      description: "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n**NOTE**: `uuid` 혹은 `identifier`\
+      description: "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n\n**NOTE**: `uuid` 혹은 `identifier`\
         \ 둘 중 하나의 값이 반드시 포함되어야 합니다.\n"
       operationId: "Order.cancel"
       produces:
@@ -337,6 +361,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -441,6 +469,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -451,15 +483,15 @@ paths:
       tags:
       - "Order"
       summary: "주문하기"
-      description: "## 주문 요청을 한다.\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n원화 마켓에서 주문을 요청 할\
-        \ 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를\
-        \ 확인하여 값을 입력해주세요.\n**NOTE**: identifier 파라미터 사용\n`identifier`는 서비스에서 발급하는\
-        \ `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주문\
-        \ 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n주문의 성공\
-        \ / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주\
-        세요.\n**NOTE**: 시장가 주문\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설정해야됩\
-        니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n매도\
-        \ 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.\n"
+      description: "## 주문 요청을 한다.\n\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n\n원화 마켓에서 주문을\
+        \ 요청 할 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를\
+        \ 확인하여 값을 입력해주세요.\n\n**NOTE**: identifier 파라미터 사용\n\n`identifier`는 서비스에서 발\
+        급하는 `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주\
+        문 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n\n주문의 성\
+        공 / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주\
+        세요.\n\n**NOTE**: 시장가 주문\n\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설\
+        정해야됩니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n\
+        매도 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.\n"
       operationId: "Order.new"
       consumes:
       - "application/x-www-form-urlencoded"
@@ -490,7 +522,7 @@ paths:
         x-optionalDataType: "String"
       - name: "price"
         in: "formData"
-        description: "주문 가격. (지정가, 시장가 매수 시 필수)\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로\
+        description: "주문 가격. (지정가, 시장가 매수 시 필수)\n\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로\
           \ 거래할 경우, 값은 1000 이 된다.\nex) KRW-BTC 마켓에서 1BTC당 매도 1호가가 500 KRW 인 경우, 시장\
           가 매수 시 값을 1000으로 세팅하면 2BTC가 매수된다.\n(수수료가 존재하거나 매도 1호가의 수량에 따라 상이할 수 있음)\n"
         required: false
@@ -535,6 +567,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -631,6 +667,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -689,6 +729,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -732,6 +776,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -743,8 +791,8 @@ paths:
       tags:
       - "Withdraw"
       summary: "코인 출금하기"
-      description: "## 코인 출금을 요청한다.\n**NOTE**: 바로출금 이용 시 유의사항\n업비트 회원의 주소가 아닌 주소로\
-        \ 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.\n"
+      description: "## 코인 출금을 요청한다.\n\n**NOTE**: 바로출금 이용 시 유의사항\n\n업비트 회원의 주소가 아닌\
+        \ 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.\n"
       operationId: "Withdraw.coin"
       consumes:
       - "multipart/form-data"
@@ -804,6 +852,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -847,6 +899,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -942,6 +998,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -1000,6 +1060,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -1011,11 +1075,11 @@ paths:
       tags:
       - "Deposit"
       summary: "입금 주소 생성 요청"
-      description: "입금 주소 생성을 요청한다.\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n입금 주소의 생성은 서버\
-        에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청 시 결\
-        과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는 새로운 주\
-        소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면 일정 시간\
-        \ 이후 해당 API를 다시 호출해주시길 부탁드립니다.\n"
+      description: "입금 주소 생성을 요청한다.\n\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n\n입금 주소의 생성\
+        은 서버에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청\
+        \ 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는\
+        \ 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면\
+        \ 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.\n"
       operationId: "Deposit.generate_coin_address"
       consumes:
       - "multipart/form-data"
@@ -1053,6 +1117,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -1064,8 +1132,8 @@ paths:
       tags:
       - "Deposit"
       summary: "전체 입금 주소 조회"
-      description: "## 내가 보유한 자산 리스트를 보여줍니다.\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n입금 주\
-        소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n"
+      description: "## 내가 보유한 자산 리스트를 보여줍니다.\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n\
+        입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n"
       operationId: "Deposit.coin_addresses"
       produces:
       - "application/json"
@@ -1090,6 +1158,10 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Internal Server Error"
           schema:
@@ -1101,8 +1173,8 @@ paths:
       tags:
       - "Deposit"
       summary: "개별 입금 주소 조회"
-      description: "## 개별 입금 주소 조회\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n입금 주소 생성 요청 이후\
-        \ 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n"
+      description: "## 개별 입금 주소 조회\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요\
+        청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n"
       operationId: "Deposit.coin_address"
       produces:
       - "application/json"
@@ -1132,6 +1204,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Not Found"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -1176,6 +1252,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Status: Not Found\n"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -1242,6 +1322,10 @@ paths:
           description: "Status: Not Found\n"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Status: Internal Server Error\n"
           schema:
@@ -1282,7 +1366,7 @@ paths:
         x-optionalDataType: "Float32"
       - name: "convertingPriceUnit"
         in: "query"
-        description: "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n`convertingPriceUnit`\
+        description: "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n\n`convertingPriceUnit`\
           \ 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시\n종가를 명시된 파라미터 값으로 환산해\
           \ `converted_trade_price` 필드에 추가하여 반환합니다.\n현재는 원화(`KRW`) 로 변환하는 기능만 제공하며\
           \ 추후 기능을 확장할 수 있습니다.\n"
@@ -1309,6 +1393,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Status: Not Found\n"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -1369,6 +1457,10 @@ paths:
           description: "Status: Not Found\n"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Status: Internal Server Error\n"
           schema:
@@ -1427,6 +1519,10 @@ paths:
           description: "Status: Not Found\n"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Status: Internal Server Error\n"
           schema:
@@ -1466,8 +1562,8 @@ paths:
         x-optionalDataType: "Float32"
       - name: "cursor"
         in: "query"
-        description: "페이지네이션 커서 (sequentialId)\n`sequential_id` 필드는 체결의 유일성 판단을 위한\
-          \ 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
+        description: "페이지네이션 커서 (sequentialId)\n\n`sequential_id` 필드는 체결의 유일성 판단을\
+          \ 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
         required: false
         type: "string"
         x-exportParamName: "Cursor"
@@ -1499,6 +1595,10 @@ paths:
             $ref: "#/definitions/Error"
         "404":
           description: "Status: Not Found\n"
+          schema:
+            $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
           schema:
             $ref: "#/definitions/Error"
         "500":
@@ -1543,6 +1643,10 @@ paths:
           description: "Status: Not Found\n"
           schema:
             $ref: "#/definitions/Error"
+        "429":
+          description: "Too Many Requests"
+          schema:
+            $ref: "#/definitions/Error"
         "500":
           description: "Status: Internal Server Error\n"
           schema:
@@ -1580,10 +1684,10 @@ definitions:
         example: "xxxxxxxxxxxxxxxxxxxxxxxx"
       expire_at:
         type: "string"
-        example: "2021-03-09T12:39:39.000+0000"
+        example: "2021-03-09T12:39:39.000Z"
     example:
       access_key: "xxxxxxxxxxxxxxxxxxxxxxxx"
-      expire_at: "2021-03-09T12:39:39.000+0000"
+      expire_at: "2021-03-09T12:39:39.000Z"
   Account:
     type: "object"
     properties:
@@ -1593,11 +1697,11 @@ definitions:
         description: "화폐를 의미하는 영문 대문자 코드"
       balance:
         type: "string"
-        example: "1000000.0"
+        example: "1000000"
         description: "주문가능 금액/수량"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "주문 중 묶여있는 금액/수량"
       avg_buy_price:
         type: "string"
@@ -1614,10 +1718,10 @@ definitions:
     description: "사용자의 계좌 정보"
     example:
       unit_currency: "KRW"
-      balance: "1000000.0"
+      balance: "1000000"
       avg_buy_price: "101000"
       currency: "KRW"
-      locked: "0.0"
+      locked: "0"
       avg_buy_price_modified: false
   Wallet:
     type: "object"
@@ -1643,11 +1747,11 @@ definitions:
         description: "블록 높이"
       block_updated_at:
         type: "string"
-        example: "2020-07-03T02:04:45.523+0000"
+        example: "2020-07-03T02:04:45.523Z"
         description: "블록 갱신 시각"
     example:
       block_state: "normal"
-      block_updated_at: "2020-07-03T02:04:45.523+0000"
+      block_updated_at: "2020-07-03T02:04:45.523Z"
       currency: "BTC"
       block_height: 637432
       wallet_state: "working"
@@ -1737,7 +1841,7 @@ definitions:
         description: "주문 방식"
       price:
         type: "string"
-        example: "4280000.0"
+        example: "4280000"
         description: "주문 당시 화폐 가격"
       state:
         type: "string"
@@ -1749,35 +1853,35 @@ definitions:
         description: "마켓의 유일키"
       created_at:
         type: "string"
-        example: "2019-01-04T04:48:09.000+0000"
+        example: "2019-01-04T04:48:09.000Z"
         description: "주문 생성 시간"
       volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "사용자가 입력한 주문 양"
       remaining_volume:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "체결 후 남은 주문 양"
       reserved_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "수수료로 예약된 비용"
       remaining_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "남은 수수료"
       paid_fee:
         type: "string"
-        example: "2140.0"
+        example: "2140"
         description: "사용된 수수료"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "거래에 사용중인 비용"
       executed_volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "체결된 양"
       trades_count:
         type: "number"
@@ -1786,20 +1890,20 @@ definitions:
         description: "해당 주문에 걸린 체결 수"
     example:
       side: "ask"
-      executed_volume: "1.0"
+      executed_volume: "1"
       ord_type: "limit"
-      created_at: "2019-01-04T04:48:09.000+0000"
-      paid_fee: "2140.0"
-      remaining_fee: "0.0"
+      created_at: "2019-01-04T04:48:09.000Z"
+      paid_fee: "2140"
+      remaining_fee: "0"
       uuid: "9ca023a5-851b-4fec-9f0a-48cd83c2eaae"
-      reserved_fee: "0.0"
+      reserved_fee: "0"
       market: "KRW-BTC"
-      volume: "1.0"
+      volume: "1"
       trades_count: 1
-      remaining_volume: "0.0"
-      price: "4280000.0"
+      remaining_volume: "0"
+      price: "4280000"
       state: "done"
-      locked: "0.0"
+      locked: "0"
   NewOrder:
     type: "object"
     properties:
@@ -1817,11 +1921,11 @@ definitions:
         description: "주문 방식"
       price:
         type: "string"
-        example: "4280000.0"
+        example: "4280000"
         description: "주문 당시 화폐 가격"
       avg_price:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "체결 가격의 평균가"
       state:
         type: "string"
@@ -1833,35 +1937,35 @@ definitions:
         description: "마켓의 유일키"
       created_at:
         type: "string"
-        example: ""
+        example: "2019-01-04T13:48:09+09:00"
         description: "주문 생성 시간"
       volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "사용자가 입력한 주문 양"
       remaining_volume:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "체결 후 남은 주문 양"
       reserved_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "수수료로 예약된 비용"
       remaining_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "남은 수수료"
       paid_fee:
         type: "string"
-        example: "2140.0"
+        example: "2140"
         description: "사용된 수수료"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "거래에 사용중인 비용"
       executed_volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "체결된 양"
       trades_count:
         type: "number"
@@ -1870,21 +1974,21 @@ definitions:
         description: "해당 주문에 걸린 체결 수"
     example:
       side: "ask"
-      executed_volume: "1.0"
+      executed_volume: "1"
       ord_type: "limit"
-      created_at: ""
-      paid_fee: "2140.0"
-      avg_price: "0.0"
-      remaining_fee: "0.0"
+      created_at: "2019-01-04T13:48:09+09:00"
+      paid_fee: "2140"
+      avg_price: "0"
+      remaining_fee: "0"
       uuid: "9ca023a5-851b-4fec-9f0a-48cd83c2eaae"
-      reserved_fee: "0.0"
+      reserved_fee: "0"
       market: "KRW-BTC"
-      volume: "1.0"
+      volume: "1"
       trades_count: 1
-      remaining_volume: "0.0"
-      price: "4280000.0"
+      remaining_volume: "0"
+      price: "4280000"
       state: "done"
-      locked: "0.0"
+      locked: "0"
   OrderInfo:
     type: "object"
     properties:
@@ -1902,7 +2006,7 @@ definitions:
         description: "주문 방식"
       price:
         type: "string"
-        example: "4280000.0"
+        example: "4280000"
         description: "주문 당시 화폐 가격"
       state:
         type: "string"
@@ -1914,35 +2018,35 @@ definitions:
         description: "마켓의 유일키"
       created_at:
         type: "string"
-        example: ""
+        example: "2019-01-04T13:48:09+09:00"
         description: "주문 생성 시간"
       volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "사용자가 입력한 주문 양"
       remaining_volume:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "체결 후 남은 주문 양"
       reserved_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "수수료로 예약된 비용"
       remaining_fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "남은 수수료"
       paid_fee:
         type: "string"
-        example: "2140.0"
+        example: "2140"
         description: "사용된 수수료"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "거래에 사용중인 비용"
       executed_volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "체결된 양"
       trades_count:
         type: "number"
@@ -1956,35 +2060,35 @@ definitions:
           $ref: "#/definitions/Trade"
     example:
       side: "ask"
-      executed_volume: "1.0"
+      executed_volume: "1"
       ord_type: "limit"
-      created_at: ""
-      paid_fee: "2140.0"
+      created_at: "2019-01-04T13:48:09+09:00"
+      paid_fee: "2140"
       trades:
       - market: "KRW-BTC"
-        volume: "1.0"
+        volume: "1"
         side: "ask"
-        price: "4280000.0"
-        created_at: "2019-01-04T04:48:09.000+0000"
-        funds: "4280000.0"
+        price: "4280000"
+        created_at: "2019-01-04T04:48:09.000Z"
+        funds: "4280000"
         uuid: "9e8f8eba-7050-4837-8969-cfc272cbe083"
       - market: "KRW-BTC"
-        volume: "1.0"
+        volume: "1"
         side: "ask"
-        price: "4280000.0"
-        created_at: "2019-01-04T04:48:09.000+0000"
-        funds: "4280000.0"
+        price: "4280000"
+        created_at: "2019-01-04T04:48:09.000Z"
+        funds: "4280000"
         uuid: "9e8f8eba-7050-4837-8969-cfc272cbe083"
-      remaining_fee: "0.0"
+      remaining_fee: "0"
       uuid: "9ca023a5-851b-4fec-9f0a-48cd83c2eaae"
-      reserved_fee: "0.0"
+      reserved_fee: "0"
       market: "KRW-BTC"
-      volume: "1.0"
+      volume: "1"
       trades_count: 1
-      remaining_volume: "0.0"
-      price: "4280000.0"
+      remaining_volume: "0"
+      price: "4280000"
       state: "done"
-      locked: "0.0"
+      locked: "0"
   Trade:
     type: "object"
     properties:
@@ -1998,15 +2102,15 @@ definitions:
         description: "체결의 고유 아이디"
       price:
         type: "string"
-        example: "4280000.0"
+        example: "4280000"
         description: "체결 가격"
       volume:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "체결 양"
       funds:
         type: "string"
-        example: "4280000.0"
+        example: "4280000"
         description: "체결된 총 가격"
       side:
         type: "string"
@@ -2014,15 +2118,15 @@ definitions:
         description: "체결 종류"
       created_at:
         type: "string"
-        example: "2019-01-04T04:48:09.000+0000"
+        example: "2019-01-04T04:48:09.000Z"
         description: "체결 시각"
     example:
       market: "KRW-BTC"
-      volume: "1.0"
+      volume: "1"
       side: "ask"
-      price: "4280000.0"
-      created_at: "2019-01-04T04:48:09.000+0000"
-      funds: "4280000.0"
+      price: "4280000"
+      created_at: "2019-01-04T04:48:09.000Z"
+      funds: "4280000"
       uuid: "9e8f8eba-7050-4837-8969-cfc272cbe083"
   OrderChance:
     type: "object"
@@ -2062,17 +2166,17 @@ definitions:
         max_total: "100000000"
       bid_account:
         unit_currency: "KRW"
-        balance: "1000000.0"
+        balance: "1000000"
         avg_buy_price: "101000"
         currency: "KRW"
-        locked: "0.0"
+        locked: "0"
         avg_buy_price_modified: false
       ask_account:
         unit_currency: "KRW"
-        balance: "1000000.0"
+        balance: "1000000"
         avg_buy_price: "101000"
         currency: "KRW"
-        locked: "0.0"
+        locked: "0"
         avg_buy_price_modified: false
       bid_fee: "0.0015"
       ask_fee: "0.0015"
@@ -2180,11 +2284,11 @@ definitions:
         description: "화폐를 의미하는 영문 대문자 코드"
       balance:
         type: "string"
-        example: "1000000.0"
+        example: "1000000"
         description: "주문가능 금액/수량"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "주문 중 묶여있는 금액/수량"
       avg_buy_price:
         type: "string"
@@ -2201,10 +2305,10 @@ definitions:
     description: "매수 시 사용하는 화폐의 계좌 상태"
     example:
       unit_currency: "KRW"
-      balance: "1000000.0"
+      balance: "1000000"
       avg_buy_price: "101000"
       currency: "KRW"
-      locked: "0.0"
+      locked: "0"
       avg_buy_price_modified: false
   AskAccount:
     type: "object"
@@ -2215,11 +2319,11 @@ definitions:
         description: "화폐를 의미하는 영문 대문자 코드"
       balance:
         type: "string"
-        example: "1000000.0"
+        example: "1000000"
         description: "주문가능 금액/수량"
       locked:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "주문 중 묶여있는 금액/수량"
       avg_buy_price:
         type: "string"
@@ -2236,10 +2340,10 @@ definitions:
     description: "매도 시 사용하는 화폐의 계좌 상태"
     example:
       unit_currency: "KRW"
-      balance: "1000000.0"
+      balance: "1000000"
       avg_buy_price: "101000"
       currency: "KRW"
-      locked: "0.0"
+      locked: "0"
       avg_buy_price_modified: false
   Withdraw:
     type: "object"
@@ -2266,30 +2370,30 @@ definitions:
         description: "출금 상태"
       created_at:
         type: "string"
-        example: ""
+        example: "2019-02-28T15:17:51+09:00"
         description: "출금 생성 시간"
       done_at:
         type: "string"
-        example: ""
+        example: "2019-02-28T15:22:12+09:00"
         description: "출금 완료 시간"
       amount:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "출금 금액/수량"
       fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "출금 수수료"
       transaction_type:
         type: "string"
         example: "default"
         description: "출금 유형\n- default : 일반출금\n- internal : 바로출금  String\n"
     example:
-      amount: "1.0"
-      done_at: ""
-      fee: "0.0"
+      amount: "1"
+      done_at: "2019-02-28T15:22:12+09:00"
+      fee: "0"
       txid: "98c15999f0bdc4ae0e8a-ed35868bb0c204fe6ec29e4058a3451e-88636d1040f4baddf943274ce37cf9cc"
-      created_at: ""
+      created_at: "2019-02-28T15:17:51+09:00"
       currency: "XRP"
       state: "DONE"
       type: "withdraw"
@@ -2320,35 +2424,35 @@ definitions:
         description: "출금 상태"
       created_at:
         type: "string"
-        example: ""
+        example: "2019-02-28T15:17:51+09:00"
         description: "출금 생성 시간"
       done_at:
         type: "string"
-        example: ""
+        example: "2019-02-28T15:22:12+09:00"
         description: "출금 완료 시간"
       amount:
         type: "string"
-        example: "1.0"
+        example: "1"
         description: "출금 금액/수량"
       fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "출금 수수료"
       krw_amount:
         type: "string"
-        example: "80420.0"
+        example: "80420"
         description: "원화 환산 가격"
       transaction_type:
         type: "string"
         example: "default"
         description: "출금 유형\n- default : 일반출금\n- internal : 바로출금  String\n"
     example:
-      amount: "1.0"
-      done_at: ""
-      krw_amount: "80420.0"
-      fee: "0.0"
+      amount: "1"
+      done_at: "2019-02-28T15:22:12+09:00"
+      krw_amount: "80420"
+      fee: "0"
       txid: "98c15999f0bdc4ae0e8a-ed35868bb0c204fe6ec29e4058a3451e-88636d1040f4baddf943274ce37cf9cc"
-      created_at: ""
+      created_at: "2019-02-28T15:17:51+09:00"
       currency: "XRP"
       state: "DONE"
       type: "withdraw"
@@ -2367,12 +2471,12 @@ definitions:
         $ref: "#/definitions/WithdrawLimit"
     example:
       withdraw_limit:
-        daily: "10.0"
-        remaining_daily_krw: "0.0"
+        daily: "10"
+        remaining_daily_krw: "0"
         currency: "BTC"
         fixed: 0.80082819046101150206595775671303272247314453125
         can_withdraw: true
-        remaining_daily: "10.0"
+        remaining_daily: "10"
         minimum: "minimum"
         onetime: "onetime"
       currency:
@@ -2385,10 +2489,10 @@ definitions:
         wallet_state: "working"
       account:
         unit_currency: "KRW"
-        balance: "1000000.0"
+        balance: "1000000"
         avg_buy_price: "101000"
         currency: "KRW"
-        locked: "0.0"
+        locked: "0"
         avg_buy_price_modified: false
       member_level:
         bank_account_verified: true
@@ -2497,15 +2601,15 @@ definitions:
         description: "1회 출금 한도"
       daily:
         type: "string"
-        example: "10.0"
+        example: "10"
         description: "1일 출금 한도"
       remaining_daily:
         type: "string"
-        example: "10.0"
+        example: "10"
         description: "1일 잔여 출금 한도"
       remaining_daily_krw:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "통합 1일 잔여 출금 한도"
       fixed:
         type: "number"
@@ -2517,12 +2621,12 @@ definitions:
         description: "출금 지원 여부"
     description: "출금 제약 정보"
     example:
-      daily: "10.0"
-      remaining_daily_krw: "0.0"
+      daily: "10"
+      remaining_daily_krw: "0"
       currency: "BTC"
       fixed: 0.80082819046101150206595775671303272247314453125
       can_withdraw: true
-      remaining_daily: "10.0"
+      remaining_daily: "10"
       minimum: "minimum"
       onetime: "onetime"
   Deposit:
@@ -2550,30 +2654,30 @@ definitions:
         description: "입금 상태"
       created_at:
         type: "string"
-        example: ""
+        example: "2017-12-08T15:38:02+09:00"
         description: "입금 생성 시간"
       done_at:
         type: "string"
-        example: ""
+        example: "2019-02-28T15:22:12+09:00"
         description: "입금 완료 시간"
       amount:
         type: "string"
-        example: "100000.0"
+        example: "100000"
         description: "입금 수량"
       fee:
         type: "string"
-        example: "0.0"
+        example: "0"
         description: "입금 수수료"
       transaction_type:
         type: "string"
         example: "default"
         description: "입금 유형\n- default : 일반출금\n- internal : 바로입금\n"
     example:
-      amount: "100000.0"
-      done_at: ""
-      fee: "0.0"
+      amount: "100000"
+      done_at: "2019-02-28T15:22:12+09:00"
+      fee: "0"
       txid: "9e37c537-6849-4c8b-a134-57313f5dfc5a"
-      created_at: ""
+      created_at: "2017-12-08T15:38:02+09:00"
       currency: "KRW"
       state: "ACCEPTED"
       type: "deposit"
@@ -2636,11 +2740,11 @@ definitions:
         description: "마켓명"
       candle_date_time_utc:
         type: "string"
-        example: ""
+        example: "2018-04-18T10:16:00"
         description: "캔들 기준 시각 (UTC 기준)"
       candle_date_time_kst:
         type: "string"
-        example: ""
+        example: "2018-04-18T19:16:00"
         description: "캔들 기준 시각 (KST 기준)"
       opening_price:
         type: "number"
@@ -2691,11 +2795,11 @@ definitions:
         description: "마켓명"
       candle_date_time_utc:
         type: "string"
-        example: ""
+        example: "2021-01-05T00:00:00"
         description: "캔들 기준 시각 (UTC 기준)"
       candle_date_time_kst:
         type: "string"
-        example: ""
+        example: "2021-01-05T09:00:00"
         description: "캔들 기준 시각 (KST 기준)"
       opening_price:
         type: "number"
@@ -2761,11 +2865,11 @@ definitions:
         description: "마켓명"
       candle_date_time_utc:
         type: "string"
-        example: ""
+        example: "2021-01-04T00:00:00"
         description: "캔들 기준 시각 (UTC 기준)"
       candle_date_time_kst:
         type: "string"
-        example: ""
+        example: "2021-01-04T09:00:00"
         description: "캔들 기준 시각 (KST 기준)"
       opening_price:
         type: "number"
@@ -2804,7 +2908,7 @@ definitions:
         description: "누적 거래량"
       first_day_of_period:
         type: "string"
-        example: "2021-01-04T00:00:00.000+0000"
+        example: "2021-01-04T00:00:00.000Z"
         description: "캔들 기간의 가장 첫 날"
   TradeTicks:
     type: "object"
@@ -2815,7 +2919,7 @@ definitions:
         description: "마켓 구분 코드"
       trade_date_utc:
         type: "string"
-        example: "2021-01-05T00:00:00.000+0000"
+        example: "2021-01-05T00:00:00.000Z"
         description: "체결 일자 (UTC 기준)"
       trade_time_utc:
         type: "string"
@@ -2854,8 +2958,8 @@ definitions:
         type: "number"
         format: "int64"
         example: 1609853849000002
-        description: "체결 번호 (Unique)\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수\
-          \ 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
+        description: "체결 번호 (Unique)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일\
+          \ 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
   Ticker:
     type: "object"
     properties:
@@ -2960,7 +3064,7 @@ definitions:
         description: "52주 신고가"
       highest_52_week_date:
         type: "string"
-        example: "2021-01-03T00:00:00.000+0000"
+        example: "2021-01-03T00:00:00.000Z"
         description: "52주 신고가 달성일"
       lowest_52_week_price:
         type: "number"
@@ -2969,7 +3073,7 @@ definitions:
         description: "52주 신저가"
       lowest_52_week_date:
         type: "string"
-        example: "2020-03-13T00:00:00.000+0000"
+        example: "2020-03-13T00:00:00.000Z"
         description: "52주 신저가 달성일"
       timestamp:
         type: "number"
