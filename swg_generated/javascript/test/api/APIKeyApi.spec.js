@@ -56,7 +56,7 @@
               expect(data.accessKey).to.be.a('string');
               expect(data.accessKey).to.be("xxxxxxxxxxxxxxxxxxxxxxxx");
               expect(data.expireAt).to.be.a('string');
-              expect(data.expireAt).to.be("2021-03-09T12:39:39.000+0000");
+              expect(data.expireAt).to.be("2021-03-09T12:39:39.000Z");
             }
 
             done();

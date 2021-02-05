@@ -56,9 +56,9 @@
               expect(data.currency).to.be.a('string');
               expect(data.currency).to.be("KRW");
               expect(data.balance).to.be.a('string');
-              expect(data.balance).to.be("1000000.0");
+              expect(data.balance).to.be("1000000");
               expect(data.locked).to.be.a('string');
-              expect(data.locked).to.be("0.0");
+              expect(data.locked).to.be("0");
               expect(data.avgBuyPrice).to.be.a('string');
               expect(data.avgBuyPrice).to.be("101000");
               expect(data.avgBuyPriceModified).to.be.a('boolean');
@@ -100,7 +100,7 @@
               expect(data.blockHeight).to.be.a('number');
               expect(data.blockHeight).to.be(637432.0);
               expect(data.blockUpdatedAt).to.be.a('string');
-              expect(data.blockUpdatedAt).to.be("2020-07-03T02:04:45.523+0000");
+              expect(data.blockUpdatedAt).to.be("2020-07-03T02:04:45.523Z");
             }
 
             done();

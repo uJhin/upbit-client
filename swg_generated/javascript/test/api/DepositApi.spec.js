@@ -138,13 +138,13 @@
             expect(data.state).to.be.a('string');
             expect(data.state).to.be("ACCEPTED");
             expect(data.createdAt).to.be.a('string');
-            expect(data.createdAt).to.be("");
+            expect(data.createdAt).to.be("2017-12-08T15:38:02+09:00");
             expect(data.doneAt).to.be.a('string');
-            expect(data.doneAt).to.be("");
+            expect(data.doneAt).to.be("2019-02-28T15:22:12+09:00");
             expect(data.amount).to.be.a('string');
-            expect(data.amount).to.be("100000.0");
+            expect(data.amount).to.be("100000");
             expect(data.fee).to.be.a('string');
-            expect(data.fee).to.be("0.0");
+            expect(data.fee).to.be("0");
             expect(data.transactionType).to.be.a('string');
             expect(data.transactionType).to.be("default");
 
@@ -191,13 +191,13 @@
               expect(data.state).to.be.a('string');
               expect(data.state).to.be("ACCEPTED");
               expect(data.createdAt).to.be.a('string');
-              expect(data.createdAt).to.be("");
+              expect(data.createdAt).to.be("2017-12-08T15:38:02+09:00");
               expect(data.doneAt).to.be.a('string');
-              expect(data.doneAt).to.be("");
+              expect(data.doneAt).to.be("2019-02-28T15:22:12+09:00");
               expect(data.amount).to.be.a('string');
-              expect(data.amount).to.be("100000.0");
+              expect(data.amount).to.be("100000");
               expect(data.fee).to.be.a('string');
-              expect(data.fee).to.be("0.0");
+              expect(data.fee).to.be("0");
               expect(data.transactionType).to.be.a('string');
               expect(data.transactionType).to.be("default");
             }
