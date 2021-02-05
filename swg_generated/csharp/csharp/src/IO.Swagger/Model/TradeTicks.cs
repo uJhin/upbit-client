@@ -42,7 +42,7 @@ namespace IO.Swagger.Model
         /// <param name="prevClosingPrice">전일 종가.</param>
         /// <param name="changePrice">변화량.</param>
         /// <param name="askBid">매도/매수.</param>
-        /// <param name="sequentialId">체결 번호 (Unique) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. .</param>
+        /// <param name="sequentialId">체결 번호 (Unique)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. .</param>
         public TradeTicks(string market = default(string), string tradeDateUtc = default(string), string tradeTimeUtc = default(string), decimal? timestamp = default(decimal?), double? tradePrice = default(double?), double? tradeVolume = default(double?), double? prevClosingPrice = default(double?), double? changePrice = default(double?), string askBid = default(string), decimal? sequentialId = default(decimal?))
         {
             this.Market = market;
@@ -121,9 +121,9 @@ namespace IO.Swagger.Model
         public string AskBid { get; set; }
 
         /// <summary>
-        /// 체결 번호 (Unique) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
+        /// 체결 번호 (Unique)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
         /// </summary>
-        /// <value>체결 번호 (Unique) &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. </value>
+        /// <value>체결 번호 (Unique)  &#x60;sequential_id&#x60; 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. </value>
         [DataMember(Name="sequential_id", EmitDefaultValue=false)]
         public decimal? SequentialId { get; set; }
 
