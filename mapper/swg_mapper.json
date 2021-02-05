@@ -1500,6 +1500,9 @@
     "Error": {
       "type": "object",
       "properties": {
+        "error": {
+          "$ref": "#/definitions/ErrorInfo"
+        },
         "message": {
           "type": "string",
           "example": "error message",
