@@ -95,6 +95,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -155,6 +161,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -175,7 +187,7 @@
           "Account"
         ],
         "summary": "입출금 현황",
-        "description": "## 입출금 현황 및 블록 상태를 조회합니다.\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와 다를 수 있습니다.\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.\n본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.\n",
+        "description": "## 입출금 현황 및 블록 상태를 조회합니다.\n\n**NOTE**: 입출금 현황 데이터는 실제 서비스 상태와 다를 수 있습니다.\n\n입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.\n본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.\n",
         "operationId": "Account.wallet",
         "produces": [
           "application/json"
@@ -211,6 +223,12 @@
           },
           "404": {
             "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -287,6 +305,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -352,6 +376,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -372,7 +402,7 @@
           "Order"
         ],
         "summary": "개별 주문 조회",
-        "description": "## 주문 UUID를 통해 개별 주문건을 조회한다.\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
+        "description": "## 주문 UUID를 통해 개별 주문건을 조회한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
         "operationId": "Order.info",
         "produces": [
           "application/json"
@@ -424,6 +454,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -442,7 +478,7 @@
           "Order"
         ],
         "summary": "주문 취소 접수",
-        "description": "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
+        "description": "## 주문 UUID를 통해 해당 주문에 대한 취소 접수를 한다.\n\n**NOTE**: `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.\n",
         "operationId": "Order.cancel",
         "produces": [
           "application/json"
@@ -490,6 +526,12 @@
           },
           "404": {
             "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -623,6 +665,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -641,7 +689,7 @@
           "Order"
         ],
         "summary": "주문하기",
-        "description": "## 주문 요청을 한다.\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n원화 마켓에서 주문을 요청 할 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를 확인하여 값을 입력해주세요.\n**NOTE**: identifier 파라미터 사용\n`identifier`는 서비스에서 발급하는 `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주문 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n주문의 성공 / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주세요.\n**NOTE**: 시장가 주문\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설정해야됩니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n매도 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.\n",
+        "description": "## 주문 요청을 한다.\n\n**NOTE**: 원화 마켓 가격 단위를 확인하세요.\n\n원화 마켓에서 주문을 요청 할 경우, [원화 마켓 주문 가격 단위](https://docs.upbit.com/docs/market-info-trade-price-detail)를 확인하여 값을 입력해주세요.\n\n**NOTE**: identifier 파라미터 사용\n\n`identifier`는 서비스에서 발급하는 `uuid`가 아닌 이용자가 직접 발급하는 키값으로,\n주문을 조회하기 위해 할당하는 값입니다.\n해당 값은 사용자의 전체 주문 내 유일한 값을 전달해야하며,\n비록 주문 요청시 오류가 발생하더라도 같은 값으로 다시 요청을 보낼 수 없습니다.\n\n주문의 성공 / 실패 여부와 관계없이 중복해서 들어온 `identifier` 값에서는 중복 오류가 발생하니,\n매 요청시 새로운 값을 생성해주세요.\n\n**NOTE**: 시장가 주문\n\n시장가 주문은 `ord_type` 필드를 `price` or `market` 으로 설정해야됩니다.\n매수 주문의 경우 `ord_type`을 `price`로 설정하고 `volume`을 `null` 혹은 제외해야됩니다.\n매도 주문의 경우 `ord_type`을 `market`로 설정하고 `price`을 `null` 혹은 제외해야됩니다.\n",
         "operationId": "Order.new",
         "consumes": [
           "application/x-www-form-urlencoded",
@@ -677,7 +725,7 @@
           {
             "name": "price",
             "in": "formData",
-            "description": "주문 가격. (지정가, 시장가 매수 시 필수)\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로 거래할 경우, 값은 1000 이 된다.\nex) KRW-BTC 마켓에서 1BTC당 매도 1호가가 500 KRW 인 경우, 시장가 매수 시 값을 1000으로 세팅하면 2BTC가 매수된다.\n(수수료가 존재하거나 매도 1호가의 수량에 따라 상이할 수 있음)\n",
+            "description": "주문 가격. (지정가, 시장가 매수 시 필수)\n\nex) KRW-BTC 마켓에서 1BTC당 1,000 KRW로 거래할 경우, 값은 1000 이 된다.\nex) KRW-BTC 마켓에서 1BTC당 매도 1호가가 500 KRW 인 경우, 시장가 매수 시 값을 1000으로 세팅하면 2BTC가 매수된다.\n(수수료가 존재하거나 매도 1호가의 수량에 따라 상이할 수 있음)\n",
             "required": false,
             "type": "string",
             "default": "null"
@@ -730,6 +778,12 @@
           },
           "404": {
             "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -852,6 +906,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -931,6 +991,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -996,6 +1062,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1016,7 +1088,7 @@
           "Withdraw"
         ],
         "summary": "코인 출금하기",
-        "description": "## 코인 출금을 요청한다.\n**NOTE**: 바로출금 이용 시 유의사항\n업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.\n",
+        "description": "## 코인 출금을 요청한다.\n\n**NOTE**: 바로출금 이용 시 유의사항\n\n업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.\n반드시 주소를 확인 후 출금을 진행하시기 바랍니다.\n",
         "operationId": "Withdraw.coin",
         "consumes": [
           "multipart/form-data"
@@ -1092,6 +1164,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1156,6 +1234,12 @@
           },
           "404": {
             "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1278,6 +1362,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1357,6 +1447,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1377,7 +1473,7 @@
           "Deposit"
         ],
         "summary": "입금 주소 생성 요청",
-        "description": "입금 주소 생성을 요청한다.\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.\n",
+        "description": "입금 주소 생성을 요청한다.\n\n**NOTE**: 입금 주소 생성 요청 API 유의사항\n\n입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다.\n비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.\n주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.\n주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.\n정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.\n",
         "operationId": "Deposit.generate_coin_address",
         "consumes": [
           "multipart/form-data"
@@ -1431,6 +1527,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1451,7 +1553,7 @@
           "Deposit"
         ],
         "summary": "전체 입금 주소 조회",
-        "description": "## 내가 보유한 자산 리스트를 보여줍니다.\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
+        "description": "## 내가 보유한 자산 리스트를 보여줍니다.\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
         "operationId": "Deposit.coin_addresses",
         "produces": [
           "application/json"
@@ -1486,6 +1588,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1506,7 +1614,7 @@
           "Deposit"
         ],
         "summary": "개별 입금 주소 조회",
-        "description": "## 개별 입금 주소 조회\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
+        "description": "## 개별 입금 주소 조회\n\n**NOTE**: 입금 주소 조회 요청 API 유의사항\n\n입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.\n",
         "operationId": "Deposit.coin_address",
         "produces": [
           "application/json"
@@ -1547,6 +1655,12 @@
           },
           "404": {
             "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1611,6 +1725,12 @@
           },
           "404": {
             "description": "Status: Not Found\n",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1700,6 +1820,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Status: Internal Server Error\n",
             "schema": {
@@ -1751,7 +1877,7 @@
           {
             "name": "convertingPriceUnit",
             "in": "query",
-            "description": "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n`convertingPriceUnit` 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시\n종가를 명시된 파라미터 값으로 환산해 `converted_trade_price` 필드에 추가하여 반환합니다.\n현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다.\n",
+            "description": "종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)\n\n`convertingPriceUnit` 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시\n종가를 명시된 파라미터 값으로 환산해 `converted_trade_price` 필드에 추가하여 반환합니다.\n현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다.\n",
             "required": false,
             "type": "string",
             "default": "KRW"
@@ -1782,6 +1908,12 @@
           },
           "404": {
             "description": "Status: Not Found\n",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -1864,6 +1996,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Status: Internal Server Error\n",
             "schema": {
@@ -1942,6 +2080,12 @@
               "$ref": "#/definitions/Error"
             }
           },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "500": {
             "description": "Status: Internal Server Error\n",
             "schema": {
@@ -1993,7 +2137,7 @@
           {
             "name": "cursor",
             "in": "query",
-            "description": "페이지네이션 커서 (sequentialId)\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n",
+            "description": "페이지네이션 커서 (sequentialId)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n",
             "required": false,
             "type": "string"
           },
@@ -2031,6 +2175,12 @@
           },
           "404": {
             "description": "Status: Not Found\n",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -2094,6 +2244,12 @@
           },
           "404": {
             "description": "Status: Not Found\n",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -2410,7 +2566,7 @@
         },
         "created_at": {
           "type": "string",
-          "example": "2019-01-04T04:48:09.000Z",
+          "example": "2019-01-04T13:48:09+09:00",
           "description": "주문 생성 시간"
         },
         "volume": {
@@ -2491,7 +2647,7 @@
         },
         "created_at": {
           "type": "string",
-          "example": "2019-01-04T04:48:09.000Z",
+          "example": "2019-01-04T13:48:09+09:00",
           "description": "주문 생성 시간"
         },
         "volume": {
@@ -2650,7 +2806,7 @@
         },
         "max_total": {
           "type": "string",
-          "example": 100000000,
+          "example": "1.0E8",
           "description": "최대 매도/매수 금액"
         },
         "state": {
@@ -2803,12 +2959,12 @@
         },
         "created_at": {
           "type": "string",
-          "example": "2019-02-28T06:17:51.000Z",
+          "example": "2019-02-28T15:17:51+09:00",
           "description": "출금 생성 시간"
         },
         "done_at": {
           "type": "string",
-          "example": "2019-02-28T06:22:12.000Z",
+          "example": "2019-02-28T15:22:12+09:00",
           "description": "출금 완료 시간"
         },
         "amount": {
@@ -2858,12 +3014,12 @@
         },
         "created_at": {
           "type": "string",
-          "example": "2019-02-28T06:17:51.000Z",
+          "example": "2019-02-28T15:17:51+09:00",
           "description": "출금 생성 시간"
         },
         "done_at": {
           "type": "string",
-          "example": "2019-02-28T06:22:12.000Z",
+          "example": "2019-02-28T15:22:12+09:00",
           "description": "출금 완료 시간"
         },
         "amount": {
@@ -2963,7 +3119,7 @@
         },
         "withdraw_fee": {
           "type": "string",
-          "example": 0.0005,
+          "example": "5.0E-4",
           "description": "해당 화폐의 출금 수수료"
         },
         "is_coin": {
@@ -3064,12 +3220,12 @@
         },
         "created_at": {
           "type": "string",
-          "example": "2017-12-08T06:38:02.000Z",
+          "example": "2017-12-08T15:38:02+09:00",
           "description": "입금 생성 시간"
         },
         "done_at": {
           "type": "string",
-          "example": "2019-02-28T06:22:12.000Z",
+          "example": "2019-02-28T15:22:12+09:00",
           "description": "입금 완료 시간"
         },
         "amount": {
@@ -3158,12 +3314,12 @@
         },
         "candle_date_time_utc": {
           "type": "string",
-          "example": "2018-04-18T10:16:00.000Z",
+          "example": "2018-04-18T10:16:00",
           "description": "캔들 기준 시각 (UTC 기준)"
         },
         "candle_date_time_kst": {
           "type": "string",
-          "example": "2018-04-18T19:16:00.000Z",
+          "example": "2018-04-18T19:16:00",
           "description": "캔들 기준 시각 (KST 기준)"
         },
         "opening_price": {
@@ -3226,12 +3382,12 @@
         },
         "candle_date_time_utc": {
           "type": "string",
-          "example": "2021-01-05T00:00:00.000Z",
+          "example": "2021-01-05T00:00:00",
           "description": "캔들 기준 시각 (UTC 기준)"
         },
         "candle_date_time_kst": {
           "type": "string",
-          "example": "2021-01-05T09:00:00.000Z",
+          "example": "2021-01-05T09:00:00",
           "description": "캔들 기준 시각 (KST 기준)"
         },
         "opening_price": {
@@ -3311,12 +3467,12 @@
         },
         "candle_date_time_utc": {
           "type": "string",
-          "example": "2021-01-04T00:00:00.000Z",
+          "example": "2021-01-04T00:00:00",
           "description": "캔들 기준 시각 (UTC 기준)"
         },
         "candle_date_time_kst": {
           "type": "string",
-          "example": "2021-01-04T09:00:00.000Z",
+          "example": "2021-01-04T09:00:00",
           "description": "캔들 기준 시각 (KST 기준)"
         },
         "opening_price": {
@@ -3425,7 +3581,7 @@
           "type": "number",
           "format": "int64",
           "example": 1609853849000002,
-          "description": "체결 번호 (Unique)\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
+          "description": "체결 번호 (Unique)\n\n`sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.\n하지만 체결의 순서를 보장하지는 못합니다.\n"
         }
       }
     },
