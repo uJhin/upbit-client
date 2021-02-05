@@ -1502,6 +1502,7 @@
       "properties": {
         "error": {
           "type": "object",
+          "description": "HTTP Error",
           "properties": {}
         }
       }
