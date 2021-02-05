@@ -23,7 +23,7 @@ package io.swagger.client.models
  * @param prev_closing_price 전일 종가
  * @param change_price 변화량
  * @param ask_bid 매도/매수
- * @param sequential_id 체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
+ * @param sequential_id 체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다. 
  */
 data class TradeTicks (
     /* 마켓 구분 코드 */
@@ -44,7 +44,7 @@ data class TradeTicks (
     val change_price: kotlin.Double? = null,
     /* 매도/매수 */
     val ask_bid: kotlin.String? = null,
-    /* 체결 번호 (Unique) `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  */
+    /* 체결 번호 (Unique)  `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다. 하지만 체결의 순서를 보장하지는 못합니다.  */
     val sequential_id: java.math.BigDecimal? = null
 ) {
 
