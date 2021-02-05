@@ -1501,7 +1501,8 @@
       "type": "object",
       "properties": {
         "error": {
-          "$ref": "#/definitions/ErrorInfo"
+          "type": "object",
+          "properties": {}
         }
       }
     },
