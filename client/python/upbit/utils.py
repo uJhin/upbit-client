@@ -86,5 +86,5 @@ class Validator:
         elif price > 2_000_000:
             unit = 1000
         else:
-            raise ValueError('Invaild Price')
+            raise ValueError('Invalid Price')
         return price - (price % unit)
