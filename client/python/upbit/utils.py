@@ -19,8 +19,11 @@ class HTTPFutureExtractor:
         remaining = headers['Remaining-Req']
         return {
             k: v
-            for k, v in
-            [param.split('=') for param in remaining.split('; ')]
+            for k, v in [
+                param.split('=')
+                for param
+                in remaining.split('; ')
+            ]
         }
 
     @staticmethod
