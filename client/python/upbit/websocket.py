@@ -43,7 +43,7 @@ class UpbitWebSocket:
         codes = [
             f"{currency}.{count}"
             for currency, count
-            in list(zip(currencies, counts))
+            in zip(currencies, counts)
         ] if counts else currencies
         return codes
 
