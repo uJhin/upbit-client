@@ -1,5 +1,5 @@
 
-from upbit.models import *
+from .models import *
 
 
 class Upbit:

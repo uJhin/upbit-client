@@ -2,9 +2,13 @@
 import jwt
 import hashlib
 import uuid
+
 from urllib.parse import urlencode
 
 from bravado.requests_client import Authenticator
+
+
+QUOTATION_PARAMS = ['uuids', 'txids', 'identifiers']
 
 
 class APIKeyAuthenticator(Authenticator):
@@ -51,19 +55,18 @@ class APIKeyAuthenticator(Authenticator):
         return authorize_token
 
     def generate_query(self, params):
-        quotation_params = ['uuids', 'txids', 'identifiers']
         query = urlencode({
             k: v
             for k, v in params.items()
-            if k not in quotation_params
+            if k not in QUOTATION_PARAMS
         })
-        for q_param in quotation_params:
-            if params.get(q_param):
-                param = params.pop(q_param)
-                params[f"{q_param}[]"] = param
+        for quotation in QUOTATION_PARAMS:
+            if params.get(quotation):
+                param = params.pop(quotation)
+                params[f"{quotation}[]"] = param
                 query_params = '&'.join([
-                    f"{q_param}[]={q}"
-                    for q in q_param
+                    f"{quotation}[]={q}"
+                    for q in quotation
                 ])
                 query = f"{query}&{query_params}" if query else query_params
         return query
