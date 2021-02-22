@@ -10,7 +10,7 @@ WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
 
 
 class UpbitWebSocket:
-    f"""
+    """
     Upbit WebSocket Client
     Please read the official Upbit Client document.
     Documents: https://ujhin.github.io/upbit-client-docs/

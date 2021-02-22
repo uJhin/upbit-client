@@ -8,7 +8,7 @@ __all__         = ['client', 'websocket']
 __module_name__ = 'upbit-client'
 
 __open_api_version__ = '1.1.7'
-__version__          = __open_api_version__+'.2'
+__version__          = __open_api_version__+'.3'
 __released_version__ = Version.get_versions(__module_name__)
 __latest_version__   = __released_version__[0]
 
