@@ -10,8 +10,25 @@ WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
 
 
 class UpbitWebSocket:
+    f"""
+    Upbit WebSocket Client
+    Please read the official Upbit Client document.
+    Documents: https://ujhin.github.io/upbit-client-docs/
 
-    def __init__(self, uri=None, ping_inverval=None, ping_timeout=None):
+    - Base URI: {WEBSOCKET_URI}
+    - Author: ujhin
+    - Email: ujhin942@gmail.com
+    - GitHub: https://github.com/uJhin
+    - Official OPEN API Documents: https://docs.upbit.com
+    - Official Support Email: open-api@upbit.com
+    """
+
+    def __init__(
+        self,
+        uri: Union[str] = None,
+        ping_inverval: Union[int, float] = None,
+        ping_timeout: Union[int, float] = None
+    ):
         self.__uri = uri if uri else WEBSOCKET_URI
         self.__conn = websockets.connect(
             uri=self.URI,

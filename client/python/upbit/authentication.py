@@ -13,7 +13,13 @@ QUOTATION_PARAMS = ['uuids', 'txids', 'identifiers']
 
 class APIKeyAuthenticator(Authenticator):
 
-    def __init__(self, host, access_key, secret_key):
+    def __init__(
+        self,
+        host: str,
+        access_key: str,
+        secret_key: str
+    ):
+
         super(APIKeyAuthenticator, self).__init__(host)
         self.host = host
         self.access_key = access_key

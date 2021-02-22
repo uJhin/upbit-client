@@ -1,16 +1,19 @@
 
-from .models import *
+from . import models
+
+
+OPEN_API_VERSION = '1.1.7'
 
 
 class Upbit:
-    """
+    f"""
     Upbit Client
     Please read the official Upbit Client document.
     Documents: https://ujhin.github.io/upbit-client-docs/
 
-    - Base URL: https://api.upbit.com
+    - Base URL: {models.HOST}
     - Base Path: /v1
-    - Upbit OPEN API Version: 1.1.6
+    - Upbit OPEN API Version: {OPEN_API_VERSION}
     - Author: ujhin
     - Email: ujhin942@gmail.com
     - GitHub: https://github.com/uJhin
@@ -18,19 +21,30 @@ class Upbit:
     - Official Support Email: open-api@upbit.com
     """
 
-    def __init__(self, access_key: str = None, secret_key: str = None, **kwargs):
-        self.__client = ClientModel(access_key=access_key, secret_key=secret_key, **kwargs).UpbitClient
-        self.APIKey = APIKey(self.__client)
-        self.Account = Account(self.__client)
-        self.Candle = Candle(self.__client)
-        self.Deposit = Deposit(self.__client)
-        self.Market = Market(self.__client)
-        self.Order = Order(self.__client)
-        self.Trade = Trade(self.__client)
-        self.Withdraw = Withdraw(self.__client)
+    def __init__(
+        self,
+        access_key: str = None,
+        secret_key: str = None,
+        **kwargs
+    ):
+
+        self.__client = models.ClientModel(
+            access_key=access_key,
+            secret_key=secret_key,
+            **kwargs
+        ).SWGClient
+
+        self.APIKey = models.APIKey(self.__client)
+        self.Account = models.Account(self.__client)
+        self.Candle = models.Candle(self.__client)
+        self.Deposit = models.Deposit(self.__client)
+        self.Market = models.Market(self.__client)
+        self.Order = models.Order(self.__client)
+        self.Trade = models.Trade(self.__client)
+        self.Withdraw = models.Withdraw(self.__client)
 
     def __str__(self):
-        return f"UpbitClient({HOST})"
+        return self.__repr__()
 
     def __repr__(self):
-        return f"UpbitClient({HOST})"
+        return f"UpbitClient({models.HOST})"

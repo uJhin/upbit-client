@@ -1,6 +1,6 @@
 
-from bravado.requests_client import RequestsClient as rc
-from bravado.client import SwaggerClient as sc
+from bravado.requests_client import RequestsClient
+from bravado.client import SwaggerClient
 
 from .authentication import APIKeyAuthenticator
 from .utils import HTTPFutureExtractor
@@ -11,8 +11,17 @@ SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg
 
 
 class ClientModel:
+    """
+    Client Base Model
+    """
 
-    def __init__(self, access_key: str = None, secret_key: str = None, **kwargs):
+    def __init__(
+        self,
+        access_key: str = None,
+        secret_key: str = None,
+        **kwargs
+    ):
+
         arg_config = kwargs.get('config')
         arg_spec_uri = kwargs.get('spec_uri')
         config = {
@@ -25,19 +34,28 @@ class ClientModel:
 
         if access_key and secret_key:
 
-            request_client = rc()
+            request_client = RequestsClient()
             request_client.authenticator = APIKeyAuthenticator(
-                config['host'], access_key, secret_key)
+                host=config['host'],
+                access_key=access_key,
+                secret_key=secret_key
+            )
 
-            self.__client = sc.from_url(
-                spec_url=spec_uri, http_client=request_client, config=config)
+            self.__client = SwaggerClient.from_url(
+                spec_url=spec_uri,
+                http_client=request_client,
+                config=config
+            )
 
         else:
 
-            self.__client = sc.from_url(spec_url=spec_uri, config=config)
+            self.__client = SwaggerClient.from_url(
+                spec_url=spec_uri,
+                config=config
+            )
 
     @property
-    def UpbitClient(self):
+    def SWGClient(self):
         return self.__client
 
 
@@ -55,6 +73,7 @@ class APIKey:
         
         ## API 키 목록 및 만료 일자를 조회합니다.
         """
+
         future = self.__client.APIKey.APIKey_info()
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -73,6 +92,7 @@ class Account:
         
         ## 내가 보유한 자산 리스트를 보여줍니다.
         """
+
         future = self.__client.Account.Account_info()
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -87,6 +107,7 @@ class Account:
         입출금 현황 API에서 제공하는 입출금 상태, 블록 상태 정보는 수 분 정도 지연되어 반영될 수 있습니다.
         본 API는 참고용으로만 사용하시길 바라며 실제 입출금을 수행하기 전에는 반드시 업비트 공지사항 및 입출금 현황 페이지를 참고해주시기 바랍니다.
         """
+
         future = self.__client.Account.Account_wallet()
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -120,6 +141,7 @@ class Candle:
         :param count: 캔들 개수 (최대 200개까지 요청 가능) (optional)
         :type count: number
         """
+
         future = self.__client.Candle.Candle_minutes(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -146,6 +168,7 @@ class Candle:
         현재는 원화(`KRW`) 로 변환하는 기능만 제공하며 추후 기능을 확장할 수 있습니다. (Default: KRW) (optional)
         :type convertingPriceUnit: str
         """
+
         future = self.__client.Candle.Candle_days(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -166,6 +189,7 @@ class Candle:
         :param count: 캔들 개수 (optional)
         :type count: number
         """
+
         future = self.__client.Candle.Candle_weeks(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -186,6 +210,7 @@ class Candle:
         :param count: 캔들 개수 (optional)
         :type count: number
         """
+
         future = self.__client.Candle.Candle_month(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -211,6 +236,7 @@ class Deposit:
         :param currency: Currency symbol
         :type currency: str
         """
+
         future = self.__client.Deposit.Deposit_coin_address(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -223,6 +249,7 @@ class Deposit:
 
         입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.
         """
+
         future = self.__client.Deposit.Deposit_coin_addresses()
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -244,6 +271,7 @@ class Deposit:
         :param currency: Currency 코드
         :type currency: string
         """
+
         future = self.__client.Deposit.Deposit_generate_coin_address(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -262,6 +290,7 @@ class Deposit:
         :param currency: Currency 코드 (optional)
         :type currency: string
         """
+
         future = self.__client.Deposit.Deposit_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -300,6 +329,7 @@ class Deposit:
         - desc : 내림차순 (default)
         :type order_by: str
         """
+
         future = self.__client.Deposit.Deposit_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -321,6 +351,7 @@ class Market:
         :param isDetails: 유의종목 필드과 같은 상세 정보 노출 여부(선택 파라미터)(Default: False) (optional)
         :type isDetails: bool
         """
+
         future = self.__client.Market.Market_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -341,6 +372,7 @@ class Order:
 
         :param markets: 마켓 코드 목록 (ex. [KRW-BTC, KRW-ADA])
         """
+
         future = self.__client.Order.Order_orderbook(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -352,6 +384,7 @@ class Order:
 
         :param market: Market ID
         """
+
         future = self.__client.Order.Order_chance(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
@@ -369,6 +402,7 @@ class Order:
         :param identifier: 조회용 사용자 지정 값 (optional)
         :type identifier: str
         """
+
         future = self.__client.Order.Order_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
@@ -407,6 +441,7 @@ class Order:
         - desc : 내림차순 (default)
         :type order_by: str
         """
+
         future = self.__client.Order.Order_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
@@ -457,6 +492,7 @@ class Order:
         :param identifier: 조회용 사용자 지정값 (선택) (optional)
         :type identifier: str
         """
+
         future = self.__client.Order.Order_new(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
     
@@ -474,6 +510,7 @@ class Order:
         :param identifier: 조회용 사용자 지정 값 (optional)
         :type identifier: string
         """
+
         future = self.__client.Order.Order_cancel(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -497,6 +534,7 @@ class Trade:
         :param markets: 반점으로 구분되는 마켓 코드 (ex. KRW-BTC, BTC-BCC)
         :type markets: str
         """
+
         future = self.__client.Trade.Trade_ticker(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -526,6 +564,7 @@ class Trade:
         비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7) (optional)
         :type daysAgo: number
         """
+
         future = self.__client.Trade.Trade_ticks(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -547,6 +586,7 @@ class Withdraw:
         :param currency: Currency Symbol
         :type currency: str
         """
+
         future = self.__client.Withdraw.Withdraw_chance(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -578,6 +618,7 @@ class Withdraw:
         - internal : 바로출금
         :type transaction_type: str
         """
+
         future = self.__client.Withdraw.Withdraw_coin(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -596,6 +637,7 @@ class Withdraw:
         :param currency: Currency 코드 (optional)
         :type currency: str
         """
+
         future = self.__client.Withdraw.Withdraw_info(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -636,6 +678,7 @@ class Withdraw:
         - desc : 내림차순 (default)
         :type order_by: str
         """
+
         future = self.__client.Withdraw.Withdraw_info_all(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
@@ -648,5 +691,6 @@ class Withdraw:
         :param amount: 출금 원화 수량
         :type amount: str
         """
+
         future = self.__client.Withdraw.Withdraw_krw(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
