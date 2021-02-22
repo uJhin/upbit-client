@@ -9,6 +9,7 @@ from bravado.requests_client import Authenticator
 
 
 QUOTATION_PARAMS = ['uuids', 'txids', 'identifiers']
+MAPPER           = 'swg_mapper.json'
 
 
 class APIKeyAuthenticator(Authenticator):
@@ -21,12 +22,13 @@ class APIKeyAuthenticator(Authenticator):
     ):
 
         super(APIKeyAuthenticator, self).__init__(host)
+
         self.host = host
         self.access_key = access_key
         self.secret_key = secret_key
 
     def matches(self, url):
-        return 'swg_mapper.json' not in url
+        return MAPPER not in url
 
     def apply(self, request):
         request.headers['User-Agent'] = "ujhin's Upbit SDKs"

@@ -6,7 +6,7 @@ from .authentication import APIKeyAuthenticator
 from .utils import HTTPFutureExtractor
 
 
-HOST = "https://api.upbit.com"
+HOST     = "https://api.upbit.com"
 SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg_mapper.json"
 
 

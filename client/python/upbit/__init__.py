@@ -1,15 +1,16 @@
 
 import logging
 
-from upbit.utils import Version
+from .utils import Version
 
 
-__all__ = ['client', 'websocket']
+__all__         = ['client', 'websocket']
 __module_name__ = 'upbit-client'
 
-__version__ = '1.1.7.1'
+__open_api_version__ = '1.1.7'
+__version__          = __open_api_version__+'.2'
 __released_version__ = Version.get_versions(__module_name__)
-__latest_version__ = __released_version__[0]
+__latest_version__   = __released_version__[0]
 
 
 if __latest_version__ != __version__:

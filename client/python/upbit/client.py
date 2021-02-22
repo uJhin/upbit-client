@@ -2,18 +2,15 @@
 from . import models
 
 
-OPEN_API_VERSION = '1.1.7'
-
-
 class Upbit:
-    f"""
+    """
     Upbit Client
     Please read the official Upbit Client document.
     Documents: https://ujhin.github.io/upbit-client-docs/
 
-    - Base URL: {models.HOST}
+    - Base URL: https://api.upbit.com
     - Base Path: /v1
-    - Upbit OPEN API Version: {OPEN_API_VERSION}
+    - Upbit OPEN API Version: 1.1.7
     - Author: ujhin
     - Email: ujhin942@gmail.com
     - GitHub: https://github.com/uJhin

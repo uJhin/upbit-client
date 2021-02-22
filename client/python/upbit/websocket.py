@@ -15,7 +15,7 @@ class UpbitWebSocket:
     Please read the official Upbit Client document.
     Documents: https://ujhin.github.io/upbit-client-docs/
 
-    - Base URI: {WEBSOCKET_URI}
+    - Base URI: wss://api.upbit.com/websocket/v1
     - Author: ujhin
     - Email: ujhin942@gmail.com
     - GitHub: https://github.com/uJhin
