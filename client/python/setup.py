@@ -11,9 +11,9 @@ with open('README.rst') as readme:
 
 
 setup(
-    name             = 'upbit_client',
-    version          = version,
-    packages         = find_packages(),
+    name     = 'upbit_client',
+    version  = version,
+    packages = find_packages(),
     install_requires = [
         'bravado>=11.0.2',
         'PyJWT>=2.0',
