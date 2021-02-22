@@ -70,7 +70,7 @@ git clone https://github.com/uJhin/upbit-client.git
 ```
 
 
-### Simple Examples
+### Quick Start
 #### REST Client
 - Check Your API Keys
 ```python
@@ -161,7 +161,7 @@ payload = sock.generate_payload(
 )
 
 event_loop = asyncio.get_event_loop()
-event_loop.run_until_complete(ticker(sock, payload))
+event_loop.run_until_complete( ticker(sock, payload) )
 ```
 
 ### Donation
