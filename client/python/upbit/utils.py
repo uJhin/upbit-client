@@ -1,7 +1,4 @@
 
-import requests
-
-from distutils.version import LooseVersion
 from typing import Union
 
 
@@ -35,17 +32,6 @@ class HTTPFutureExtractor:
             "remaining_request": remaining,
             "result": resp.json()
         }
-
-
-class Version:
-
-    @staticmethod
-    def get_versions(package_name):
-        url = f"https://pypi.org/pypi/{package_name}/json"
-        resp = requests.get(url)
-        data = resp.json()
-        versions = data["releases"].keys()
-        return sorted(versions, key=LooseVersion, reverse=True)
 
 
 class Validator:
