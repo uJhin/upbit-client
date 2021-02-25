@@ -26,13 +26,14 @@ class UpbitWebSocket:
     def __init__(
         self,
         uri: Union[str] = None,
-        ping_inverval: Union[int, float] = None,
+        ping_interval: Union[int, float] = None,
         ping_timeout: Union[int, float] = None
     ):
+
         self.__uri = uri if uri else WEBSOCKET_URI
-        self.__conn = websockets.connect(
-            uri=self.URI,
-            ping_interval=ping_inverval,
+        self.__conn = None
+        self.connect(
+            ping_interval=ping_interval,
             ping_timeout=ping_timeout
         )
 
@@ -47,16 +48,35 @@ class UpbitWebSocket:
     @property
     def Connection(self):
         return self.__conn
-    
+
     @Connection.setter
     def Connection(self, conn):
         self.__conn = conn
+
+    def connect(
+        self,
+        ping_interval: Union[int, float] = None,
+        ping_timeout: Union[int, float] = None
+    ):
+        self.Connection = websockets.connect(
+            uri=self.URI,
+            ping_interval=ping_interval,
+            ping_timeout=ping_timeout
+        )
 
     @staticmethod
     def generate_orderbook_codes(
         currencies: Union[List[str]],
         counts: Union[List[int]] = None
     ) -> List[str]:
+        """
+        :param currencies: 수신할 `orderbook` field 마켓 코드 리스트
+        :type currencies: list[str, ...]
+
+        :param counts: 각 마켓 코드 리스트의 index에 해당하는 수신할 `orderbook` 갯수
+        :type counts: list[int, ...]
+        """
+
         codes = [
             f"{currency}.{count}"
             for currency, count
@@ -84,6 +104,7 @@ class UpbitWebSocket:
         :param isOnlyRealtime: 실시간 시세만 제공 여부
         :type isOnlyRealtime: bool
         """
+
         field = {}
 
         if type in ['ticker', 'trade', 'orderbook']:
@@ -117,6 +138,7 @@ class UpbitWebSocket:
         :param ticket: 식별값
         :type ticket: str
         """
+
         payload = []
 
         ticket = ticket if ticket else str(uuid.uuid4())
@@ -135,3 +157,9 @@ class UpbitWebSocket:
 
     async def __aexit__(self, exc_type, exc_value, traceback) -> None:
         await self.Connection.__aexit__(exc_type, exc_value, traceback)
+    
+    def __str__(self):
+        return self.__repr__()
+
+    def __repr__(self):
+        return f"UpbitWebSocket({self.URI})"
