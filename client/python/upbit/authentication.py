@@ -31,11 +31,13 @@ class APIKeyAuthenticator(Authenticator):
         return MAPPER not in url
 
     def apply(self, request):
-        request.headers['User-Agent'] = "ujhin's Upbit SDKs"
+        payload = self.generate_payload(request)
+
+        request.headers['User-Agent'     ] = "ujhin's Upbit SDKs"
         request.headers['Accept-Encoding'] = 'gzip, deflate'
-        request.headers['Accept'] = '*/*'
-        request.headers['Connection'] = 'keep-alive'
-        request.headers['Authorization'] = self.generate_payload(request)
+        request.headers['Accept'         ] = '*/*'
+        request.headers['Connection'     ] = 'keep-alive'
+        request.headers['Authorization'  ] = payload
         return request
 
     def generate_payload(self, request):
@@ -51,11 +53,11 @@ class APIKeyAuthenticator(Authenticator):
         if params:
             query = self.generate_query(params)
 
-            h = hashlib.sha512()
-            h.update(query.encode())
-            query_hash = h.hexdigest()
+            sha512 = hashlib.sha512()
+            sha512.update(query.encode())
+            query_hash = sha512.hexdigest()
 
-            payload['query_hash'] = query_hash
+            payload['query_hash'    ] = query_hash
             payload['query_hash_alg'] = 'SHA512'
 
         jwt_token = jwt.encode(payload, self.secret_key)

@@ -139,7 +139,7 @@ class Candle:
         :type to: str
 
         :param count: 캔들 개수 (최대 200개까지 요청 가능) (optional)
-        :type count: number
+        :type count: int
         """
 
         future = self.__client.Candle.Candle_minutes(**kwargs)
@@ -160,7 +160,7 @@ class Candle:
         :type to: str
 
         :param count: 캔들 개수 (optional)
-        :type count: number
+        :type count: int
 
         :param convertingPriceUnit: 종가 환산 화폐 단위 (생략 가능, KRW로 명시할 시 원화 환산 가격을 반환.)
         `convertingPriceUnit` 파라미터의 경우, 원화 마켓이 아닌 다른 마켓(ex. BTC, ETH)의 일봉 요청 시
@@ -187,7 +187,7 @@ class Candle:
         :type to: str
 
         :param count: 캔들 개수 (optional)
-        :type count: number
+        :type count: int
         """
 
         future = self.__client.Candle.Candle_weeks(**kwargs)
@@ -208,7 +208,7 @@ class Candle:
         :type to: str
         
         :param count: 캔들 개수 (optional)
-        :type count: number
+        :type count: int
         """
 
         future = self.__client.Candle.Candle_month(**kwargs)
@@ -269,7 +269,7 @@ class Deposit:
 
 
         :param currency: Currency 코드
-        :type currency: string
+        :type currency: str
         """
 
         future = self.__client.Deposit.Deposit_generate_coin_address(**kwargs)
@@ -282,13 +282,13 @@ class Deposit:
         ## 개별 입금 조회
 
         :param uuid: 입금 UUID (optional)
-        :type uuid: string
+        :type uuid: str
 
         :param txid: 입금 TXID (optional)
-        :type txid: string
+        :type txid: str
 
         :param currency: Currency 코드 (optional)
-        :type currency: string
+        :type currency: str
         """
 
         future = self.__client.Deposit.Deposit_info(**kwargs)
@@ -319,10 +319,10 @@ class Deposit:
         :type txids: list
 
         :param limit: 개수 제한 (default: 100, max: 100) (optional)
-        :type limit: number
+        :type limit: int
 
         :param page: 페이지 수, default: 1 (optional)
-        :type page: number
+        :type page: int
 
         :param order_by: 정렬 방식 (optional)
         - asc : 오름차순
@@ -431,10 +431,10 @@ class Order:
         :type identifiers: array
 
         :param page: 페이지 수, default: 1 (optional)
-        :type page: number
+        :type page: int
 
         :param limit: 요청 개수, default: 100 (optional)
-        :type limit: number
+        :type limit: int
 
         :param order_by: 정렬 방식 (optional)
         - asc : 오름차순
@@ -505,10 +505,10 @@ class Order:
         [NOTE] `uuid` 혹은 `identifier` 둘 중 하나의 값이 반드시 포함되어야 합니다.
         
         :param uuid: 취소할 주문의 UUID (optional)
-        :type uuid: string
+        :type uuid: str
 
         :param identifier: 조회용 사용자 지정 값 (optional)
-        :type identifier: string
+        :type identifier: str
         """
 
         future = self.__client.Order.Order_cancel(**kwargs)
@@ -553,7 +553,7 @@ class Trade:
         :type to: str
 
         :param count: 체결 개수 (optional)
-        :type count: number
+        :type count: int
 
         :param cursor: 페이지네이션 커서 (sequentialId)
         `sequential_id` 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.
@@ -562,7 +562,7 @@ class Trade:
 
         :param daysAgo: 최근 체결 날짜 기준 7일 이내의 이전 데이터 조회 가능.
         비워서 요청 시 가장 최근 체결 날짜 반환. (범위: 1 ~ 7) (optional)
-        :type daysAgo: number
+        :type daysAgo: int
         """
 
         future = self.__client.Trade.Trade_ticks(**kwargs)
@@ -611,7 +611,7 @@ class Withdraw:
         :type address: str
 
         :param secondary_address: 2차 출금 주소 (필요한 코인에 한해서) (optional)
-        :type secondary_address: string
+        :type secondary_address: str
 
         :param transaction_type: 출금 유형 (optional)
         - default : 일반출금
@@ -648,7 +648,7 @@ class Withdraw:
         ## 출금 리스트를 조회한다.
 
         :param currency: Currency 코드 (optional)
-        :type currency: string
+        :type currency: str
 
         :param state: 출금 상태 (optional)
         - submitting : 처리 중
@@ -659,7 +659,7 @@ class Withdraw:
         - processing : 처리 중
         - done : 완료
         - canceled : 취소됨
-        :type state: string
+        :type state: str
 
         :param uuids: 출금 UUID의 목록 (optional)
         :type uuids: list
@@ -668,10 +668,10 @@ class Withdraw:
         :type txids: list
 
         :param limit: 개수 제한 (default: 100, max: 100) (optional)
-        :type limit: number
+        :type limit: int
 
         :param page: 페이지 수, default: 1 (optional)
-        :type page: number
+        :type page: int
 
         :param order_by: 정렬 방식 (optional)
         - asc : 오름차순
