@@ -8,6 +8,9 @@ from typing import Union, List
 
 WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
 
+FIELD_TYPES   = ['ticker', 'trade', 'orderbook']
+FIELD_FORMATS = ['SIMPLE', 'DEFAULT']
+
 
 class UpbitWebSocket:
     """
@@ -58,6 +61,14 @@ class UpbitWebSocket:
         ping_interval: Union[int, float] = None,
         ping_timeout: Union[int, float] = None
     ):
+        """
+        :param ping_interval: ping 간격 제한
+        :type ping_interval: Union[int, float]
+
+        :param ping_timeout: ping 시간 초과 제한
+        :type ping_timeout: Union[int, float]
+        """
+
         self.Connection = websockets.connect(
             uri=self.URI,
             ping_interval=ping_interval,
@@ -107,7 +118,7 @@ class UpbitWebSocket:
 
         field = {}
 
-        if type in ['ticker', 'trade', 'orderbook']:
+        if type in FIELD_TYPES:
             field["type"] = type
         else:
             raise ValueError("'type' is not available")
@@ -147,7 +158,7 @@ class UpbitWebSocket:
         payload.extend(type_fields)
 
         fmt = format.upper()
-        fmt = fmt if fmt in ['SIMPLE', 'DEFAULT'] else 'DEFAULT'
+        fmt = fmt if fmt in FIELD_FORMATS else 'DEFAULT'
         payload.append({"format": fmt})
 
         return json.dumps(payload)

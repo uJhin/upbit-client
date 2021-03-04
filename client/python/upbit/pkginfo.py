@@ -29,7 +29,7 @@ def _get_versions(package_name):
 PACKAGE_NAME     = 'upbit-client'
 
 OPEN_API_VERSION = '1.1.7'
-CURRENT_VERSION  = OPEN_API_VERSION+'.5'
+CURRENT_VERSION  = OPEN_API_VERSION+'.6'
 
 RELEASED_VERSION = _get_versions(PACKAGE_NAME)
 LATEST_VERSION   = RELEASED_VERSION[0]
@@ -37,8 +37,8 @@ LATEST_VERSION   = RELEASED_VERSION[0]
 
 if LATEST_VERSION != CURRENT_VERSION:
     logging.basicConfig(format="[%(levelname)s] %(message)s")
-    logging.warning(f"""
-        {PACKAGE_NAME} is currently a newer version: {LATEST_VERSION}\n
-        Please update to the latest version using the pip command: 
-        `pip install --upgrade {PACKAGE_NAME}`
-    """)
+    logging.warning(
+        f"{PACKAGE_NAME} is currently a newer version: {LATEST_VERSION}\n"
+        f"Please update to the latest version using the pip command:" 
+        f"`pip install --upgrade {PACKAGE_NAME}`"
+    )
