@@ -27,11 +27,33 @@ class HTTPFutureExtractor:
     def future_extraction(http_future) -> dict:
         resp = http_future.future.result()
         remaining = HTTPFutureExtractor.remaining_request(resp.headers)
+
         # resp.raise_for_status()
-        return {
+
+        result = {
             "remaining_request": remaining,
-            "result": resp.json()
+            "response": {
+                "url": resp.url,
+                "headers": resp.headers,
+                "status_code": resp.status_code,
+                "reason": resp.reason,
+                "text": resp.text,
+                "content": resp.content,
+                "ok": resp.ok
+            }
         }
+
+        try:
+            result['result'] = resp.json()
+        except:
+            result['result'] = {
+                "error": {
+                    "message": resp.text,
+                    "name": resp.reason
+                }
+            }
+        finally:
+            return result
 
 
 class Validator:
