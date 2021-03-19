@@ -81,7 +81,7 @@ class APIKeyAuthenticator(Authenticator):
                 params[f"{query_param}[]"] = param
                 query_params = '&'.join([
                     f"{query_param}[]={q}"
-                    for q in query_param
+                    for q in param
                 ])
                 query = f"{query}&{query_params}" if query else query_params
         return query
