@@ -412,6 +412,15 @@ class Order:
 
         ## 주문 리스트를 조회한다.
 
+        [NOTE] states 파라미터 변경 안내 (2021. 03. 22 ~)
+
+        2021년 3월 22일부터 미체결 주문(wait, watch)과 완료 주문(done, cancel)을 혼합하여 조회하실 수 없습니다.
+
+        예시1) done, cancel 주문을 한 번에 조회 => 가능
+        예시2) wait, done 주문을 한 번에 조회 => 불가능 (각각 API 호출 필요)
+
+        자세한 내용은 개발자 센터 공지사항을 참조 부탁드립니다.
+
         :param market: 마켓 아이디 (optional)
         :type market: str
 
