@@ -8,7 +8,7 @@ from urllib.parse import urlencode
 from bravado.requests_client import Authenticator
 
 
-QUOTATION_PARAMS = ['uuids', 'txids', 'identifiers']
+QUOTATION_PARAMS = ['uuids', 'txids', 'identifiers', 'states']
 MAPPER           = 'swg_mapper.json'
 
 

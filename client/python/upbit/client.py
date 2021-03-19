@@ -10,7 +10,7 @@ class Upbit:
 
     - Base URL: https://api.upbit.com
     - Base Path: /v1
-    - Upbit OPEN API Version: 1.1.7
+    - Upbit OPEN API Version: 1.2.0
     - Author: ujhin
     - Email: ujhin942@gmail.com
     - GitHub: https://github.com/uJhin
