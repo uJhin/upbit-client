@@ -172,12 +172,12 @@ class UpbitWebSocket:
 
         return json.dumps(payload)
 
-    async def __aenter__(self) -> websockets.client.WebSocketClientProtocol:
+    async def __aenter__(self):
         return await self.Connection.__aenter__()
 
-    async def __aexit__(self, exc_type, exc_value, traceback) -> None:
+    async def __aexit__(self, exc_type, exc_value, traceback):
         await self.Connection.__aexit__(exc_type, exc_value, traceback)
-    
+
     def __str__(self):
         return self.__repr__()
 
