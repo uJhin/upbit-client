@@ -75,6 +75,15 @@ class UpbitWebSocket:
             ping_timeout=ping_timeout
         )
 
+    async def ping(self):
+        """
+        Client to Server PING
+        """
+        async with self as conn:
+            await conn.send('PING')
+            recv = await conn.recv()
+            return json.loads(recv)
+
     @staticmethod
     def generate_orderbook_codes(
         currencies: Union[List[str]],
