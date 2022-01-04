@@ -165,5 +165,8 @@ event_loop.run_until_complete( ticker(sock, payload) )
 ```
 
 ### Donation
-- BTC: 3NVw2seiTQddGQwc1apqudKxuTqebpyL3s
-- ETH: 0x60dd373f59862d9df776596889b997e24bee42eb
+<div align="left">
+  <img alt="uJhin's BTC" src="https://img.shields.io/badge/BTC-3NVw2seiTQddGQwc1apqudKxuTqebpyL3s-blue?style=for-the-badge&logo=bitcoin">
+  <br/>
+  <img alt="uJhin's ETH" src="https://img.shields.io/badge/ETH-0x60dd373f59862d9df776596889b997e24bee42eb-blue?style=for-the-badge&logo=ethereum">
+</div>
