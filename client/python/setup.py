@@ -16,7 +16,7 @@ setup(
     install_requires = [
         'bravado>=11.0.2',
         'PyJWT>=2.0',
-        'websockets>=8.1'
+        'websockets>=10.1'
     ],
     extras_require  = {
         'fido': [
