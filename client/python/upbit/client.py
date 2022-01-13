@@ -31,14 +31,41 @@ class Upbit:
             **kwargs
         ).SWGClient
 
-        self.APIKey   = models.APIKey(self.__client)
-        self.Account  = models.Account(self.__client)
-        self.Candle   = models.Candle(self.__client)
-        self.Deposit  = models.Deposit(self.__client)
-        self.Market   = models.Market(self.__client)
-        self.Order    = models.Order(self.__client)
-        self.Trade    = models.Trade(self.__client)
-        self.Withdraw = models.Withdraw(self.__client)
+        self.__APIKey   = models.APIKey(self.__client)
+        self.__Account  = models.Account(self.__client)
+        self.__Candle   = models.Candle(self.__client)
+        self.__Deposit  = models.Deposit(self.__client)
+        self.__Market   = models.Market(self.__client)
+        self.__Order    = models.Order(self.__client)
+        self.__Trade    = models.Trade(self.__client)
+        self.__Withdraw = models.Withdraw(self.__client)
+
+
+    @property
+    def APIKey(self):
+        return self.__APIKey
+    @property
+    def Account(self):
+        return self.__Account
+    @property
+    def Candle(self):
+        return self.__Candle
+    @property
+    def Deposit(self):
+        return self.__Deposit
+    @property
+    def Market(self):
+        return self.__Market
+    @property
+    def Order(self):
+        return self.__Order
+    @property
+    def Trade(self):
+        return self.__Trade
+    @property
+    def Withdraw(self):
+        return self.__Withdraw
+
 
     def __str__(self):
         return self.__repr__()
