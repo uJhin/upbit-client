@@ -21,8 +21,8 @@ class UpbitWebSocket:
     """
 
     WEBSOCKET_URI = "wss://api.upbit.com/websocket/v1"
-    FIELD_TYPES   = tuple("ticker", "trade", "orderbook")
-    FIELD_FORMATS = tuple("SIMPLE", "DEFAULT")
+    FIELD_TYPES   = ("ticker", "trade", "orderbook")
+    FIELD_FORMATS = ("SIMPLE", "DEFAULT")
 
 
     def __init__(

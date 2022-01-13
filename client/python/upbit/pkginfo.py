@@ -26,10 +26,10 @@ def _get_versions(package_name):
     return sorted(versions, key=LooseVersion, reverse=True)
 
 
-PACKAGE_NAME     = 'upbit-client'
+PACKAGE_NAME     = "upbit-client"
 
-OPEN_API_VERSION = '1.2.2'
-CURRENT_VERSION  = OPEN_API_VERSION+'.3'
+OPEN_API_VERSION = "1.2.2"
+CURRENT_VERSION  = OPEN_API_VERSION+".4"
 
 RELEASED_VERSION = _get_versions(PACKAGE_NAME)
 LATEST_VERSION   = RELEASED_VERSION[0]
