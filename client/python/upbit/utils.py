@@ -1,11 +1,11 @@
 
-from typing import Union
+import typing as t
 
 
 class HTTPFutureExtractor:
 
     @staticmethod
-    def remaining_request(headers: dict) -> dict:
+    def remaining_request(headers: t.Dict[str, t.Any]) -> t.Dict[str, t.Any]:
         """
         Check Request limit times
 
@@ -24,7 +24,7 @@ class HTTPFutureExtractor:
         }
 
     @staticmethod
-    def future_extraction(http_future) -> dict:
+    def future_extraction(http_future) -> t.Dict[str, t.Any]:
         resp = http_future.future.result()
         remaining = HTTPFutureExtractor.remaining_request(resp.headers)
 
@@ -59,7 +59,7 @@ class HTTPFutureExtractor:
 class Validator:
 
     @staticmethod
-    def validate_price(price: Union[int, float, str]) -> float:
+    def validate_price(price: t.Union[int, float, str]) -> float:
         """
         Please read the official Upbit Client document.
         Documents: https://ujhin.github.io/upbit-client-docs/

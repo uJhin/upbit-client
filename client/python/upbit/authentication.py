@@ -11,12 +11,12 @@ from bravado.requests_client import Authenticator
 class APIKeyAuthenticator(Authenticator):
 
     MAPPER           = "swg_mapper.json"
-    QUERY_PARAMS     = ("uuids", "txids", "identifiers", "states")
+    QUERY_PARAMS     = ( "uuids", "txids", "identifiers", "states" )
 
 
     def __init__(
         self,
-        host: str,
+        host      : str,
         access_key: str,
         secret_key: str
     ):
