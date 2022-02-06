@@ -4,7 +4,7 @@
 Please read the official Upbit Client document.
 Documents: https://ujhin.github.io/upbit-client-docs/
 
-- Upbit OPEN API Version: 1.2.2
+- Upbit OPEN API Version: 1.3.1
 - Author: ujhin
 - Email: ujhin942@gmail.com
 - GitHub: https://github.com/uJhin
@@ -15,5 +15,5 @@ Documents: https://ujhin.github.io/upbit-client-docs/
 from . import pkginfo
 
 
-__all__     = ['client', 'websocket']
+__all__     = [ "client", "websocket" ]
 __version__ = pkginfo.CURRENT_VERSION

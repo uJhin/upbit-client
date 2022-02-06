@@ -22,13 +22,13 @@ class ClientModel:
         **kwargs
     ):
 
-        arg_config = kwargs.get('config')
-        arg_spec_uri = kwargs.get('spec_uri')
+        arg_config   = kwargs.get("config")
+        arg_spec_uri = kwargs.get("spec_uri")
         config = {
-            'also_return_response': False,
-            'validate_responses': False,
-            'use_models': False,
-            'host': HOST
+            "also_return_response": False,
+            "validate_responses"  : False,
+            "use_models"          : False,
+            "host"                : HOST
         } if not arg_config else arg_config
         spec_uri = SPEC_URI if not arg_spec_uri else arg_spec_uri
 
@@ -36,7 +36,7 @@ class ClientModel:
 
             request_client = RequestsClient()
             request_client.authenticator = APIKeyAuthenticator(
-                host=config['host'],
+                host=config["host"],
                 access_key=access_key,
                 secret_key=secret_key
             )
@@ -55,7 +55,7 @@ class ClientModel:
             )
 
     @property
-    def SWGClient(self):
+    def SWGClient(self) -> SwaggerClient:
         return self.__client
 
 
