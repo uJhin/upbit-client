@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Upbit Client"
-          command: "echo ujhin SDKs"
+          command: "echo Welcome to Yu Jhin SDKs"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
