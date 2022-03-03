@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: 기능 추가 (Add Functions)
 assignees: ''
 
 ---
