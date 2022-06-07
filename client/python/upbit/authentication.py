@@ -1,14 +1,14 @@
 
-import jwt
-import hashlib
-import uuid
-
-from urllib.parse import urlencode
-
 from bravado.requests_client import Authenticator
 
 
 class APIKeyAuthenticator(Authenticator):
+
+    import jwt
+    import uuid
+
+    from urllib.parse import urlencode
+
 
     MAPPER           = "swg_mapper.json"
     QUERY_PARAMS     = ( "uuids", "txids", "identifiers", "states" )
@@ -26,6 +26,8 @@ class APIKeyAuthenticator(Authenticator):
         self.host       = host
         self.access_key = access_key
         self.secret_key = secret_key
+        self.algorithms = self.jwt.algorithms
+        self.algo       = "HS512"
 
 
     def matches(self, url):
@@ -49,27 +51,27 @@ class APIKeyAuthenticator(Authenticator):
 
         payload = {
             'access_key': self.access_key,
-            'nonce': str(uuid.uuid4())
+            'nonce': str(self.uuid.uuid4())
         }
         if isinstance(data, dict):
             params.update(data)
         if params:
             query = self.generate_query(params)
 
-            sha512 = hashlib.sha512()
+            sha512 = self.get_hash_algo(self.algo)
             sha512.update(query.encode())
             query_hash = sha512.hexdigest()
 
             payload["query_hash"    ] = query_hash
-            payload["query_hash_alg"] = "SHA512"
+            payload["query_hash_alg"] = sha512.name
 
-        jwt_token = jwt.encode(payload, self.secret_key)
+        jwt_token = self.jwt.encode(payload, self.secret_key, algorithm=self.algo)
         authorize_token = f"Bearer {jwt_token}"
         return authorize_token
 
 
     def generate_query(self, params):
-        query = urlencode({
+        query = self.urlencode({
             k: v
             for k, v in params.items()
             if k.lower() not in APIKeyAuthenticator.QUERY_PARAMS
@@ -84,3 +86,10 @@ class APIKeyAuthenticator(Authenticator):
                 ])
                 query = f"{query}&{query_params}" if query else query_params
         return query
+
+
+    def get_hash_algo(self, algo):
+        algorithms = self.algorithms.get_default_algorithms()
+        algo = algorithms.get(algo, "HS512")
+        hash_algo = algo.hash_alg()
+        return hash_algo
