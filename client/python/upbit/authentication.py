@@ -26,12 +26,15 @@ class APIKeyAuthenticator(Authenticator):
         self.host       = host
         self.access_key = access_key
         self.secret_key = secret_key
+
+        self.urlencode  = APIKeyAuthenticator.urlencode
+        self.jwt        = APIKeyAuthenticator.jwt
         self.algorithms = self.jwt.algorithms
         self.algo       = "HS512"
 
 
     def matches(self, url):
-        return APIKeyAuthenticator.MAPPER not in url
+        return self.MAPPER not in url
 
 
     def apply(self, request):
@@ -74,9 +77,9 @@ class APIKeyAuthenticator(Authenticator):
         query = self.urlencode({
             k: v
             for k, v in params.items()
-            if k.lower() not in APIKeyAuthenticator.QUERY_PARAMS
+            if k.lower() not in self.QUERY_PARAMS
         })
-        for query_param in APIKeyAuthenticator.QUERY_PARAMS:
+        for query_param in self.QUERY_PARAMS:
             if params.get(query_param):
                 param = params.pop(query_param)
                 params[f"{query_param}[]"] = param
