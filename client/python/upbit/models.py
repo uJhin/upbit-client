@@ -523,12 +523,18 @@ class Order:
         future = self.__client.Order.Order_cancel(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
-    def Order_cancel_all(self) -> dict:
-        result = []
+    def Order_cancel_all(self, side: str = None) -> dict:
+        args = {
+            "state": "wait"
+        }
 
+        if side:
+            args["side"] = side
+
+        result = []
         while True:
             waits = HTTPFutureExtractor.future_extraction(
-                self.__client.Order.Order_info_all(state="wait")
+                self.__client.Order.Order_info_all(**args)
             )["result"]
 
             if len(waits) == 0:
