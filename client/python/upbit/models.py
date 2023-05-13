@@ -528,9 +528,6 @@ class Order:
             "state": "wait"
         }
 
-        if side:
-            args["side"] = side
-
         result = []
         while True:
             waits = HTTPFutureExtractor.future_extraction(
@@ -540,12 +537,15 @@ class Order:
             if len(waits) == 0:
                 break
 
-            result += waits
-
             for w in waits:
+                if side and w["side"] != side:
+                    continue
+
                 HTTPFutureExtractor.future_extraction(
                     self.__client.Order.Order_cancel(uuid=w["uuid"])
                 )
+
+                result.append(w)
 
         return {
             "result": result
