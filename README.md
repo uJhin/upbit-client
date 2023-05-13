@@ -75,6 +75,26 @@ git clone https://github.com/uJhin/upbit-client.git
 
 
 ### Quick Start
+#### Credentials
+```shell
+mkdir -p ~/.upbit
+```
+```
+# vi ~/.upbit/credentials
+
+[default]
+access_key = a
+secret_key = b
+
+[a]
+access_key = c
+secret_key = d
+```
+```python
+client = Upbit() # default
+client = Upbit(profile="a")
+```
+
 #### REST Client
 - Check Your API Keys
 ```python

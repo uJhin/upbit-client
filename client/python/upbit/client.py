@@ -1,5 +1,6 @@
 
 from . import models
+from .credentials import Credentials
 
 
 class Upbit:
@@ -22,8 +23,13 @@ class Upbit:
         self,
         access_key: str = None,
         secret_key: str = None,
+        profile: str = None,
         **kwargs
     ):
+        if access_key is None and secret_key is None:
+            credentials = Credentials.get(profile)
+            access_key = credentials["access_key"]
+            secret_key = credentials["secret_key"]
 
         self.__client = models.ClientModel(
             access_key=access_key,
