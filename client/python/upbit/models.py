@@ -523,6 +523,28 @@ class Order:
         future = self.__client.Order.Order_cancel(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
 
+    def Order_cancel_all(self) -> dict:
+        result = []
+
+        while True:
+            waits = HTTPFutureExtractor.future_extraction(
+                self.__client.Order.Order_info_all(state="wait")
+            )["result"]
+
+            if len(waits) == 0:
+                break
+
+            result += waits
+
+            for w in waits:
+                HTTPFutureExtractor.future_extraction(
+                    self.__client.Order.Order_cancel(uuid=w["uuid"])
+                )
+
+        return {
+            "result": result
+        }
+
 
 class Trade:
     """
