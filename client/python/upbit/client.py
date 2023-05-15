@@ -1,6 +1,6 @@
 
 from . import models
-from .credentials import Credentials
+from seunggabi_core_python.util.config_util import Config
 
 
 class Upbit:
@@ -27,7 +27,11 @@ class Upbit:
         **kwargs
     ):
         if access_key is None and secret_key is None:
-            credentials = Credentials.get(profile)
+            credentials = Config.get(
+                group="upbit",
+                context="credentials",
+                profile=profile
+            )
             access_key = credentials["access_key"]
             secret_key = credentials["secret_key"]
 

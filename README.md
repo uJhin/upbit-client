@@ -194,3 +194,15 @@ event_loop.run_until_complete( ticker(sock, payload) )
   <br/>
   <img alt="uJhin's ETH" src="https://img.shields.io/badge/ETH-0x60dd373f59862d9df776596889b997e24bee42eb-blue?style=flat-square&logo=ethereum">
 </div>
+
+### Contributor
+```shell
+deactivate
+
+rm -rf venv
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip3 install -r client/python/requirements.txt
+```

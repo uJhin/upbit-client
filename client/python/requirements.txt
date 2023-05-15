@@ -1,4 +1,4 @@
-astroid==2.5
+astroid==2.11
 attrs==20.3.0
 bleach==3.3.0
 bravado==11.0.2
@@ -7,7 +7,7 @@ certifi==2022.12.7
 chardet==4.0.0
 colorama==0.4.4
 docutils==0.16
-idna==3.1
+idna==2.5
 isort==5.7.0
 jsonpointer==2.0
 jsonref==0.2
@@ -46,3 +46,4 @@ webcolors==1.11.1
 webencodings==0.5.1
 websockets==10.1
 wrapt==1.12.1
+seunggabi_core_python
