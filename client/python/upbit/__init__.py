@@ -4,7 +4,7 @@
 Please read the official Upbit Client document.
 Documents: https://ujhin.github.io/upbit-client-docs/
 
-- Upbit OPEN API Version: 1.3.2
+- Upbit OPEN API Version: 1.3.4
 - Author: ujhin
 - Email: ujhin942@gmail.com
 - GitHub: https://github.com/uJhin

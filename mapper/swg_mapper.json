@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "## REST API for Upbit Exchange\n- Base URL: [https://api.upbit.com]\n- Official Upbit API Documents: [https://docs.upbit.com]\n- Official Support email: [open-api@upbit.com]\n",
-    "version": "1.3.2",
+    "version": "1.3.4",
     "title": "Upbit Open API",
     "contact": {
       "url": "https://github.com/uJhin",
@@ -814,6 +814,13 @@
             "in": "formData",
             "description": "출금 원화 수량\n",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "two_factor_type",
+            "in": "formData",
+            "description": "2차 인증 수단 (optional)\n",
+            "required": false,
             "type": "string"
           }
         ],

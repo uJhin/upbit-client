@@ -7,7 +7,7 @@ from .utils import HTTPFutureExtractor
 
 
 HOST     = "https://api.upbit.com"
-SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg_mapper.json"
+SPEC_URI = "https://raw.githubusercontent.com/seunggabi/upbit-client/main/mapper/swg_mapper.json"
 
 
 class ClientModel:
@@ -727,6 +727,11 @@ class Withdraw:
 
         :param amount: 출금 원화 수량
         :type amount: str
+
+        :param 2차 인증 수단 (optional)
+        - kakao_pay : 카카오 페이 (default)
+        - naver : 네이버
+        :type two_factor_type: str
         """
 
         future = self.__client.Withdraw.Withdraw_krw(**kwargs)

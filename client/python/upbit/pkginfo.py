@@ -4,7 +4,7 @@
 Please read the official Upbit Client document.
 Documents: https://ujhin.github.io/upbit-client-docs/
 
-- Upbit OPEN API Version: 1.3.2
+- Upbit OPEN API Version: 1.3.4
 - Author: ujhin
 - Email: ujhin942@gmail.com
 - GitHub: https://github.com/uJhin
@@ -28,17 +28,17 @@ def _get_versions(package_name):
 
 PACKAGE_NAME     = "upbit-client"
 
-OPEN_API_VERSION = "1.3.2"
+OPEN_API_VERSION = "1.3.4"
 CURRENT_VERSION  = OPEN_API_VERSION+".0"
 
-RELEASED_VERSION = _get_versions(PACKAGE_NAME)
-LATEST_VERSION   = RELEASED_VERSION[0]
+# RELEASED_VERSION = _get_versions(PACKAGE_NAME)
+# LATEST_VERSION   = RELEASED_VERSION[0]
 
 
-if LATEST_VERSION != CURRENT_VERSION:
-    logging.basicConfig(format="[%(levelname)s] %(message)s")
-    logging.warning(
-        f"{PACKAGE_NAME} is currently a newer version: {LATEST_VERSION}\n"
-        f"Please update to the latest version using the pip command:" 
-        f"`pip install --upgrade {PACKAGE_NAME}`"
-    )
+# if LATEST_VERSION != CURRENT_VERSION:
+#     logging.basicConfig(format="[%(levelname)s] %(message)s")
+#     logging.warning(
+#         f"{PACKAGE_NAME} is currently a newer version: {LATEST_VERSION}\n"
+#         f"Please update to the latest version using the pip command:"
+#         f"`pip install --upgrade {PACKAGE_NAME}`"
+#     )
