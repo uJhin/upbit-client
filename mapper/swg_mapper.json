@@ -745,6 +745,13 @@
             "type": "string"
           },
           {
+            "name": "net_type",
+            "in": "formData",
+            "description": "출금 네트워크\n",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "amount",
             "in": "formData",
             "description": "출금 수량\n",
