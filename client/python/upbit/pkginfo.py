@@ -4,7 +4,7 @@
 Please read the official Upbit Client document.
 Documents: https://ujhin.github.io/upbit-client-docs/
 
-- Upbit OPEN API Version: 1.3.2
+- Upbit OPEN API Version: 1.3.4
 - Author: ujhin
 - Email: ujhin942@gmail.com
 - GitHub: https://github.com/uJhin
@@ -28,7 +28,7 @@ def _get_versions(package_name):
 
 PACKAGE_NAME     = "upbit-client"
 
-OPEN_API_VERSION = "1.3.2"
+OPEN_API_VERSION = "1.3.4"
 CURRENT_VERSION  = OPEN_API_VERSION+".0"
 
 RELEASED_VERSION = _get_versions(PACKAGE_NAME)
