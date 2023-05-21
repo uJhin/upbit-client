@@ -231,10 +231,15 @@ class Deposit:
 
         [NOTE] 입금 주소 조회 요청 API 유의사항
 
-        입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.
+        입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 `deposit_address` 가 `null` 일 수 있습니다.
+        * 네트워크가 일치하지 않는 경우 정상 입출금이 진행되지 않을 수 있습니다.
+        사용하는 주소와 네트워크가 정확히 일치하는지 재확인 후 이용을 부탁드립니다.
 
-        :param currency: Currency symbol
+        :param currency: Currency 코드
         :type currency: str
+
+        :param net_type: 입금 네트워크
+        :type net_type: str
         """
 
         future = self.__client.Deposit.Deposit_coin_address(**kwargs)
@@ -247,7 +252,7 @@ class Deposit:
         ## 내가 보유한 자산 리스트를 보여줍니다.
         [NOTE] 입금 주소 조회 요청 API 유의사항
 
-        입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 deposit_address가 null일 수 있습니다.
+        입금 주소 생성 요청 이후 아직 발급되지 않은 상태일 경우 `deposit_address` 가 `null` 일 수 있습니다.
         """
 
         future = self.__client.Deposit.Deposit_coin_addresses()
@@ -263,13 +268,15 @@ class Deposit:
         
         입금 주소의 생성은 서버에서 비동기적으로 이뤄집니다.
         비동기적 생성 특성상 요청과 동시에 입금 주소가 발급되지 않을 수 있습니다.
-        주소 발급 요청 시 결과로 Response1이 반환되며 주소 발급 완료 이전까지 계속 Response1이 반환됩니다.
-        주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 Response2 형태로 반환됩니다.
+        주소 발급 요청 시 결과로 `Response1` 이 반환되며 주소 발급 완료 이전까지 계속 `Response1` 이 반환됩니다.
+        주소가 발급된 이후부터는 새로운 주소가 발급되는 것이 아닌 이전에 발급된 주소가 `Response2` 형태로 반환됩니다.
         정상적으로 주소가 생성되지 않는다면 일정 시간 이후 해당 API를 다시 호출해주시길 부탁드립니다.
-
 
         :param currency: Currency 코드
         :type currency: str
+
+        :param net_type: 입금 네트워크
+        :type net_type: str
         """
 
         future = self.__client.Deposit.Deposit_generate_coin_address(**kwargs)
@@ -592,8 +599,11 @@ class Withdraw:
 
         ## 해당 통화의 가능한 출금 정보를 확인한다.
 
-        :param currency: Currency Symbol
+        :param currency: 자산 코드
         :type currency: str
+
+        :param net_type: 출금 네트워크
+        :type net_type: str
         """
 
         future = self.__client.Withdraw.Withdraw_chance(**kwargs)
@@ -609,9 +619,14 @@ class Withdraw:
 
         업비트 회원의 주소가 아닌 주소로 바로출금을 요청하는 경우, 출금이 정상적으로 수행되지 않습니다.
         반드시 주소를 확인 후 출금을 진행하시기 바랍니다.
+        * 네트워크가 일치하지 않는 경우 정상 입출금이 진행되지 않을 수 있습니다.
+        사용하는 주소와 네트워크가 정확히 일치하는지 재확인 후 이용을 부탁드립니다.
 
-        :param currency: Currency 코드
+        :param currency: 자산 코드
         :type currency: str
+
+        :param net_type: 출금 네트워크
+        :type net_type: str
 
         :param amount: 출금 수량
         :type amount: str
@@ -703,3 +718,23 @@ class Withdraw:
 
         future = self.__client.Withdraw.Withdraw_krw(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
+
+    def Withdraw_coin_addresses(self, **kwargs) -> dict:
+        """
+        [GET] 출금 허용 주소 리스트 조회
+
+        ## 등록된 출금 허용 주소 목록을 조회한다.
+
+        [NOTE] 출금 기능을 이용하기 위해서는 주소 등록이 필요합니다.
+
+        Open API를 통해 디지털 자산을 출금하기 위해서는 출금 허용 주소 등록이 필요합니다.
+        * 네트워크가 일치하지 않는 경우 정상 입출금이 진행되지 않을 수 있습니다.
+        사용하는 주소와 네트워크가 정확히 일치하는지 재확인 후 이용을 부탁드립니다.
+
+        ### 출금 허용 주소 등록 방법
+        업비트 웹 > [MY] > [Open API 관리] > [디지털 자산 출금주소 관리] 페이지에서 진행하실 수 있습니다.
+        """
+
+        future = self.__client.Withdraw.Withdraw_coin_addresses(**kwargs)
+        return HTTPFutureExtractor.future_extraction(future)
+

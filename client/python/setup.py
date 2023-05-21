@@ -14,9 +14,9 @@ setup(
     version  = pkginfo.CURRENT_VERSION,
     packages = find_packages(),
     install_requires = [
-        'bravado>=11.0.2',
-        'PyJWT>=2.4.0',
-        'websockets>=10.3'
+          'bravado>=11.0.2'
+        , 'PyJWT>=2.4.0'
+        , 'websockets>=10.3'
     ],
     extras_require  = {
         'fido': [
@@ -25,20 +25,22 @@ setup(
     },
     python_requires = '>=3.8',
     classifiers     = [
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
+          'Programming Language :: Python :: 3.8'
+        , 'Programming Language :: Python :: 3.9'
+        , 'Programming Language :: Python :: 3.10'
+        , 'Programming Language :: Python :: 3.11'
+        , 'Programming Language :: Python :: 3.12'
     ],
     keywords        = [
-        'Upbit',
-        'upbit',
-        'upbit-client',
-        'Upbit-Client',
-        'Upbit_client',
-        'Upbit-api-connector',
-        'upbit-api-connector',
-        'Upbit_api_connector',
-        'upbit_api_connector'
+          'Upbit'
+        , 'upbit'
+        , 'upbit-client'
+        , 'Upbit-Client'
+        , 'Upbit_client'
+        , 'Upbit-api-connector'
+        , 'upbit-api-connector'
+        , 'Upbit_api_connector'
+        , 'upbit_api_connector'
     ],
     url                           = 'https://github.com/uJhin/upbit-client',
     download_url                  = 'https://github.com/uJhin/upbit-client/releases',
