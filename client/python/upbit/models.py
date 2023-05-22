@@ -714,6 +714,11 @@ class Withdraw:
 
         :param amount: 출금 원화 수량
         :type amount: str
+        
+        :param two_factor_type: 2차 인증 수단 (optional)
+        - kakao_pay: 카카오페이 인증 (default)
+        - naver: 네이버 인증
+        :type two_factor_type: str
         """
 
         future = self.__client.Withdraw.Withdraw_krw(**kwargs)
