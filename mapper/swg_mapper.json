@@ -829,6 +829,14 @@
             "description": "출금 원화 수량\n",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "two_factor_type",
+            "in": "formData",
+            "description": "2차 인증 수단 (기본 값 : kakao_pay)\n",
+            "required": false,
+            "type": "string",
+            "default": "kakao_pay"
           }
         ],
         "responses": {
