@@ -696,7 +696,14 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency Symbol\n",
+            "description": "자산 코드\n",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "net_type",
+            "in": "query",
+            "description": "출금 네트워크\n",
             "required": true,
             "type": "string"
           }
@@ -745,6 +752,13 @@
             "type": "string"
           },
           {
+            "name": "net_type",
+            "in": "formData",
+            "description": "출금 네트워크\n",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "amount",
             "in": "formData",
             "description": "출금 수량\n",
@@ -761,7 +775,7 @@
           {
             "name": "secondary_address",
             "in": "formData",
-            "description": "2차 출금 주소 (필요한 코인에 한해서)\n",
+            "description": "2차 출금 주소 (필요한 디지털 자산에 한해서)\n",
             "required": false,
             "type": "string"
           },
@@ -819,9 +833,10 @@
           {
             "name": "two_factor_type",
             "in": "formData",
-            "description": "2차 인증 수단 (optional)\n",
+            "description": "2차 인증 수단 (기본 값 : kakao_pay)\n",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "default": "kakao_pay"
           }
         ],
         "responses": {
@@ -829,6 +844,39 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/Withdraw"
+            }
+          },
+          "default": {
+            "description": "HTTP Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/withdraws/coin_addresses": {
+      "get": {
+        "tags": [
+          "Withdraw"
+        ],
+        "summary": "출금 허용 주소 리스트 조회",
+        "description": "## 등록된 출금 허용 주소 목록을 조회한다.\n",
+        "operationId": "Withdraw.coin_addresses",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/WithdrawCoinAddresses"
             }
           },
           "default": {
@@ -1015,6 +1063,13 @@
             "description": "Currency 코드\n",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "net_type",
+            "in": "formData",
+            "description": "입금 네트워크\n",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -1059,7 +1114,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DepositCompleteResponse"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1090,7 +1150,14 @@
           {
             "name": "currency",
             "in": "query",
-            "description": "Currency symbol\n",
+            "description": "자산 코드\n",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "net_type",
+            "in": "query",
+            "description": "입금 네트워크\n",
             "required": true,
             "type": "string"
           }
@@ -1140,7 +1207,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MarketInfo"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1201,7 +1273,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CandleMinutes"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1263,7 +1340,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CandleDays"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1317,7 +1399,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CandleDate"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1371,7 +1458,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CandleDate"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1440,7 +1532,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TradeTicks"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1479,7 +1576,12 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {}
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Ticker"
+              }
+            }
           },
           "default": {
             "description": "HTTP Error",
@@ -1594,6 +1696,11 @@
           "type": "string",
           "example": "BTC",
           "description": "화폐를 의미하는 영문 대문자 코드"
+        },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "입출금 네트워크"
         },
         "wallet_state": {
           "type": "string",
@@ -2184,6 +2291,11 @@
           "example": "XRP",
           "description": "화폐를 의미하는 영문 대문자 코드"
         },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "출금 네트워크"
+        },
         "txid": {
           "type": "string",
           "example": "98c15999f0bdc4ae0e8a-ed35868bb0c204fe6ec29e4058a3451e-88636d1040f4baddf943274ce37cf9cc",
@@ -2238,6 +2350,11 @@
           "type": "string",
           "example": "XRP",
           "description": "화폐를 의미하는 영문 대문자 코드"
+        },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "출금 네트워크"
         },
         "txid": {
           "type": "string",
@@ -2427,6 +2544,30 @@
       },
       "description": "출금 제약 정보"
     },
+    "WithdrawCoinAddresses": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "example": "BTC",
+          "description": "화폐를 의미하는 영문 대문자 코드"
+        },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "출금 네트워크"
+        },
+        "withdraw_address": {
+          "type": "string",
+          "example": "3EusRwybuZUhVDeHL7gh3HSLmbhLcy7NqD",
+          "description": "출금 주소"
+        },
+        "secondary_address": {
+          "type": "string",
+          "description": "2차 출금 주소 (필요한 디지털 자산에 한에서)"
+        }
+      }
+    },
     "Deposit": {
       "type": "object",
       "properties": {
@@ -2444,6 +2585,11 @@
           "type": "string",
           "example": "KRW",
           "description": "화폐를 의미하는 영문 대문자 코드"
+        },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "입금 네트워크"
         },
         "txid": {
           "type": "string",
@@ -2504,6 +2650,11 @@
           "type": "string",
           "example": "BTC",
           "description": "화폐를 의미하는 영문 대문자 코드"
+        },
+        "net_type": {
+          "type": "string",
+          "example": "BTC",
+          "description": "입금 네트워크"
         },
         "deposit_address": {
           "type": "string",
