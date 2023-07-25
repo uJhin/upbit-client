@@ -552,14 +552,17 @@ class Order:
                 break
 
             for w in waits:
-                if side and w["side"] != side:
+                try:
+                    if side and w["side"] != side:
+                        continue
+
+                    HTTPFutureExtractor.future_extraction(
+                        self.__client.Order.Order_cancel(uuid=w["uuid"])
+                    )
+
+                    result.append(w)
+                except:
                     continue
-
-                HTTPFutureExtractor.future_extraction(
-                    self.__client.Order.Order_cancel(uuid=w["uuid"])
-                )
-
-                result.append(w)
 
         return {
             "result": result
