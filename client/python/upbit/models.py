@@ -553,7 +553,9 @@ class Order:
 
             for w in waits:
                 if w == "error":
-                    break
+                    return {
+                        "result": result
+                    }
 
                 if side and w["side"] != side:
                     continue
