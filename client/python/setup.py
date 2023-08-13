@@ -11,7 +11,6 @@ setup(
     version=pkginfo.CURRENT_VERSION,
     packages=find_packages(),
     install_requires=[
-        'requests',
         'bravado>=11.0.2'
         , 'PyJWT>=2.4.0'
         , 'websockets>=10.3'
