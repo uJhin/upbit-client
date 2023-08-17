@@ -2,7 +2,7 @@ arrow==1.2.3
 attrs==23.1.0
 bravado==11.0.3
 bravado-core==5.17.1
-certifi==2023.5.7
+certifi==2023.7.22
 charset-normalizer==3.1.0
 fqdn==1.5.1
 idna==3.4
