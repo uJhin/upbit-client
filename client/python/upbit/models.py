@@ -7,7 +7,7 @@ from .utils import HTTPFutureExtractor
 
 
 HOST     = "https://api.upbit.com"
-SPEC_URI = "https://raw.githubusercontent.com/uJhin/upbit-client/main/mapper/swg_mapper.json"
+SPEC_URI = "https://raw.githubusercontent.com/seunggabi/upbit-client/main/mapper/swg_mapper.json"
 
 
 class ClientModel:
@@ -529,6 +529,46 @@ class Order:
 
         future = self.__client.Order.Order_cancel(**kwargs)
         return HTTPFutureExtractor.future_extraction(future)
+
+    def Order_cancel_all(
+            self,
+            side: str = None,
+            market: str = None,
+    ) -> dict:
+        args = {
+            "state": "wait"
+        }
+
+        if market:
+            args["market"] = market
+
+        result = []
+        while True:
+            waits = HTTPFutureExtractor.future_extraction(
+                self.__client.Order.Order_info_all(**args)
+            )["result"]
+
+            if len(waits) == 0:
+                break
+
+            for w in waits:
+                if w == "error":
+                    return {
+                        "result": result
+                    }
+
+                if side and w["side"] != side:
+                    continue
+
+                HTTPFutureExtractor.future_extraction(
+                    self.__client.Order.Order_cancel(uuid=w["uuid"])
+                )
+
+                result.append(w)
+
+        return {
+            "result": result
+        }
 
 
 class Trade:

@@ -139,6 +139,7 @@ class WithdrawApi(object):
 
         :param async_req bool
         :param str currency: Currency 코드  (required)
+        :param str net_type: 출금 네트워크  (required)
         :param str amount: 출금 수량  (required)
         :param str address: 출금 가능 주소에 등록된 출금 주소  (required)
         :param str secondary_address: 2차 출금 주소 (필요한 코인에 한해서) 
